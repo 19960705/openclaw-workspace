@@ -223,6 +223,158 @@ RGB 灯效缓慢呼吸变化。
 ---
 ```
 
+## 🖼️ 首帧/首尾帧文生图提示词（Nano Banana Pro）
+
+在 Seedance 2.0 生成视频前，需要先用文生图模型生成高质量的首帧（或首尾帧）来锁定整体基调。
+
+### 首帧提示词结构
+
+```
+[主体描述], [场景/背景], [光影氛围], [艺术风格/质感], [镜头/构图], [画质参数]
+```
+
+### 首帧提示词模板
+
+```markdown
+## 🖼️ 首帧文生图提示词
+
+### 基础信息
+- **画面比例：** [16:9 / 9:16 / 1:1]
+- **用途：** [首帧 / 尾帧 / 风格参考]
+
+### 提示词构成
+
+| 元素 | 描述 |
+|------|------|
+| **主体** | [画面中心的人物/物品/场景主体] |
+| **场景** | [环境、背景、空间描述] |
+| **光影** | [光源方向、光线质感、明暗对比] |
+| **风格** | [艺术风格、材质质感、美术基调] |
+| **构图** | [镜头角度、景别、视觉焦点] |
+| **画质** | [分辨率、清晰度、细节程度] |
+
+### 完整提示词
+```
+[英文提示词，可直接复制到 Nano Banana Pro]
+```
+
+### 负面提示词（可选）
+```
+[需要排除的元素]
+```
+```
+
+### 示例：毛毡风格首帧
+
+```markdown
+## 🖼️ 首帧文生图提示词
+
+### 基础信息
+- **画面比例：** 9:16
+- **用途：** 首帧（锁定毛毡质感基调）
+
+### 提示词构成
+
+| 元素 | 描述 |
+|------|------|
+| **主体** | 一团柔软的白色羊毛，中心微微泛红 |
+| **场景** | 纯净的浅米色背景，微缩世界感 |
+| **光影** | 柔和的暖色漫射光，无明显阴影 |
+| **风格** | 手工毛毡质感，羊毛纤维清晰可见，治愈系 |
+| **构图** | 居中构图，微距特写，浅景深 |
+| **画质** | 高清细腻，纤维纹理清晰 |
+
+### 完整提示词
+```
+A soft fluffy white wool ball with subtle red tint in center, miniature world aesthetic, felt craft texture, visible wool fibers, pure light beige background, warm soft diffused lighting, cozy healing atmosphere, centered composition, macro close-up shot, shallow depth of field, high detail, 4K quality
+```
+
+### 负面提示词
+```
+blurry, low quality, plastic texture, harsh shadows, oversaturated
+```
+```
+
+### 示例：产品展示首帧
+
+```markdown
+## 🖼️ 首帧文生图提示词
+
+### 基础信息
+- **画面比例：** 16:9
+- **用途：** 首帧（产品静态展示）
+
+### 提示词构成
+
+| 元素 | 描述 |
+|------|------|
+| **主体** | 黑色哑光机械键盘，RGB 灯效微亮 |
+| **场景** | 纯白无限背景，倒影可见 |
+| **光影** | 影棚柔光，轻微侧光勾勒轮廓 |
+| **风格** | 高端商业摄影，苹果风格简约 |
+| **构图** | 45度俯视，产品居中，留白充足 |
+| **画质** | 超高清，材质细节锐利 |
+
+### 完整提示词
+```
+A black matte mechanical keyboard with subtle RGB backlighting, pure white infinite cyclorama background, visible reflection on glossy surface, professional studio soft lighting with rim light accent, premium commercial product photography, Apple-style minimalist aesthetic, 45-degree overhead angle, centered composition with generous negative space, ultra sharp details, 4K resolution
+```
+```
+
+### 示例：赛博朋克首帧
+
+```markdown
+## 🖼️ 首帧文生图提示词
+
+### 基础信息
+- **画面比例：** 9:16
+- **用途：** 首帧（锁定赛博朋克氛围）
+
+### 完整提示词
+```
+A young woman with neon blue short hair standing in rainy cyberpunk city street, holographic advertisements reflecting on wet pavement, pink and cyan neon signs, dense fog with volumetric lighting, dystopian night atmosphere, cinematic color grading, medium shot, looking at camera, mysterious expression, high contrast dramatic lighting, ultra detailed, 4K cinematic quality
+```
+```
+
+### 首尾帧配合使用
+
+当需要控制视频的起点和终点时，生成配对的首尾帧：
+
+```markdown
+## 🖼️ 首尾帧文生图提示词
+
+### 首帧
+```
+[开始画面的提示词]
+```
+
+### 尾帧
+```
+[结束画面的提示词 - 保持风格一致，改变主体状态/位置/情绪]
+```
+
+### 一致性要点
+- 保持相同的光影风格
+- 保持相同的色彩基调
+- 保持相同的画面质感
+- 主体可以有动作/位置变化
+```
+
+### 风格关键词速查
+
+| 风格类型 | 英文关键词 |
+|----------|-----------|
+| 毛毡/手工 | felt craft, wool texture, handmade aesthetic, cozy, miniature |
+| 商业摄影 | commercial photography, product shot, studio lighting, minimalist |
+| 电影感 | cinematic, film style, anamorphic, dramatic lighting |
+| 赛博朋克 | cyberpunk, neon, dystopian, holographic, rain-soaked |
+| 动漫风 | anime style, cel shading, vibrant colors, Japanese animation |
+| 复古胶片 | vintage, film grain, retro, nostalgic, analog |
+| 3D 渲染 | 3D render, Octane, C4D, CGI, photorealistic |
+| 水彩插画 | watercolor, soft edges, painterly, artistic |
+| 极简主义 | minimalist, clean, simple, negative space, pure |
+| 奇幻梦境 | dreamlike, surreal, fantasy, ethereal, magical |
+
 ## 风格与主体的文生图提示词
 
 ### 风格提示词模板
