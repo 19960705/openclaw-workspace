@@ -47,8 +47,116 @@ workspace/tasks/
 | `seedance` | 生成 Seedance 视频提示词 | 调用 seedance-prompt-generator skill |
 | `news` | 采集 AI/科技新闻 | 调用 technews 或 web_search |
 | `tiktok` | TikTok 趋势监控 | 调用 tiktok-thailand-trends skill |
+| `twitter-digest` | Twitter 热门日报 | 搜索热门推文，整理日报 |
+| `twitter-monitor` | Twitter 账号监控 | 监控指定账号，重大更新推送 |
+| `twitter-topic` | Twitter 话题追踪 | 持续追踪特定话题讨论 |
 | `message` | 发送通知消息 | 直接发送 Discord 消息 |
 | `custom` | 自定义任务 | 根据 config 执行 |
+
+## Twitter 任务执行指南
+
+### twitter-digest（热门日报）
+
+**执行步骤：**
+1. 读取 `config.keywords` 关键词列表
+2. 使用 `web_search` 搜索 `site:x.com {keyword}`
+3. 筛选高互动内容
+4. 整理成日报格式推送
+
+**config 参数：**
+```json
+{
+  "keywords": ["AI", "GPT", "Claude"],
+  "minEngagement": "high",
+  "language": "en",
+  "resultCount": 10
+}
+```
+
+**输出格式：**
+```markdown
+## 🐦 AI 热门推文日报
+**日期：** 2026-02-14
+
+### 🔥 今日热门
+
+1. **@OpenAI**: GPT-5 发布预告...
+   - 互动：10K+ likes
+   - 链接：https://x.com/...
+
+2. **@AnthropicAI**: Claude 新功能上线...
+   - 互动：5K+ likes
+   - 链接：https://x.com/...
+```
+
+### twitter-monitor（账号监控）
+
+**执行步骤：**
+1. 读取 `config.accounts` 账号列表
+2. 搜索 `site:x.com from:{account}`
+3. 对比 `lastRun` 时间，筛选新推文
+4. 用 `config.filterKeywords` 过滤重要更新
+5. 翻译（如果 `config.translate: true`）
+6. 推送重大更新
+
+**config 参数：**
+```json
+{
+  "accounts": ["@OpenAI", "@AnthropicAI"],
+  "filterKeywords": ["release", "launch", "new"],
+  "translate": true
+}
+```
+
+**输出格式：**
+```markdown
+## 🔔 官方账号更新
+**时间：** 2026-02-14 14:00
+
+### @OpenAI 发布新动态
+
+**原文：** We're excited to announce...
+**翻译：** 我们很高兴宣布...
+**链接：** https://x.com/...
+
+---
+*无内容则不推送*
+```
+
+### twitter-topic（话题追踪）
+
+**执行步骤：**
+1. 读取 `config.topic` 和 `config.keywords`
+2. 搜索相关推文
+3. 整理讨论热点和新玩法
+4. 生成追踪报告
+
+**config 参数：**
+```json
+{
+  "topic": "OpenClaw",
+  "keywords": ["OpenClaw", "openclaw"],
+  "trackDays": 7
+}
+```
+
+**输出格式：**
+```markdown
+## 📊 话题追踪：OpenClaw
+**周期：** 最近 7 天
+
+### 讨论热点
+- 任务系统搭建
+- 飞书集成玩法
+- Skills 开发
+
+### 精选推文
+1. @user1: 分享了 OpenClaw + 飞书的玩法...
+2. @user2: 开源了一个新的 skill...
+
+### 趋势分析
+热度持续上升，主要讨论集中在...
+```
 
 ## 操作指南
 
@@ -209,6 +317,62 @@ const needsRun = !task.lastRun && task.status === "pending"
   "config": {
     "sources": ["technews"],
     "count": 5
+  }
+}
+```
+
+### Twitter 热门日报任务
+```json
+{
+  "id": "task-twitter-001",
+  "name": "AI 热门推文日报",
+  "type": "twitter-digest",
+  "description": "每日收集 AI 领域热门推文",
+  "schedule": "daily",
+  "scheduleTime": "09:00",
+  "status": "pending",
+  "enabled": true,
+  "config": {
+    "keywords": ["AI", "GPT", "Claude", "LLM"],
+    "minEngagement": "high",
+    "resultCount": 10
+  }
+}
+```
+
+### Twitter 官方账号监控任务
+```json
+{
+  "id": "task-twitter-002",
+  "name": "AI 官方账号监控",
+  "type": "twitter-monitor",
+  "description": "监控 AI 公司官方账号，重大更新推送",
+  "schedule": "hourly",
+  "status": "pending",
+  "enabled": true,
+  "config": {
+    "accounts": ["@OpenAI", "@AnthropicAI", "@GoogleAI"],
+    "filterKeywords": ["release", "launch", "announcing"],
+    "translate": true
+  }
+}
+```
+
+### Twitter 话题追踪任务
+```json
+{
+  "id": "task-twitter-003",
+  "name": "OpenClaw 话题追踪",
+  "type": "twitter-topic",
+  "description": "追踪 OpenClaw 相关讨论",
+  "schedule": "daily",
+  "scheduleTime": "18:00",
+  "status": "pending",
+  "enabled": true,
+  "config": {
+    "topic": "OpenClaw",
+    "keywords": ["OpenClaw", "openclaw"],
+    "trackDays": 7
   }
 }
 ```

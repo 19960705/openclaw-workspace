@@ -12,6 +12,78 @@
       "createdAt": "2026-02-14",
       "lastRun": null,
       "lastResult": null
+    },
+    {
+      "id": "task-twitter-001",
+      "name": "AI 热门推文日报",
+      "type": "twitter-digest",
+      "description": "每日收集 AI 领域热门推文，筛选高互动内容",
+      "schedule": "daily",
+      "scheduleTime": "09:00",
+      "status": "pending",
+      "enabled": true,
+      "createdAt": "2026-02-14",
+      "lastRun": null,
+      "lastResult": null,
+      "config": {
+        "keywords": ["AI", "GPT", "Claude", "LLM", "OpenAI", "Anthropic"],
+        "minEngagement": "high",
+        "language": "en",
+        "resultCount": 10
+      }
+    },
+    {
+      "id": "task-twitter-002",
+      "name": "AI 官方账号监控",
+      "type": "twitter-monitor",
+      "description": "监控 AI 公司官方账号动态，重大更新自动推送",
+      "schedule": "hourly",
+      "status": "pending",
+      "enabled": true,
+      "createdAt": "2026-02-14",
+      "lastRun": null,
+      "lastResult": null,
+      "config": {
+        "accounts": ["@OpenAI", "@AnthropicAI", "@GoogleAI", "@xaboratory"],
+        "filterKeywords": ["release", "launch", "new", "update", "announcing"],
+        "translate": true
+      }
+    },
+    {
+      "id": "task-twitter-003",
+      "name": "OpenClaw 话题追踪",
+      "type": "twitter-topic",
+      "description": "持续追踪 OpenClaw 相关讨论和玩法分享",
+      "schedule": "daily",
+      "scheduleTime": "18:00",
+      "status": "pending",
+      "enabled": true,
+      "createdAt": "2026-02-14",
+      "lastRun": null,
+      "lastResult": null,
+      "config": {
+        "topic": "OpenClaw",
+        "keywords": ["OpenClaw", "openclaw"],
+        "trackDays": 7
+      }
+    },
+    {
+      "id": "task-twitter-004",
+      "name": "Seedance 视频案例收集",
+      "type": "twitter-topic",
+      "description": "收集 Seedance 2.0 优秀作品和提示词分享",
+      "schedule": "daily",
+      "scheduleTime": "20:00",
+      "status": "pending",
+      "enabled": true,
+      "createdAt": "2026-02-14",
+      "lastRun": null,
+      "lastResult": null,
+      "config": {
+        "topic": "Seedance",
+        "keywords": ["Seedance", "seedance", "即梦"],
+        "trackDays": 3
+      }
     }
   ],
   "taskTypes": {
@@ -19,6 +91,9 @@
     "seedance": "生成 Seedance 视频提示词",
     "news": "采集新闻资讯",
     "tiktok": "TikTok 趋势监控",
+    "twitter-digest": "Twitter 热门日报",
+    "twitter-monitor": "Twitter 账号监控",
+    "twitter-topic": "Twitter 话题追踪",
     "custom": "自定义脚本"
   },
   "scheduleTypes": {
