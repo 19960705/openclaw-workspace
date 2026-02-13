@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "name": "示例任务：每日问候",
+      "type": "message",
+      "description": "每天早上发送问候消息",
+      "schedule": "daily",
+      "scheduleTime": "09:00",
+      "status": "pending",
+      "enabled": false,
+      "createdAt": "2026-02-14",
+      "lastRun": null,
+      "lastResult": null
+    }
+  ],
+  "taskTypes": {
+    "message": "发送消息通知",
+    "seedance": "生成 Seedance 视频提示词",
+    "news": "采集新闻资讯",
+    "tiktok": "TikTok 趋势监控",
+    "custom": "自定义脚本"
+  },
+  "scheduleTypes": {
+    "once": "单次执行",
+    "daily": "每天",
+    "hourly": "每小时",
+    "weekly": "每周"
+  }
+}
