@@ -23,8 +23,8 @@
       "status": "pending",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": null,
-      "lastResult": null,
+      "lastRun": "2026-02-14 00:30",
+      "lastResult": "采集 10 条热门新闻，已推送",
       "config": {
         "keywords": ["AI", "GPT", "Claude", "LLM", "OpenAI", "Anthropic"],
         "minEngagement": "high",
@@ -94,6 +94,7 @@
     "twitter-digest": "Twitter 热门日报",
     "twitter-monitor": "Twitter 账号监控",
     "twitter-topic": "Twitter 话题追踪",
+    "wechat-radar": "公众号蓝海选题雷达",
     "custom": "自定义脚本"
   },
   "scheduleTypes": {
