@@ -1,0 +1,17 @@
+---
+name: twitter_search
+description: Search Twitter/X for tweets, posts, and discussions. Finds relevant tweets by keywords, user mentions, or hashtags. Returns tweet text with links to original posts. Use this when user wants to find tweets about a topic, look up what people are saying about something on X/Twitter, or search for specific user's tweets.
+parameters:
+  type: object
+  properties:
+    query:
+      type: string
+      description: Search query - keywords, phrases, @username, or #hashtag (e.g., "GPT-4", "@OpenAI", "#AI")
+    limit:
+      type: integer
+      description: Maximum number of results (default: 10, max: 50)
+    json:
+      type: boolean
+      description: Output as JSON format for programmatic use (default: false)
+---
+

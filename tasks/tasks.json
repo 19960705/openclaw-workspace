@@ -23,8 +23,8 @@
       "status": "pending",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-14 00:30",
-      "lastResult": "采集 10 条热门新闻，已推送",
+      "lastRun": "2026-02-15 09:00",
+      "lastResult": "成功采集10条AI热门资讯并推送至Discord #normal：Anthropic $300亿融资、Claude超级碗广告、SaaS $1万亿蒸发、GPT-5.3-Codex/Opus 4.6编程革命、美军使用Claude、Grok市场份额飙升、AI砍医疗账单、五角大楼AI部署、FTC审查Microsoft、AI创造力超人类",
       "config": {
         "keywords": ["AI", "GPT", "Claude", "LLM", "OpenAI", "Anthropic"],
         "minEngagement": "high",
@@ -41,8 +41,8 @@
       "status": "pending",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": null,
-      "lastResult": null,
+      "lastRun": "2026-02-15 15:00",
+      "lastResult": "无重大新增更新。OpenAI：ChatGPT Health（16h前）已报道，非新发布；Anthropic：Claude Opus 4.6为2月5日发布（10天前），无新发布；Google：Gemini 3 Deep Think为2月12日升级（3天前），无新发布；xAI：Grok Android更新（12h前）+安全争议新闻（公司层面非产品）。各公司无过去1-2小时内全新release/launch级别动态。",
       "config": {
         "accounts": ["@OpenAI", "@AnthropicAI", "@GoogleAI", "@xaboratory"],
         "filterKeywords": ["release", "launch", "new", "update", "announcing"],
@@ -53,14 +53,14 @@
       "id": "task-twitter-003",
       "name": "OpenClaw 话题追踪",
       "type": "twitter-topic",
-      "description": "持续追踪 OpenClaw 相关讨论和玩法分享",
+      "description": "持续追踪 OpenClaw 相关讨论 and 玩法分享",
       "schedule": "daily",
       "scheduleTime": "18:00",
       "status": "pending",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": null,
-      "lastResult": null,
+      "lastRun": "2026-02-14 18:09",
+      "lastResult": "监控到 GitHub 突破 18w 星及 IBM/Nature 相关讨论，已推送",
       "config": {
         "topic": "OpenClaw",
         "keywords": ["OpenClaw", "openclaw"],
@@ -77,12 +77,30 @@
       "status": "pending",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": null,
-      "lastResult": null,
+      "lastRun": "2026-02-14 20:00",
+      "lastResult": "成功收集 Seedance 2.0 案例及导演级提示词遵循能力分析",
       "config": {
         "topic": "Seedance",
         "keywords": ["Seedance", "seedance", "即梦"],
         "trackDays": 3
+      }
+    },
+    {
+      "id": "task-ad-visual-001",
+      "name": "4A 广告 & 新片场视觉拆解",
+      "type": "ad-visual-analyst",
+      "description": "每日监控 4A 公司及新片场顶级作品，生成分镜脚本和提示词",
+      "schedule": "daily",
+      "scheduleTime": "09:30",
+      "status": "pending",
+      "enabled": true,
+      "createdAt": "2026-02-14",
+      "lastRun": "2026-02-15 09:30",
+      "lastResult": "成功拆解2个视觉冲击力案例：①小米Goodbye Chaos（数英奖金奖，灾难片式广告，实拍+CG结合）②Viatris Make Love Last（戛纳医药狮全场大奖，长曝光艺术短片）。含分镜描述+AI视频生成提示词，已推送Discord",
+      "config": {
+        "sources": ["digitaling", "xinpianchang"],
+        "channelId": "1469680962102235177",
+        "translate": true
       }
     }
   ],
@@ -95,6 +113,7 @@
     "twitter-monitor": "Twitter 账号监控",
     "twitter-topic": "Twitter 话题追踪",
     "wechat-radar": "公众号蓝海选题雷达",
+    "ad-visual-analyst": "4A 广告视觉拆解",
     "custom": "自定义脚本"
   },
   "scheduleTypes": {

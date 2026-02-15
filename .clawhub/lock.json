@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "skills": {
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1770991111877
+    },
+    "find-skills": {
+      "version": "0.1.0",
+      "installedAt": 1770991117036
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1770991155986
+    },
+    "browse": {
+      "version": "1.0.1",
+      "installedAt": 1770991280707
+    },
+    "kesslerio-stealth-browser": {
+      "version": "1.0.0",
+      "installedAt": 1770991304339
+    },
+    "browser-cash": {
+      "version": "1.0.0",
+      "installedAt": 1770991316058
+    },
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1770991326475
+    },
+    "twitter-api-alternative": {
+      "version": "1.2.1",
+      "installedAt": 1770992229752
+    },
+    "xpoz-setup": {
+      "version": "1.2.0",
+      "installedAt": 1770992250128
+    },
+    "twitter-search-skill": {
+      "version": "0.1.2",
+      "installedAt": 1770992307075
+    },
+    "exa-web-search-free": {
+      "version": "1.0.1",
+      "installedAt": 1770992400240
+    },
+    "technews": {
+      "version": "1.0.0",
+      "installedAt": 1770992409987
+    },
+    "deepwiki": {
+      "version": "1.0.0",
+      "installedAt": 1770992418053
+    },
+    "get-tldr": {
+      "version": "1.0.0",
+      "installedAt": 1770992426744
+    },
+    "ai-news-oracle": {
+      "version": "1.0.0",
+      "installedAt": 1770992447563
+    },
+    "slack": {
+      "version": "1.0.0",
+      "installedAt": 1770992476125
+    },
+    "discord": {
+      "version": "1.0.1",
+      "installedAt": 1770992482798
+    },
+    "email-send": {
+      "version": "1.0.0",
+      "installedAt": 1770992499582
+    },
+    "whatsapp-styling-guide": {
+      "version": "1.0.0",
+      "installedAt": 1770992516254
+    },
+    "imsg": {
+      "version": "1.0.0",
+      "installedAt": 1770992539619
+    },
+    "debug-pro": {
+      "version": "1.0.0",
+      "installedAt": 1770992733467
+    },
+    "test-runner": {
+      "version": "1.0.0",
+      "installedAt": 1770992746772
+    },
+    "nextjs-expert": {
+      "version": "1.0.0",
+      "installedAt": 1770992752702
+    },
+    "code-mentor": {
+      "version": "1.0.2",
+      "installedAt": 1770992761731
+    },
+    "git-essentials": {
+      "version": "1.0.0",
+      "installedAt": 1770992770289
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1770992776313
+    },
+    "conventional-commits": {
+      "version": "1.0.1",
+      "installedAt": 1770992787187
+    },
+    "git-sync": {
+      "version": "1.0.1",
+      "installedAt": 1770992796322
+    },
+    "pr-review-loop": {
+      "version": "1.0.0",
+      "installedAt": 1770992819543
+    },
+    "codex-orchestrator": {
+      "version": "1.0.0",
+      "installedAt": 1770992829534
+    },
+    "openclaw-mem": {
+      "version": "2.1.0",
+      "installedAt": 1771096659223
+    }
+  }
+}

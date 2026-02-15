@@ -50,10 +50,30 @@ workspace/tasks/
 | `twitter-digest` | Twitter 热门日报 | 搜索热门推文，整理日报 |
 | `twitter-monitor` | Twitter 账号监控 | 监控指定账号，重大更新推送 |
 | `twitter-topic` | Twitter 话题追踪 | 持续追踪特定话题讨论 |
+| `ad-visual-analyst` | 4A 广告视觉拆解 | 调用 ad-visual-analyst skill |
 | `message` | 发送通知消息 | 直接发送 Discord 消息 |
 | `custom` | 自定义任务 | 根据 config 执行 |
 
-## Twitter 任务执行指南
+## 任务执行指南
+
+### ad-visual-analyst（4A 视觉拆解）
+
+**执行步骤：**
+1. 读取 `config.sources` 来源列表（数英/新片场）
+2. 抓取最新顶级广告案例
+3. 按照精细分镜脚本格式进行拆解分析
+4. 获取目标频道 ID `config.channelId`（如：`1469680962102235177`）
+5. 将结果发送至该频道
+
+**config 参数：**
+```json
+{
+  "sources": ["digitaling", "xinpianchang"],
+  "channelId": "1469680962102235177",
+  "translate": true
+}
+```
+
 
 ### twitter-digest（热门日报）
 

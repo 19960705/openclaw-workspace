@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "xpoz": {
+      "baseUrl": "https://mcp.xpoz.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJha2F6dWppbjA3MDVAZ21haWwuY29tIiwiY2xpZW50X2lkIjoiNWE2YjBiMWMtNjIxZC00ZDkyLTk0NzQtM2IzYjQ1OGEwYjg1IiwiaXNzIjoiaHR0cHM6Ly9tY3AueHBvei5haSIsImF1ZCI6Imh0dHBzOi8vbWNwLnhwb3ouYWkiLCJleHAiOjE3NzM1ODgwOTIsImlhdCI6MTcwOTk2MDkyLCJ1c2VyIjp7ImVtYWlsIjoiYWthenVqaW4wNzA1QGdtYWlsLmNvbSIsIm5hbWUiOiLlmu6bkueQieaQjyIsImdvb2dsZUlkIjoiMTE1NjAzNDA4NjExMTE5OTEwNzY1IiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tndmxIS0lpNVdSYmhFVnhBeENNUDRIbG1OVDVkWjBKc1ByVTRQM1RMeXlCa01YeD1zOTYtYyJ9fQ.dvPLyjLDGs2YlUh5z4Jz8rJSjXqIVLi2CH4pW9C1o5A"
+      }
+    }
+  },
+  "imports": []
+}
