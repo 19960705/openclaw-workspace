@@ -124,6 +124,10 @@
     "openclaw-mem": {
       "version": "2.1.0",
       "installedAt": 1771096659223
+    },
+    "polymarket-mert-sniper": {
+      "version": "1.0.3",
+      "installedAt": 1771224964674
     }
   }
 }

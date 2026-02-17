@@ -1,0 +1,10 @@
+{
+  "name": "TikTok Thailand Translator",
+  "description": "中→泰翻译服务，用于TikTok电商文案生成。内置泰语关键词库，支持直接翻译和关键词映射。",
+  "version": "1.0.0",
+  "author": "Jinny Lee & Keonho",
+  "runtime": "node18",
+  "keywords": ["tiktok", "thailand", "ecommerce", "translation", "chinese", "thai", "copywriting"],
+  "entrypoint": "server/index.ts",
+  "permissions": ["read", "write"]
+}

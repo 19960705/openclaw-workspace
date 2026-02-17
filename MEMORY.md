@@ -56,6 +56,21 @@ Details: 放弃 Ollama（API 502 错误），改用 local provider (sentence-tra
 - 配置：~/.memsearch/config.toml (provider: local, collection: openclaw_memory)
 - 索引了 70 个 chunks，搜索测试成功
 
+## FACT-2026-02-17-01
+type: fact
+area: trading
+
+Fact: Simmer SDK 接入真实 API 完成
+Details:
+- SDK: simmer-sdk 0.8.15 (Python, ~/.simmer-venv/)
+- API key: 存储在 ~/.openclaw/workspace/.env.simmer（chmod 600）
+- 钱包: 0x39e4BB0f4b14875AC85B74E5b844bcB092438c61
+- 监控脚本: scripts/simmer-check.py (summary/positions/markets/trade/opportunities)
+- Heartbeat 已接入真实 API，自动监控持仓
+- 当前状态: 76% 胜率, +24.23 $SIM PnL, 34 持仓(17已结/17进行中)
+- 交易限制: max $1 USDC/市场, 50笔/天, SL 20%, TP 15%
+- Simmer skill 已创建: ~/.openclaw/skills/simmer/
+
 ---
 
 _First meeting: 2026-02-13_

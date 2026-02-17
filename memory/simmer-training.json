@@ -1,0 +1,80 @@
+{
+  "mode": "training",
+  "targetWinRate": 0.70,
+  "currentWinRate": 0,
+  "totalTrades": 5,
+  "wins": 0,
+  "losses": 0,
+  "pending": 5,
+  "startBalance": 10000,
+  "currentBalance": 9945,
+  "startedAt": "2026-02-16T07:10:00Z",
+  "lastScanAt": "2026-02-16T07:15:00Z",
+  "trades": [
+    {
+      "id": "85d96812-b580-4435-b86b-b37346b290cf",
+      "market": "Seoul highest temp 4°C Feb 16",
+      "marketId": "11ea50a9-1254-40fc-9613-588b04cca30e",
+      "side": "yes",
+      "cost": 10.01,
+      "shares": 18.35,
+      "entryPrice": 0.545,
+      "source": "training-weather",
+      "status": "open",
+      "resolvesAt": "2026-02-16T12:00:00Z"
+    },
+    {
+      "id": "bc877a77-8927-4ddb-a2aa-f59212d9f547",
+      "market": "BTC Up/Down Feb 16 4-8AM ET",
+      "marketId": "c2898418-d266-4b50-b552-dabb0c8e2da5",
+      "side": "yes",
+      "cost": 10.38,
+      "shares": 25.03,
+      "entryPrice": 0.50,
+      "source": "training-crypto",
+      "status": "open",
+      "resolvesAt": "2026-02-16T23:59:59Z"
+    },
+    {
+      "id": "2d028139-1abc-4474-9e21-0d9dd0398e5a",
+      "market": "BTC Up/Down Feb 16 8AM-12PM ET",
+      "marketId": "2c8aeff0-3d56-4401-bd12-47bfbed0c4c6",
+      "side": "yes",
+      "cost": 15.80,
+      "shares": 36.16,
+      "entryPrice": 0.266,
+      "source": "training-crypto-divergence",
+      "status": "open",
+      "resolvesAt": "2026-02-16T23:59:59Z"
+    },
+    {
+      "id": "92cc8f91-ad1a-45d2-96f4-035e871a4346",
+      "market": "Seattle Feb precip 4-5in",
+      "marketId": "52079ab2-fdd8-4726-a108-e297e8cf2013",
+      "side": "yes",
+      "cost": 10.07,
+      "shares": 64.52,
+      "entryPrice": 0.155,
+      "source": "training-weather",
+      "status": "open",
+      "resolvesAt": "2026-02-28T23:59:59Z"
+    },
+    {
+      "id": "12612f45-768b-4937-a42c-b96182030532",
+      "market": "Oscars Best Doc Short - All Empty Rooms",
+      "marketId": "790d09e6-a172-41ae-b884-56bf6aa48f4f",
+      "side": "yes",
+      "cost": 10.01,
+      "shares": 17.09,
+      "entryPrice": 0.585,
+      "source": "training-entertainment",
+      "status": "open",
+      "resolvesAt": "2026-03-15T23:59:59Z"
+    }
+  ],
+  "strategies": {
+    "weather": "Use NOAA/AccuWeather data for weather markets",
+    "crypto-divergence": "Buy Simmer-underpriced side when Poly diverges >15%",
+    "entertainment": "Follow market consensus for entertainment/awards"
+  }
+}

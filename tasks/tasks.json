@@ -20,16 +20,17 @@
       "description": "每日收集 AI 领域热门推文，筛选高互动内容",
       "schedule": "daily",
       "scheduleTime": "09:00",
-      "status": "pending",
+      "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-15 09:00",
-      "lastResult": "成功采集10条AI热门资讯并推送至Discord #normal：Anthropic $300亿融资、Claude超级碗广告、SaaS $1万亿蒸发、GPT-5.3-Codex/Opus 4.6编程革命、美军使用Claude、Grok市场份额飙升、AI砍医疗账单、五角大楼AI部署、FTC审查Microsoft、AI创造力超人类",
+      "lastRun": "2026-02-17 15:50",
+      "lastResult": "成功推送AI日报：Claude Opus 4.6意识争议(Anthropic CEO承认不知道)、Anthropic vs OpenAI超级碗广告战、Anthropic融资$380亿估值、编程革命(Opus 4.6 vs GPT-5.3 Codex)、企业应用爆发",
       "config": {
         "keywords": ["AI", "GPT", "Claude", "LLM", "OpenAI", "Anthropic"],
         "minEngagement": "high",
         "language": "en",
-        "resultCount": 10
+        "resultCount": 10,
+        "deliverTo": "telegram:-1003505656701:topic:2"
       }
     },
     {
@@ -39,14 +40,15 @@
       "description": "监控 AI 公司官方账号动态，重大更新自动推送",
       "schedule": "hourly",
       "status": "pending",
-      "enabled": true,
+      "enabled": false,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-15 15:00",
-      "lastResult": "无重大新增更新。OpenAI：ChatGPT Health（16h前）已报道，非新发布；Anthropic：Claude Opus 4.6为2月5日发布（10天前），无新发布；Google：Gemini 3 Deep Think为2月12日升级（3天前），无新发布；xAI：Grok Android更新（12h前）+安全争议新闻（公司层面非产品）。各公司无过去1-2小时内全新release/launch级别动态。",
+      "lastRun": "2026-02-15 17:00",
+      "lastResult": "AI官方账号监控检查完成。OpenAI: 无新发布(仅GPT-5.2历史信息)；Anthropic/Google: API限制未能检索；xAI: Grok 4.2发布延期，无新release。过去1-2小时内未发现全新重大更新，无需推送Discord。",
       "config": {
         "accounts": ["@OpenAI", "@AnthropicAI", "@GoogleAI", "@xaboratory"],
         "filterKeywords": ["release", "launch", "new", "update", "announcing"],
-        "translate": true
+        "translate": true,
+        "deliverTo": "telegram:-1003505656701:topic:2"
       }
     },
     {
@@ -64,7 +66,8 @@
       "config": {
         "topic": "OpenClaw",
         "keywords": ["OpenClaw", "openclaw"],
-        "trackDays": 7
+        "trackDays": 7,
+        "deliverTo": "telegram:-1003505656701:topic:5"
       }
     },
     {
@@ -82,7 +85,8 @@
       "config": {
         "topic": "Seedance",
         "keywords": ["Seedance", "seedance", "即梦"],
-        "trackDays": 3
+        "trackDays": 3,
+        "deliverTo": "telegram:-1003505656701:topic:3"
       }
     },
     {
@@ -92,15 +96,34 @@
       "description": "每日监控 4A 公司及新片场顶级作品，生成分镜脚本和提示词",
       "schedule": "daily",
       "scheduleTime": "09:30",
-      "status": "pending",
+      "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-15 09:30",
-      "lastResult": "成功拆解2个视觉冲击力案例：①小米Goodbye Chaos（数英奖金奖，灾难片式广告，实拍+CG结合）②Viatris Make Love Last（戛纳医药狮全场大奖，长曝光艺术短片）。含分镜描述+AI视频生成提示词，已推送Discord",
+      "lastRun": "2026-02-17 15:54",
+      "lastResult": "成功推送Super Bowl LX广告拆解：Adweek十大最佳、He Gets Us宗教广告、外卖三巨头(Uber Eats/Pepsi/DoorDash)、AI广告战冲突、怀旧复兴趋势、90年代元素、Seedance 2.0提示词矩阵(怀旧/AI/美食)",
       "config": {
-        "sources": ["digitaling", "xinpianchang"],
-        "channelId": "1469680962102235177",
-        "translate": true
+        "sources": ["twitter", "digitaling", "xinpianchang"],
+        "translate": true,
+        "deliverTo": "telegram:-1003505656701:topic:3"
+      }
+    }
+    ,{
+      "id": "task-tiktok-th-001",
+      "name": "泰区 TikTok 趋势日报",
+      "type": "tiktok",
+      "description": "每日监控泰国 TikTok 热门话题、爆款视频和产品趋势，聚焦咖啡、厨房、家居、工具类目",
+      "schedule": "daily",
+      "scheduleTime": "10:00",
+      "status": "completed",
+      "enabled": true,
+      "createdAt": "2026-02-16",
+      "lastRun": "2026-02-17 15:52",
+      "lastResult": "成功推送泰区TikTok日报：Simplus绞肉机(泰国品牌TikTok销售领先)、咖啡桌游戏爆品、手持油膜清洁器、丁腈手套、东南亚厨房小家电增长、选品建议(咖啡/厨房/家居/工具)",
+      "config": {
+        "categories": ["咖啡", "厨房", "家居", "工具"],
+        "country": "TH",
+        "language": ["th", "zh", "en"],
+        "deliverTo": "telegram:-1003505656701:topic:4"
       }
     }
   ],

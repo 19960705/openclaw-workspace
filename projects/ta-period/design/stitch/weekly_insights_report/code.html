@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>她周期 - 周报洞察</title>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ffb7a8",
+            "background-light": "#f8f6f5",
+            "background-dark": "#23120f",
+          },
+          fontFamily: {
+            "display": ["Manrope", "PingFang SC", "Microsoft YaHei", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Manrope', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+    .chart-ring {
+      transform: rotate(-90deg);
+    }
+    .line-chart-gradient {
+      background: linear-gradient(180deg, rgba(255, 183, 168, 0.2) 0%, rgba(255, 183, 168, 0) 100%);
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#4a3a37] dark:text-[#f8f6f5] min-h-screen">
+<div class="h-11 w-full flex justify-between items-center px-8 pt-4">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-icons text-xs">signal_cellular_alt</span>
+<span class="material-icons text-xs">wifi</span>
+<span class="material-icons text-xs">battery_full</span>
+</div>
+</div>
+<header class="px-6 py-4 flex items-center justify-between">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-primary/10 shadow-sm">
+<span class="material-icons text-primary">chevron_left</span>
+</button>
+<div class="text-center">
+<h1 class="text-lg font-bold">周报洞察</h1>
+<p class="text-[10px] uppercase tracking-widest text-[#a89995] font-medium">10月23日 - 10月29日</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-primary/10 shadow-sm">
+<span class="material-icons text-primary">share</span>
+</button>
+</header>
+<main class="px-6 pb-20 space-y-6">
+<section class="bg-white/60 dark:bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white dark:border-white/10">
+<h2 class="text-sm font-bold mb-6 flex items-center gap-2">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+        情绪分布
+      </h2>
+<div class="flex items-center justify-around">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full chart-ring" viewBox="0 0 36 36">
+<circle class="stroke-primary/10" cx="18" cy="18" fill="none" r="15.9" stroke-width="3.5"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="15.9" stroke-dasharray="60, 100" stroke-linecap="round" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="none" r="15.9" stroke="#fcd5ce" stroke-dasharray="25, 100" stroke-dashoffset="-60" stroke-linecap="round" stroke-width="3.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold">78%</span>
+<span class="text-[10px] text-[#a89995]">积极</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<div>
+<p class="text-xs font-semibold">精力充沛</p>
+<p class="text-[10px] text-[#a89995]">60% 的时间</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-[#fcd5ce]"></div>
+<div>
+<p class="text-xs font-semibold">平静</p>
+<p class="text-[10px] text-[#a89995]">25% 的时间</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary/20"></div>
+<div>
+<p class="text-xs font-semibold">敏感</p>
+<p class="text-[10px] text-[#a89995]">15% 的时间</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white/60 dark:bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white dark:border-white/10">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-sm font-bold flex items-center gap-2">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+          生产力趋势
+        </h2>
+<span class="text-[10px] px-2 py-1 bg-primary/10 text-primary font-bold rounded-full">平均 8.4</span>
+</div>
+<div class="h-40 relative flex items-end justify-between gap-1 px-1">
+<div class="absolute inset-0 flex justify-between pointer-events-none opacity-20">
+<div class="w-px h-full bg-[#a89995]"></div>
+<div class="w-px h-full bg-[#a89995]"></div>
+<div class="w-px h-full bg-[#a89995]"></div>
+<div class="w-px h-full bg-[#a89995]"></div>
+<div class="w-px h-full bg-[#a89995]"></div>
+<div class="w-px h-full bg-[#a89995]"></div>
+<div class="w-px h-full bg-[#a89995]"></div>
+</div>
+<svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+<defs>
+<linearGradient id="gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffb7a8" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#ffb7a8" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path d="M0,60 C15,50 15,30 30,20 C45,10 55,70 70,50 C85,30 100,20 100,20 L100,100 L0,100 Z" fill="url(#gradient)"></path>
+<path d="M0,60 C15,50 15,30 30,20 C45,10 55,70 70,50 C85,30 100,20 100,20" fill="none" stroke="#ffb7a8" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="0" cy="60" fill="#ffb7a8" r="2"></circle>
+<circle cx="30" cy="20" fill="#ffb7a8" r="3" stroke="white" stroke-width="1.5"></circle>
+<circle cx="70" cy="50" fill="#ffb7a8" r="2"></circle>
+<circle cx="100" cy="20" fill="#ffb7a8" r="2"></circle>
+</svg>
+<div class="absolute -bottom-6 w-full flex justify-between text-[10px] font-bold text-[#a89995]">
+<span>周一</span>
+<span>周二</span>
+<span>周三</span>
+<span>周四</span>
+<span>周五</span>
+<span>周六</span>
+<span>周日</span>
+</div>
+</div>
+<div class="mt-10 flex gap-4">
+<div class="flex-1 p-3 bg-primary/5 rounded-lg border border-primary/10">
+<p class="text-[9px] tracking-tighter text-[#a89995] mb-1">峰值日</p>
+<p class="text-sm font-bold">周二</p>
+</div>
+<div class="flex-1 p-3 bg-primary/5 rounded-lg border border-primary/10">
+<p class="text-[9px] tracking-tighter text-[#a89995] mb-1">稳定性</p>
+<p class="text-sm font-bold">高 · 92%</p>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-white/10 rounded-xl p-6 border border-[#ffb7a8]/20 shadow-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-icons text-primary text-sm">auto_awesome</span>
+</div>
+<div>
+<h2 class="text-sm font-bold leading-tight">个人洞察</h2>
+<p class="text-[10px] text-[#a89995]">AI 为你量身定制</p>
+</div>
+</div>
+<div class="space-y-4 text-sm leading-relaxed text-[#6d5b57] dark:text-[#d4ccc9]">
+<p>
+          本周你度过了精力充沛的一周，特别是在 <span class="text-primary font-bold">周二</span>。显然，你的专注力在上午时段达到了顶峰。
+        </p>
+<p>
+          随着生理周期进入黄体期，你可能会感受到生产力的自然波动。<span class="bg-primary/10 px-1 rounded text-primary font-medium italic">无需逆流而上，顺应身体节奏就好。</span>
+</p>
+<p class="pt-2 border-t border-dashed border-[#ffb7a8]/20">
+          记得在接下来的几天优先安排休息。你做得非常好，身体的状态也完全在正轨上。
+        </p>
+</div>
+<button class="w-full mt-6 py-3 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:brightness-105 transition-all flex items-center justify-center gap-2">
+<span class="text-xs tracking-widest">规划下周</span>
+<span class="material-icons text-sm">arrow_forward</span>
+</button>
+</section>
+<div class="flex items-center gap-4 bg-[#fff1ee] dark:bg-primary/20 p-4 rounded-xl border border-primary/10">
+<img alt="Meditation" class="w-12 h-12 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2vFHZo6esZfxn18fWIjiriEQ8KjxT9ZgR837jiTVIYeBCd4LY66uZdO-WH9GbajHCQCnxti3Gy1IUks6V5rkl8VIjnmBAYCP49Q4dC_C4TVXI-dG35UeLpAHFdZalk3yLUGCVd8Tztq1xgexEpOUkOp8V8S1ofXa6CO-YXnzhnNAndjyMYqPeKKbXl-Yv61TsQFZ5oyOrzWrhkRK2MWW2wDfc8JU43dQ2wAGUMRGqe5e2XDSnA_W2Aojzm8e98Fd_Ods6Wq6L1EQ"/>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary">身心呵护小贴士</p>
+<p class="text-[11px] leading-tight">今天适合做一些轻柔的瑜伽，有助于调节压力激素水平。</p>
+</div>
+<span class="material-icons text-primary/40">close</span>
+</div>
+</main>
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-[#4a3a37]/20 rounded-full"></div>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-[#23120f]/80 backdrop-blur-md border-t border-primary/10 px-8 py-3 flex justify-between items-center pb-8">
+<button class="flex flex-col items-center gap-1 text-[#a89995]">
+<span class="material-icons">calendar_today</span>
+<span class="text-[10px] font-bold">日历</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">insights</span>
+<span class="text-[10px] font-bold">洞察</span>
+</button>
+<div class="relative -top-6">
+<button class="w-14 h-14 bg-primary rounded-full shadow-xl shadow-primary/40 flex items-center justify-center text-white">
+<span class="material-icons text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-[#a89995]">
+<span class="material-icons">sentiment_satisfied</span>
+<span class="text-[10px] font-bold">情绪</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#a89995]">
+<span class="material-icons">person_outline</span>
+<span class="text-[10px] font-bold">我的</span>
+</button>
+</nav>
+
+</body></html>

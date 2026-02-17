@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>HerCycle - Minimalist Menstrual Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffb7a8",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23120f",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: contain;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 183, 168, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#4a3f3d] dark:text-[#f8f6f5] min-h-screen flex justify-center">
+<!-- Mobile Container (Simulating Phone Frame) -->
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative shadow-2xl overflow-hidden">
+<!-- Status Bar Spacer (iOS) -->
+<div class="h-12 w-full"></div>
+<!-- Header -->
+<header class="px-6 py-4 flex justify-between items-center sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-30">
+<div>
+<h1 class="text-2xl font-bold tracking-tight">十二月</h1>
+<p class="text-xs opacity-60 font-medium">December 2023</p>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-white dark:bg-[#321e1a] flex items-center justify-center shadow-sm">
+<span class="material-icons-round text-primary text-xl">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white dark:bg-[#321e1a] flex items-center justify-center shadow-sm">
+<span class="material-icons-round text-primary text-xl">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-32 px-6">
+<!-- Weekly Calendar Card -->
+<section class="mt-2 mb-8 overflow-x-auto no-scrollbar flex gap-3 py-2">
+<div class="flex flex-col items-center min-w-[52px] p-3 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm">
+<span class="text-[10px] uppercase opacity-50 mb-2">Mon</span>
+<span class="text-sm font-semibold">11</span>
+<div class="mt-2 w-1 h-1 rounded-full bg-primary/40"></div>
+</div>
+<div class="flex flex-col items-center min-w-[52px] p-3 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm">
+<span class="text-[10px] uppercase opacity-50 mb-2">Tue</span>
+<span class="text-sm font-semibold">12</span>
+<span class="mt-1 text-xs">🔋</span>
+</div>
+<div class="flex flex-col items-center min-w-[52px] p-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/30 ring-4 ring-primary/10">
+<span class="text-[10px] uppercase opacity-80 mb-2">Wed</span>
+<span class="text-sm font-bold">13</span>
+<span class="mt-1 text-xs">✨</span>
+</div>
+<div class="flex flex-col items-center min-w-[52px] p-3 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm">
+<span class="text-[10px] uppercase opacity-50 mb-2">Thu</span>
+<span class="text-sm font-semibold">14</span>
+<div class="mt-2 w-1 h-1 rounded-full bg-primary/40"></div>
+</div>
+<div class="flex flex-col items-center min-w-[52px] p-3 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm">
+<span class="text-[10px] uppercase opacity-50 mb-2">Fri</span>
+<span class="text-sm font-semibold">15</span>
+<span class="mt-1 text-xs text-primary">🩸</span>
+</div>
+<div class="flex flex-col items-center min-w-[52px] p-3 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm opacity-60">
+<span class="text-[10px] uppercase opacity-50 mb-2">Sat</span>
+<span class="text-sm font-semibold">16</span>
+</div>
+</section>
+<!-- Hero Cycle Card -->
+<section class="mb-8">
+<div class="relative w-full aspect-square max-h-[340px] rounded-xl bg-white dark:bg-[#321e1a] shadow-sm flex flex-col items-center justify-center p-8 overflow-hidden">
+<!-- Soft Background Gradient Wave -->
+<div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<div class="relative z-10 text-center">
+<span class="text-xs font-semibold px-3 py-1 bg-primary/20 text-primary rounded-full uppercase tracking-wider">卵泡期</span>
+<h2 class="text-5xl font-bold mt-4 mb-1">第 12 天</h2>
+<p class="text-sm opacity-60">Follicular Phase</p>
+</div>
+<div class="relative z-10 mt-8 w-full">
+<div class="flex justify-between text-[10px] mb-2 font-bold opacity-40 uppercase">
+<span>Day 1</span>
+<span>Day 28</span>
+</div>
+<div class="h-2 w-full bg-background-light dark:bg-background-dark rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[42%] rounded-full shadow-[0_0_10px_rgba(255,183,168,0.5)]"></div>
+</div>
+</div>
+<div class="relative z-10 mt-8 flex flex-col items-center">
+<p class="text-sm font-medium text-center leading-relaxed">
+                            距离下次月经还有 <span class="text-primary font-bold">5</span> 天<br/>
+<span class="text-xs opacity-50">身体状态：极佳 ✨</span>
+</p>
+</div>
+</div>
+</section>
+<!-- Notion Style Minimalist Widgets Grid -->
+<section class="grid grid-cols-2 gap-4 mb-8">
+<div class="p-4 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm border border-transparent hover:border-primary/20 transition-all">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-icons-round text-primary text-lg">favorite</span>
+<span class="text-xs font-bold opacity-60">今日情绪</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl">😌</span>
+<span class="text-sm font-medium">平静</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm border border-transparent hover:border-primary/20 transition-all">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-icons-round text-primary text-lg">bolt</span>
+<span class="text-xs font-bold opacity-60">能量水平</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl">⚡</span>
+<span class="text-sm font-medium">85%</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm border border-transparent hover:border-primary/20 transition-all">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-icons-round text-primary text-lg">opacity</span>
+<span class="text-xs font-bold opacity-60">饮水量</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl">💧</span>
+<span class="text-sm font-medium">1.2 / 2.0L</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-[#321e1a] shadow-sm border border-transparent hover:border-primary/20 transition-all">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-icons-round text-primary text-lg">nights_stay</span>
+<span class="text-xs font-bold opacity-60">睡眠质量</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl">🌙</span>
+<span class="text-sm font-medium">7h 45m</span>
+</div>
+</div>
+</section>
+<!-- Daily Insight -->
+<section class="p-5 rounded-xl bg-primary/10 border border-primary/20 mb-8">
+<div class="flex items-start gap-3">
+<span class="text-2xl">💡</span>
+<div>
+<h4 class="text-xs font-bold text-primary uppercase tracking-wide mb-1">今日小贴士</h4>
+<p class="text-sm leading-relaxed italic opacity-80 text-[#7c6a67] dark:text-[#c0aca8]">
+                            “由于正处于卵泡期，这是开始新项目或进行创意工作的最佳时机。去尽情表达自己吧！”
+                        </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Action & Navigation -->
+<div class="absolute bottom-0 left-0 right-0 z-40">
+<!-- Floating Log Button -->
+<div class="px-6 pb-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/40 flex items-center justify-center gap-2 transform active:scale-[0.98] transition-all">
+<span class="material-icons-round">edit_note</span>
+<span>今天打卡</span>
+</button>
+</div>
+<!-- Bottom Nav Bar -->
+<nav class="bg-white/80 dark:bg-[#321e1a]/80 backdrop-blur-xl border-t border-primary/10 px-8 py-4 flex justify-between items-center pb-8">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons-round">home</span>
+<span class="text-[10px] font-bold uppercase">首页</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#a0918e] dark:text-[#7c6a67]">
+<span class="material-icons-round">calendar_today</span>
+<span class="text-[10px] font-bold uppercase">日历</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#a0918e] dark:text-[#7c6a67]">
+<span class="material-icons-round">bar_chart</span>
+<span class="text-[10px] font-bold uppercase">分析</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#a0918e] dark:text-[#7c6a67]">
+<span class="material-icons-round">auto_awesome</span>
+<span class="text-[10px] font-bold uppercase">社区</span>
+</button>
+</nav>
+<!-- iOS Home Indicator Spacer -->
+<div class="h-4 bg-white/80 dark:bg-[#321e1a]/80"></div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-[-100px] right-[-100px] w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
+<div class="absolute bottom-[20%] left-[-50px] w-48 h-48 bg-primary/10 rounded-full blur-[60px] pointer-events-none"></div>
+</div>
+</body></html>

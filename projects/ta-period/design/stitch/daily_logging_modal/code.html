@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>她周期 - 今日打卡</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ffb7a8",
+                "background-light": "#f8f6f5",
+                "background-dark": "#23120f",
+              },
+              fontFamily: {
+                "display": ["Noto Sans SC", "Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex items-center justify-center p-4">
+<div class="relative w-full max-w-[390px] h-[844px] bg-white dark:bg-zinc-900 rounded-[3rem] shadow-2xl overflow-hidden border-[8px] border-zinc-200 dark:border-zinc-800">
+<div class="flex justify-between items-center px-8 pt-4 pb-2 text-zinc-800 dark:text-zinc-100">
+<span class="text-sm font-bold">9:41</span>
+<div class="flex items-center gap-1">
+<span class="material-icons-round text-sm">signal_cellular_alt</span>
+<span class="material-icons-round text-sm">wifi</span>
+<span class="material-icons-round text-sm">battery_full</span>
+</div>
+</div>
+<div class="px-6 pt-8 space-y-6 opacity-40">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-2xl font-bold text-zinc-800 dark:text-zinc-100">欢迎，Sarah</h1>
+<p class="text-zinc-500 text-sm">周期第 12 天 • 排卵期</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<img class="w-full h-full rounded-full object-cover" data-alt="Portrait of a smiling young woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDaA2N9K_1O5tafQvWkCRucQw-_hoPBkxLAax4_-Dd2PA7O7jbRkiYSdPqsDJAMtCr-NucQ4L2vmIb31-W2lA0RDAfOlWdRcahCq3xBM8qWG8HmjrrFCDOWc5pKZDAnf1hmWArecjEg_V01OkMps1SrsZqn5PBCP74zCFEk8wi8Bl7-zeTVtWJShNcuX4jYa4t7-L2w0teKO7Rbj2feo8t1Oc6PIWAQy18kAjj5Hr3eqbPouQtCOTvJOcNxT7h0_Wzf8V2V2tG1xg"/>
+</div>
+</div>
+<div class="aspect-square bg-primary/10 rounded-full border-[12px] border-primary/30 flex flex-col items-center justify-center text-center p-8 relative">
+<span class="text-primary font-bold text-lg">受孕几率</span>
+<span class="text-4xl font-extrabold text-zinc-800 dark:text-zinc-100">高</span>
+<div class="absolute bottom-10 px-4 py-1 bg-white dark:bg-zinc-800 rounded-full shadow-sm">
+<span class="text-xs font-medium text-zinc-600">第 12 天 / 共 28 天</span>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px] z-10"></div>
+<div class="absolute bottom-0 left-0 right-0 bg-[#FFFBF0] dark:bg-[#2c1d1a] rounded-t-[2.5rem] shadow-2xl z-20 pb-10 pt-4 flex flex-col h-[70%]">
+<div class="w-12 h-1 bg-zinc-300 dark:bg-zinc-700 rounded-full mx-auto mb-6"></div>
+<div class="px-8 flex justify-between items-center mb-8">
+<div>
+<h2 class="text-xl font-bold text-zinc-800 dark:text-zinc-100">今日打卡</h2>
+<p class="text-zinc-500 text-xs font-medium">第 1 步 / 共 3 步</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons-round text-zinc-400 text-sm">close</span>
+</button>
+</div>
+<div class="px-8 mb-10">
+<div class="h-1.5 w-full bg-primary/10 rounded-full flex gap-1">
+<div class="h-full w-1/3 bg-primary rounded-full"></div>
+<div class="h-full w-1/3 bg-zinc-200 dark:bg-zinc-800 rounded-full"></div>
+<div class="h-full w-1/3 bg-zinc-200 dark:bg-zinc-800 rounded-full"></div>
+</div>
+</div>
+<div class="flex-1 px-8 overflow-y-auto">
+<div class="space-y-6">
+<h3 class="text-lg font-bold text-zinc-800 dark:text-zinc-100 text-center">你今天感觉如何？</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary/20 border-2 border-primary rounded-xl p-6 flex flex-col items-center justify-center transition-all cursor-pointer">
+<span class="text-4xl mb-3">😊</span>
+<span class="font-bold text-primary text-sm tracking-wide">开心</span>
+</div>
+<div class="bg-white dark:bg-zinc-800/50 border-2 border-transparent rounded-xl p-6 flex flex-col items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all cursor-pointer">
+<span class="text-4xl mb-3">😐</span>
+<span class="font-bold text-zinc-400 dark:text-zinc-500 text-sm tracking-wide">一般</span>
+</div>
+<div class="bg-white dark:bg-zinc-800/50 border-2 border-transparent rounded-xl p-6 flex flex-col items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all cursor-pointer">
+<span class="text-4xl mb-3">😫</span>
+<span class="font-bold text-zinc-400 dark:text-zinc-500 text-sm tracking-wide">焦虑</span>
+</div>
+<div class="bg-white dark:bg-zinc-800/50 border-2 border-transparent rounded-xl p-6 flex flex-col items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all cursor-pointer">
+<span class="text-4xl mb-3">🤯</span>
+<span class="font-bold text-zinc-400 dark:text-zinc-500 text-sm tracking-wide">混乱</span>
+</div>
+</div>
+</div>
+<div class="mt-12 opacity-30 pointer-events-none">
+<h3 class="text-lg font-bold text-zinc-800 dark:text-zinc-100 text-center mb-6">当前的精力水平？</h3>
+<div class="flex justify-between items-center bg-white dark:bg-zinc-800/50 p-4 rounded-xl">
+<span class="material-icons-round text-primary">battery_2_bar</span>
+<div class="w-full mx-4 h-1 bg-zinc-100 dark:bg-zinc-700 rounded-full relative">
+<div class="absolute inset-y-0 left-0 w-1/2 bg-primary rounded-full"></div>
+<div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-primary border-4 border-white dark:border-zinc-800 rounded-full shadow-md"></div>
+</div>
+<span class="material-icons-round text-primary">battery_full</span>
+</div>
+</div>
+</div>
+<div class="px-8 mt-6 space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+                    下一步
+                </button>
+<button class="w-full text-zinc-400 dark:text-zinc-500 font-bold py-2 text-sm transition-colors hover:text-zinc-600 dark:hover:text-zinc-300">
+                    稍后再说
+                </button>
+</div>
+<div class="w-32 h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full mx-auto mt-6"></div>
+</div>
+</div>
+
+</body></html>
