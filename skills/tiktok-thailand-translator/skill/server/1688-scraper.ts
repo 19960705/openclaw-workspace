@@ -133,13 +133,13 @@ function parseSpecifications(description: string): Record<string, string> {
 
   // 常见规格模式
   const specPatterns = [
-    { pattern: /材质[：:]\s*([^\n,，]+)/, key: '材质' },
-    { pattern: /尺寸[：:]\s*([^\n,，]+)/, key: '尺寸' },
-    { pattern: /颜色[：:]\s*([^\n,，]+)/, key: '颜色' },
-    { pattern: /重量[：:]\s*([^\n,，]+)/, key: '重量' },
-    { pattern: /品牌[：:]\s*([^\n,，]+)/, key: '品牌' },
-    { pattern: /型号[：:]\s*([^\n,，]+)/, key: '型号' },
-    { pattern: /产地[：:]\s*([^\n,，]+)/, key: '产地' },
+    { pattern: /材质[：:]\s*(.+)/, key: '材质' },
+    { pattern: /尺寸[：:]\s*(.+)/, key: '尺寸' },
+    { pattern: /颜色[：:]\s*(.+)/, key: '颜色' },
+    { pattern: /重量[：:]\s*(.+)/, key: '重量' },
+    { pattern: /品牌[：:]\s*(.+)/, key: '品牌' },
+    { pattern: /型号[：:]\s*(.+)/, key: '型号' },
+    { pattern: /产地[：:]\s*(.+)/, key: '产地' },
   ];
 
   for (const { pattern, key } of specPatterns) {
