@@ -23,8 +23,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-22 08:30",
-      "lastResult": "成功推送AI新闻到Telegram话题2: OpenAI硬件项目、英伟达300亿投资、Spotify开发者转向AI、微软发现AI推荐投毒、高校CS招生下滑",
+      "lastRun": "2026-02-22 09:05",
+      "lastResult": "成功推送AI热门推文日报到Telegram话题2: Claude Sonnet 4.6发布、Anthropic无广告立场、Claude 5传言、LLM生态更新、产品化进展",
       "config": {
         "keywords": ["AI", "GPT", "Claude", "LLM", "OpenAI", "Anthropic"],
         "minEngagement": "high",
