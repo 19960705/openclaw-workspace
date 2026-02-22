@@ -7,7 +7,7 @@
       "description": "每天早上发送问候消息",
       "schedule": "daily",
       "scheduleTime": "09:00",
-      "status": "pending",
+      "status": "completed",
       "enabled": false,
       "createdAt": "2026-02-14",
       "lastRun": null,
@@ -23,8 +23,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-17 15:50",
-      "lastResult": "成功推送AI日报：Claude Opus 4.6意识争议(Anthropic CEO承认不知道)、Anthropic vs OpenAI超级碗广告战、Anthropic融资$380亿估值、编程革命(Opus 4.6 vs GPT-5.3 Codex)、企业应用爆发",
+      "lastRun": "2026-02-22 08:30",
+      "lastResult": "成功推送AI新闻到Telegram话题2: OpenAI硬件项目、英伟达300亿投资、Spotify开发者转向AI、微软发现AI推荐投毒、高校CS招生下滑",
       "config": {
         "keywords": ["AI", "GPT", "Claude", "LLM", "OpenAI", "Anthropic"],
         "minEngagement": "high",
@@ -39,7 +39,7 @@
       "type": "twitter-monitor",
       "description": "监控 AI 公司官方账号动态，重大更新自动推送",
       "schedule": "hourly",
-      "status": "pending",
+      "status": "completed",
       "enabled": false,
       "createdAt": "2026-02-14",
       "lastRun": "2026-02-15 17:00",
@@ -58,11 +58,11 @@
       "description": "持续追踪 OpenClaw 相关讨论 and 玩法分享",
       "schedule": "daily",
       "scheduleTime": "18:00",
-      "status": "pending",
+      "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-14 18:09",
-      "lastResult": "监控到 GitHub 突破 18w 星及 IBM/Nature 相关讨论，已推送",
+      "lastRun": "2026-02-19 18:00",
+      "lastResult": "推送 OpenClaw 周报：OpenAI 收购创始人、GitHub 19 万星、维基百科收录、CrowdStrike 安全警告、SecureClaw 框架发布、自主 GitHub 工程师教程",
       "config": {
         "topic": "OpenClaw",
         "keywords": ["OpenClaw", "openclaw"],
@@ -77,10 +77,10 @@
       "description": "收集 Seedance 2.0 优秀作品和提示词分享",
       "schedule": "daily",
       "scheduleTime": "20:00",
-      "status": "pending",
+      "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-14 20:00",
+      "lastRun": "2026-02-19 20:00",
       "lastResult": "成功收集 Seedance 2.0 案例及导演级提示词遵循能力分析",
       "config": {
         "topic": "Seedance",
@@ -99,15 +99,16 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-17 15:54",
-      "lastResult": "成功推送Super Bowl LX广告拆解：Adweek十大最佳、He Gets Us宗教广告、外卖三巨头(Uber Eats/Pepsi/DoorDash)、AI广告战冲突、怀旧复兴趋势、90年代元素、Seedance 2.0提示词矩阵(怀旧/AI/美食)",
+      "lastRun": "2026-02-19 09:30",
+      "lastResult": "成功推送4A广告视觉拆解：Super Bowl LX冠军 Lay's Last Harvest、Fanatics逆向叙事策略、Xfinity借势经典IP、Novartis场景反转、Pringles TikTok原生、Anthropic内涵对手、Seedance 2.0提示词矩阵",
       "config": {
-        "sources": ["twitter", "digitaling", "xinpianchang"],
+        "sources": ["twitter", "digitaling", "xinpianchang", "youtube_adblitz", "ads_of_the_world", "adweek", "behance", "campaign_us"],
         "translate": true,
         "deliverTo": "telegram:-1003505656701:topic:3"
       }
     }
-    ,{
+    ,
+    {
       "id": "task-tiktok-th-001",
       "name": "泰区 TikTok 趋势日报",
       "type": "tiktok",
@@ -117,13 +118,52 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-16",
-      "lastRun": "2026-02-17 15:52",
-      "lastResult": "成功推送泰区TikTok日报：Simplus绞肉机(泰国品牌TikTok销售领先)、咖啡桌游戏爆品、手持油膜清洁器、丁腈手套、东南亚厨房小家电增长、选品建议(咖啡/厨房/家居/工具)",
+      "lastRun": "2026-02-19 10:00",
+      "lastResult": "推送泰区TikTok日报(更新版)：咖啡厨房工具趋势、家居热销品(棉拖、眼部按摩仪)、健康养生泰特色、2026算法洞察",
       "config": {
         "categories": ["咖啡", "厨房", "家居", "工具"],
         "country": "TH",
         "language": ["th", "zh", "en"],
         "deliverTo": "telegram:-1003505656701:topic:4"
+      }
+    }
+    {
+      "id": "task-simmer-001",
+      "name": "Simmer 市场扫描",
+      "type": "simmer",
+      "description": "每日定时扫描 Polymarket 高分歧市场机会，发送交易建议",
+      "schedule": "daily",
+      "scheduleTime": "01:00",
+      "status": "completed",
+      "enabled": true,
+      "createdAt": "2026-02-18",
+      "lastRun": null,
+      "lastResult": null,
+      "config": {
+        "command": "scan",
+        "deliverTo": "telegram:-1003505656701:topic:6"
+      }
+    },
+    {
+      "id": "task-ai-competition-001",
+      "name": "AI 比赛资讯汇总",
+      "type": "ai-competition",
+      "description": "每日搜索国内外 AI 相关比赛，汇总参赛信息、奖金、截止日期",
+      "schedule": "daily",
+      "scheduleTime": "14:00",
+      "status": "completed",
+      "enabled": true,
+      "createdAt": "2026-02-19",
+      "lastRun": "2026-02-19 14:00",
+      "lastResult": "成功推送AI比赛资讯：Kaggle AI Math Olympiad $210万奖金、Mistral AI 48小时黑客松、USAII全球AI Hackathon、IBM $5000奖金挑战、EU AI Week等"
+      "config": {
+        "sources": ["kaggle", "drivendata", "paperswithcode", "github_trending", "ai_challenges", "topcoder", "didi_challenge", "baidu_ai_studio", "waytoagi", "bilibili_ai", "wechat_mp", "feishu"],
+        "feishu_source": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e",
+        "wechat_search": true,
+        "keywords": ["AI design", "AI image generation", "AI video", "AI art", "generative AI", "Midjourney", "Stable Diffusion", "Suno", "Runway", "competition", "hackathon", "prompt"],
+        "language": "mixed",
+        "resultCount": 15,
+        "deliverTo": "telegram:-1003505656701:topic:2"
       }
     }
   ],
@@ -137,6 +177,7 @@
     "twitter-topic": "Twitter 话题追踪",
     "wechat-radar": "公众号蓝海选题雷达",
     "ad-visual-analyst": "4A 广告视觉拆解",
+    "ai-competition": "AI 比赛资讯",
     "custom": "自定义脚本"
   },
   "scheduleTypes": {
