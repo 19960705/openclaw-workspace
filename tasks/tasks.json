@@ -61,8 +61,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-19 18:00",
-      "lastResult": "推送 OpenClaw 周报：OpenAI 收购创始人、GitHub 19 万星、维基百科收录、CrowdStrike 安全警告、SecureClaw 框架发布、自主 GitHub 工程师教程",
+      "lastRun": "2026-02-22 18:00",
+      "lastResult": "推送 OpenClaw 话题追踪：创始人加入OpenAI、安全CVE修复、GitHub讨论、版本更新2026.2.21-2、媒体报道",
       "config": {
         "topic": "OpenClaw",
         "keywords": ["OpenClaw", "openclaw"],
