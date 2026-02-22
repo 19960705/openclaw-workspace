@@ -80,8 +80,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-19 20:00",
-      "lastResult": "成功收集 Seedance 2.0 案例及导演级提示词遵循能力分析",
+      "lastRun": "2026-02-22 20:00",
+      "lastResult": "成功收集 Seedance 2.0 案例：B站教程、安鱼资源、CSDN提示词指南、核心功能、使用建议、媒体报道",
       "config": {
         "topic": "Seedance",
         "keywords": ["Seedance", "seedance", "即梦"],
