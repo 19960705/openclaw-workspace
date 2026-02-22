@@ -99,8 +99,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-19 09:30",
-      "lastResult": "成功推送4A广告视觉拆解：Super Bowl LX冠军 Lay's Last Harvest、Fanatics逆向叙事策略、Xfinity借势经典IP、Novartis场景反转、Pringles TikTok原生、Anthropic内涵对手、Seedance 2.0提示词矩阵",
+      "lastRun": "2026-02-22 09:30",
+      "lastResult": "成功推送4A广告视觉拆解：隐私优先/AI驱动/真实故事趋势、1月最佳广告案例、Seedance 2.0分镜脚本、动画摄影技巧补充",
       "config": {
         "sources": ["twitter", "digitaling", "xinpianchang", "youtube_adblitz", "ads_of_the_world", "adweek", "behance", "campaign_us"],
         "translate": true,
