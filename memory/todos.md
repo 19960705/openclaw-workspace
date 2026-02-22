@@ -6,13 +6,15 @@
 ---
 
 ## 待办 (Pending)
-- [ ] 每天从所有对话中总结待办事项并提醒用户 (当前任务)
-
-## 进行中 (In Progress)
 - [ ]
 
+## 进行中 (In Progress)
+- [ ] 每天从所有对话中总结待办事项并提醒用户 (当前任务)
+
 ## 已完成 (Done)
-- [x]
+- [x] 创建待办事项跟踪系统 (memory/todos.md)
+- [x] 设置每日 cron 提醒 (09:00 Asia/Shanghai)
+- [x] 更新 AGENTS.md 和 MEMORY.md 文档
 
 ---
 

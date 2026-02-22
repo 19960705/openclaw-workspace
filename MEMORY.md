@@ -1,54 +1,77 @@
+# MEMORY.md - Keonho's Long-term Memory
 
-# MEMORY.md - Keonho's Long-term Memory (索引)
+## User
+- **Name:** Lunah (Jinny)
+- **Timezone:** Asia/Shanghai
+- **Style preference:** 正经 + 可爱 🐶
+- **Wants me to be:** Bold and proactive
 
-**最后更新**: 2026-02-22
+## Me
+- **Name:** Keonho
+- **Emoji:** 🐶
+- **Operational Logic:** 
+  - `#常规` and `#normal` are primary channels.
+  - Sub-channels are secondary; stay quiet unless called or cron fails.
 
-&gt; 此文件作为索引，详细内容请查看对应的子文件。
+## Projects
+- **Hodonaku 电影网站** (`/Users/mac/projects/hodonaku-movie-site/`)
+  - Remotion 介绍动画: 20s, 1080×1920, 已渲染 (`remotion-video/output.mp4`)
+  - 演员: 浜辺美波、目黒蓮
+  - 演员照片在 `public/img/hamabe.jpg` & `meguro.jpg`
+- **安乾镐生贺网站** (`/Users/mac/projects/keonho/birthday-site/`) — Claude Code 部分完成
+- **马年跑酷游戏** (`~/projects/cny-horse-game/`) — Next.js + Framer Motion
+
+## Skills & Tools Created (2026-02-14)
+- Seedance 2.0 分镜提示词生成器
+- Gateway Watchdog 自动重启服务
+- Task Management System (`tasks/tasks.json`)
+- WeChat 蓝海选题雷达
+- 4A 广告视觉分析雷达
+- 每日待办事项跟踪系统 (`memory/todos.md` + cron 提醒)
+
+## DEC-2026-02-15-01
+type: decision
+area: memory
+
+Decision: 安装 openclaw-mem skill，开启 sessionMemory + sources ["memory","sessions"]
+Reason: 解决 Discord context overflow 导致记忆丢失的问题
+
+## DEC-2026-02-15-02
+type: decision
+area: plugins
+
+Decision: 安装 openclaw-foundry 插件 (v0.2.3)
+Reason: Lunah 要求研究并安装，自我编写元插件，观察工作流→学习→结晶为工具
+Path: ~/.openclaw/extensions/foundry-openclaw/
+Note: 23个工具已注册，自动学习开启，监督者每1小时巡检
+
+## FACT-2026-02-15-01
+type: fact
+area: infra
+
+Fact: memsearch 向量搜索集成完成
+Details: 放弃 Ollama（API 502 错误），改用 local provider (sentence-transformers)
+- memsearch Python 包已装 (v0.1.7)
+- sentence-transformers 已装 (all-MiniLM-L6-v2, 384维)
+- 删除了旧 milvus.db，重置 collection
+- 配置：~/.memsearch/config.toml (provider: local, collection: openclaw_memory)
+- 索引了 70 个 chunks，搜索测试成功
+
+## FACT-2026-02-17-01
+type: fact
+area: trading
+
+Fact: Simmer SDK 接入真实 API 完成
+Details:
+- SDK: simmer-sdk 0.8.15 (Python, ~/.simmer-venv/)
+- API key: 存储在 ~/.openclaw/workspace/.env.simmer（chmod 600）
+- 钱包: 0x39e4BB0f4b14875AC85B74E5b844bcB092438c61
+- 监控脚本: scripts/simmer-check.py (summary/positions/markets/trade/opportunities)
+- Heartbeat 已接入真实 API，自动监控持仓
+- 当前状态: 76% 胜率, +24.23 $SIM PnL, 34 持仓(17已结/17进行中)
+- 交易限制: max $1 USDC/市场, 50笔/天, SL 20%, TP 15%
+- Simmer skill 已创建: ~/.openclaw/skills/simmer/
 
 ---
 
-## 快速索引
-
-| 文件 | 内容 | 路径 |
-|------|------|------|
-| **PREFERENCES.md** | 用户偏好、话题关注点、工作流程、决策记录 | `memory/PREFERENCES.md` |
-| **PROJECTS.md** | 项目状态、活跃项目、已完成项目 | `memory/PROJECTS.md` |
-| **todos.md** | 待办事项跟踪 | `memory/todos.md` |
-| **OpenClaw_AI_Agent_Research_Report.md** | OpenClaw 和 AI Agent 研究报告 | `OpenClaw_AI_Agent_Research_Report.md` |
-| **YYYY-MM-DD.md** | 每日详细对话记录 | `memory/YYYY-MM-DD.md` |
-
----
-
-## 用户速览
-
-### 基本信息
-- **Name**: Keonho
-- **Emoji**: 🐶
-- **User**: Lunah (Jinny)
-- **Timezone**: Asia/Shanghai
-- **Style**: 正经 + 可爱 🐶
-- **要求**: Bold and proactive
-
-### 话题群组
-| Topic ID | 名称 | 任务 |
-|----------|------|------|
-| topic:1 | General | 日常聊天 |
-| topic:2 | AI 资讯 | AI 热门日报、官方账号监控 |
-| topic:3 | 广告创意 | 4A 广告视觉拆解、Seedance 案例 |
-| topic:4 | 工作选品 | 泰区 TikTok 日报、产品选品 |
-| topic:5 | 工具追踪 | OpenClaw 话题 |
-| topic:6 | simmer | Simmer 交易汇报、持仓监控 |
-
----
-
-## 记住的规则
-1. 任何长时间任务，完成后必须主动通知
-2. 做不到的事不要承诺，直接说做不到
-3. 犯错了要说，不要假装没发生
-4. 记忆要当下写入，不要等之后再记
-
----
-
-## 初次见面
-- First meeting: 2026-02-13
-
+_First meeting: 2026-02-13_
