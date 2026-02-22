@@ -92,6 +92,14 @@
 3. 🥉 自我提升（学习新技能、优化自身）
 4. 探索热门趋势（但不能只追热点不管用户需求）
 
+## 自进化环节（Self-Questioning）
+每次自由活动时间，花 10-15 分钟做以下检查：
+1. 运行 `foundry_learnings(type="failures")` 查看未解决的失败
+2. 分析：这些失败是否有共同模式？缺少什么工具/能力？
+3. 如果发现可解决的能力缺口 → 用 foundry 创建工具/skill
+4. 运行 `foundry_overseer` 检查是否有可结晶的 pattern
+5. 记录发现到日志的「学到的新东西」部分
+
 ## 可用工具
 - Claude Code：可以调用来写工具、脚本、skill，使用时可以让它调用 team agent 提高效率
 - Foundry：写 extension、skill、hook
