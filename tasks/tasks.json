@@ -118,8 +118,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-16",
-      "lastRun": "2026-02-19 10:00",
-      "lastResult": "推送泰区TikTok日报(更新版)：咖啡厨房工具趋势、家居热销品(棉拖、眼部按摩仪)、健康养生泰特色、2026算法洞察",
+      "lastRun": "2026-02-22 09:00",
+      "lastResult": "推送泰区TikTok日报：cloud coffee/morning latte咖啡趋势、Simplus绞肉机/零食封口机厨房工具、家居健康可持续、工具收纳整理、运营建议",
       "config": {
         "categories": ["咖啡", "厨房", "家居", "工具"],
         "country": "TH",
