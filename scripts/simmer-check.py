@@ -9,13 +9,21 @@ import os
 env_file = os.path.expanduser("~/.openclaw/workspace/.env.simmer")
 api_key = None
 venue = os.environ.get("SIMMER_VENUE", "simmer")  # 默认使用模拟环境
-if os.path.exists(env_file):
+wallet_address = os.environ.get("SIMMER_WALLET_ADDRESS", None)
+
+# 优先读取环境变量（支持 real 模式）
+if os.environ.get("REAL_SIMMER_API_KEY"):
+    api_key = os.environ.get("REAL_SIMMER_API_KEY")
+    venue = os.environ.get("REAL_SIMMER_VENUE", "polymarket")
+elif os.path.exists(env_file):
     with open(env_file) as f:
         for line in f:
             if line.startswith("SIMMER_API_KEY="):
                 api_key = line.strip().split("=", 1)[1]
             elif line.startswith("SIMMER_VENUE="):
                 venue = line.strip().split("=", 1)[1]
+            elif line.startswith("SIMMER_WALLET_ADDRESS="):
+                wallet_address = line.strip().split("=", 1)[1]
 
 if not api_key:
     print(json.dumps({"error": "No SIMMER_API_KEY found"}))

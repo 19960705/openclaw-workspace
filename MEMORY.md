@@ -72,6 +72,121 @@ Details:
 - 交易限制: max $1 USDC/市场, 50笔/天, SL 20%, TP 15%
 - Simmer skill 已创建: ~/.openclaw/skills/simmer/
 
+## LRN-2026-02-22-01
+type: learning
+area: ai-video
+
+Learning: AI Master 可控视频制作三步法
+Source: 微博 @AI Master
+Details:
+- 核心：从「抽卡碰运气」→「可控流程」，从「学提示词」→「学导演」
+- 三步工作流：
+  1. 主镜头图像 - 锁死角色、服装、场景、光线、风格（这步不满意后面全返工）
+  2. 无限角度 - 用参考图生成，只改角度，其他全保持一致（参考图 > 文字描述）
+  3. 真正镜头 - 首帧+尾帧控制、多镜头模式，设计镜头结构而不是生成片段
+- 角度自带叙事功能：特写贴情绪、低角度显力量、荷兰角制造不稳定
+- 业余 vs 专业：业余追求出图质量，专业追求镜头控制
+- 工具：
+  - 主镜头：任何图像生成模型
+  - 无限角度：Nano Banana Pro、Qwen Image Edit
+  - 视频：可灵 3.0（带首帧尾帧控制）
+
+## DEC-2026-02-22-02
+type: decision
+area: autonomy
+
+Decision: 启动 Keonho 自由活动时间
+Details:
+- 窗口：每天北京时间 05:00-07:00（最多延至 07:30）
+- 前 7 天为观察模式（每 30 分钟汇报）
+- 启动日期：2026-02-23
+- 规则文件：FREE_TIME_RULES.md
+- 用户宪章：USER_CHARTER.md
+- 日志目录：~/OpenClaw_FreeTime_Log/
+- Cron: 04:55 触发启动序列
+- 安全红线：9 条（不删文件、不改源码、不花钱、不发社交媒体等）
+
+## FACT-2026-02-22-09
+type: fact
+area: config
+
+Fact: 移除 google-antigravity 模型配置，接入 Claude 原生 API
+Details:
+- 删除了 google-antigravity provider、auth profile、plugin entry
+- Claude Code 帮忙接入了 claude/ provider（claude-4-6, claude-4-5, claude-4-sonnet 等）
+- 默认模型：yunyi-claude/claude-opus-4-6
+
+## FACT-2026-02-21-01
+type: fact
+area: infra
+
+Fact: Token 压缩 Workflow 上线
+Details:
+- scripts/session_workflow.sh — 搜索+摘要
+- scripts/semantic_search.py — 语义搜索记忆
+- scripts/session_summary.sh — 自动生成摘要
+- Cron: 每天 23:00 自动执行 (auto-session-summary)
+
+## FACT-2026-02-21-02
+type: fact
+area: simmer
+
+Fact: Simmer 最新状态 (02-21)
+Details:
+- 余额: $1.63 USDC
+- 胜率: 83%
+- 持仓: 46 (已结 29 / 进行中 17)
+- 总 PnL: +$12.69
+- 亏损项: NYC 温度 (-7.50), Seattle 降水 (-6.78)
+
+## FACT-2026-02-22-10
+type: fact
+area: evomap
+
+Fact: EvoMap GEP-A2A 协议对接完成
+Details:
+- Skill: ~/.openclaw/skills/evomap/SKILL.md
+- Node ID: node_5dfb234713e2d1e7
+- 分布式任务队列 Capsule 接入成功 (scripts/distributed_queue.py)
+- 共 6 个 Capsule: retry, feishu_fallback, memory_bridge, agent_debug, command_repair, distributed_queue
+
+## FACT-2026-02-22-11
+type: fact
+area: security
+
+Fact: SecureClaw v2.2.0 安装
+Details:
+- 安全审计分数: 53/100
+- 自动修复: .env permissions 644→600
+- 待修复: plaintext key exposure, sandbox mode, exec approval mode
+
+## FACT-2026-02-22-12
+type: fact
+area: project
+
+Fact: Seedance 2.0 AI 动画短剧项目（待启动）
+Details:
+- 灵感: 子骅 Zihua Li (@luinlee) 的推文
+- 工作流: 构思主题→写剧本→生成素材描述→生图→写分镜脚本→逐集生成视频
+- 我们的优势: Seedance 提示词生成器 + AI Master 三步法 + OpenClaw agent
+- 状态: 待 Lunah 确定角色和世界观后启动
+
+## LRN-2026-02-23-01
+type: learning
+area: ops
+
+Learning: Workspace 维护经验（自由活动第1天）
+Details:
+- workspace 文件结构需要定期维护，不然快速膨胀
+- cron 任务用了不可用的模型会静默失败（连续 9 次错误才发现）
+- memory 目录大型 session transcript 应归档到子目录，只保留精炼日志
+- 知识类文件（工作流笔记、分镜脚本等）应放 knowledge/ 而非 memory/
+
+## Cron 待清理（需 Lunah 确认）
+- AI日报重复: 每日AI新闻(08:30) + AI日报(09:00) — 建议保留 09:00
+- TikTok日报重复: TikTok泰国趋势日报(09:00) + TikTok泰区日报(10:00) — 建议保留 10:00
+- Simmer 任务过多: 自动交易扫描 + 交易提醒 + 市场晨间扫描 + 机会扫描 — 建议精简为 1-2 个
+
 ---
 
 _First meeting: 2026-02-13_

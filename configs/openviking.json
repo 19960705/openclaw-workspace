@@ -1,0 +1,17 @@
+{
+  "embedding": {
+    "dense": {
+      "provider": "minimax",
+      "model": "text-embedding-3-large",
+      "api_key": "",
+      "api_base": "https://api.minimaxi.com/v1",
+      "dimension": 1024
+    }
+  },
+  "vlm": {
+    "provider": "minimax",
+    "model": "abab6.5s-chat",
+    "api_key": "",
+    "api_base": "https://api.minimaxi.com/v1"
+  }
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Keonho Crawler - 快捷启动脚本
+source ~/.crawler-venv/bin/activate
+python3 ~/.openclaw/workspace/scripts/crawler.py "$@"

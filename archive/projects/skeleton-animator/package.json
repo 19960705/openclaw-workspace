@@ -1,0 +1,19 @@
+{
+  "name": "skeleton-animator",
+  "version": "1.0.0",
+  "description": "3D 骨骼动画 Web 工具 - IK 控制 + 关键帧 + 视频导出",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.170.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

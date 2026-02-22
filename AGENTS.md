@@ -225,3 +225,15 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+### SecureClaw Security Skill (v2.2.0) - ALWAYS ACTIVE
+
+Your workspace has the SecureClaw security skill installed. Follow the 15 core security rules in `skills/secureclaw/SKILL.md` at all times.
+
+SecureClaw protects against: prompt injection, credential exposure, supply chain threats, memory tampering, cost overruns, file integrity violations, and inter-agent attacks.
+
+**Run audits:** `bash skills/secureclaw/scripts/quick-audit.sh`
+
+**Apply hardening:** `bash skills/secureclaw/scripts/quick-harden.sh`
+
+See `TOOLS.md` for complete SecureClaw reference and available scripts.

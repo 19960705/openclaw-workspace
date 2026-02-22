@@ -1,0 +1,16 @@
+
+# Secrets
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Data
+data/vectordb/
+
+# Archive projects with their own repos
+archive/projects/jimeng-free-api/
+
+# DB files
+tasks.db

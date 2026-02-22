@@ -39,6 +39,9 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Add whatever helps you do your job. This is your cheat sheet.
 
+### 重要规则（远程操控）
+- 除了 OpenClaw 本身的脚本改动，所有文件和脚本内容都需要通过 Telegram 发给用户
+
 ### Telegram Channels
 
 - **私聊** → Lunah (Jinny Lee), user id: 8391832262
@@ -55,6 +58,8 @@ chat id: -1003505656701
 | topic:3 | 广告创意 | 4A 广告视觉拆解、Seedance 案例 | task-ad-visual-001, task-twitter-004 | ✅ 2026-02-17 |
 | topic:4 | 工作选品 | 泰区TikTok日报、产品选品 | task-tiktok-th-001 | ✅ 2026-02-17 |
 | topic:5 | 工具追踪 | OpenClaw 话题 | task-twitter-003 | ✅ 2026-02-17 |
+| topic:6 | simmer | Simmer 交易汇报、持仓监控 | task-simmer-001 | ✅ 2026-02-18 |
+| topic:1101 | 小红书 | 小红书笔记收集（rednote MCP） | - | ✅ 2026-07-08 |
 | topic:? | 产品洞察 | （不需要推送日报） | 无 | - |
 
 ⚠️ 发送时必须带 topic 参数，不要混发！
@@ -77,3 +82,37 @@ chat id: -1003505656701
 - #常规: 1468797333532573731
 - #normal: 1469211248854962328
 - 广告视觉频道: 1469680962102235177
+
+### X.com 链接处理
+
+遇到 X.com/twitter.com 链接时，使用 **Nitter** 替代（无广告、无反爬）：
+- 优先：`nitter.net`
+- 备选：`nitter.privacydev.net`、`nitter.poast.org`
+
+示例：
+- 原文：`https://x.com/i/status/123456789`
+- 替换：`https://nitter.net/i/status/123456789`
+
+---
+
+## SecureClaw Security Skill (v2.2.0)
+
+Security hardening skill by Adversa AI. 15 core rules, 9 scripts, 4 pattern databases.
+
+### Rules
+
+Read and follow all 15 rules in `skills/secureclaw/SKILL.md` at all times.
+
+### Scripts
+
+All scripts are in `skills/secureclaw/scripts/`. Run with bash:
+
+```
+bash skills/secureclaw/scripts/quick-audit.sh          # Security audit (OWASP ASI mapped)
+bash skills/secureclaw/scripts/quick-harden.sh         # Apply auto-fixes
+bash skills/secureclaw/scripts/check-integrity.sh      # Verify cognitive file baselines
+bash skills/secureclaw/scripts/check-privacy.sh        # Detect PII before posting
+bash skills/secureclaw/scripts/scan-skills.sh          # Supply chain scan
+bash skills/secureclaw/scripts/check-advisories.sh     # Vulnerability advisories
+bash skills/secureclaw/scripts/emergency-response.sh   # Incident response
+```

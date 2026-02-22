@@ -128,6 +128,10 @@
     "polymarket-mert-sniper": {
       "version": "1.0.3",
       "installedAt": 1771224964674
+    },
+    "foundry": {
+      "version": "0.1.0",
+      "installedAt": 1771340761112
     }
   }
 }

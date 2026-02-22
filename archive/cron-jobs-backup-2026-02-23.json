@@ -1,0 +1,497 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "493df265-1823-45db-9fc3-e8b07848dac2",
+      "agentId": "main",
+      "name": "TikTok泰国趋势日报",
+      "enabled": true,
+      "createdAtMs": 1770996558352,
+      "updatedAtMs": 1771722202333,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行 TikTok 泰国趋势日报任务\n\n生成今日 TikTok 泰国趋势日报，聚焦咖啡、厨房、家居、工具类目。搜索泰国 TikTok 热门话题、爆款视频、产品趋势，给出运营建议。"
+      },
+      "state": {
+        "nextRunAtMs": 1771808400000,
+        "lastRunAtMs": 1771722000014,
+        "lastStatus": "ok",
+        "lastDurationMs": 202319,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "21594a71-a0ed-4735-9600-1efa66921d61",
+      "agentId": "main",
+      "name": "每日AI新闻",
+      "enabled": true,
+      "createdAtMs": 1771000032949,
+      "updatedAtMs": 1771720508541,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行 AI 新闻任务\n\n现在是北京时间早上8:30，执行每日AI新闻任务：搜索并整理今天最重要的AI/科技新闻（3-5条），发送到 telegram 话题群 topic:2。使用中文，格式简洁清晰。"
+      },
+      "state": {
+        "nextRunAtMs": 1771806600000,
+        "lastRunAtMs": 1771720200014,
+        "lastStatus": "ok",
+        "lastDurationMs": 308527,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "7fa66207-86f7-46f9-8c0c-98291b16a452",
+      "agentId": "main",
+      "name": "Simmer 自动交易扫描",
+      "enabled": true,
+      "createdAtMs": 1771272542038,
+      "updatedAtMs": 1771297101827,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9,13,17,21 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Simmer 自动交易定时扫描。执行以下步骤：\n1. 运行 /Users/mac/.simmer-venv/bin/python3 /Users/mac/.openclaw/workspace/scripts/simmer-check.py summary 检查持仓状态\n2. 运行 /Users/mac/.simmer-venv/bin/python3 /Users/mac/.openclaw/workspace/scripts/simmer-auto-trade.py scan 扫描机会\n3. 如果有安全机会（确信度>95%），运行 trade 模式执行（最多3笔）\n4. 用天气API交叉验证天气市场\n5. 将结果摘要发送到 Telegram 私聊（target: 8391832262）\n6. 更新 memory/simmer-state.json"
+      },
+      "state": {
+        "lastError": "FailoverError: No API key found for provider \"anthropic\". Auth store: /Users/mac/.openclaw/agents/main/agent/auth-profiles.json (agentDir: /Users/mac/.openclaw/agents/main/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir.",
+        "lastRunAtMs": 1771290000489,
+        "lastStatus": "error",
+        "lastDurationMs": 536,
+        "nextRunAtMs": 1771808400000
+      }
+    },
+    {
+      "id": "b3b0fab7-4b36-4c12-b694-e25625859e29",
+      "agentId": "main",
+      "name": "Simmer 交易提醒",
+      "enabled": true,
+      "createdAtMs": 1771297109774,
+      "updatedAtMs": 1771297131625,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9,13,17,21 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Simmer 交易扫描提醒：运行 simmer-check.py summary，查看持仓和机会。"
+      },
+      "state": {
+        "nextRunAtMs": 1771810200000
+      }
+    },
+    {
+      "id": "304c68e1-4964-4c74-b801-c61a0d52dcf9",
+      "agentId": "main",
+      "name": "Simmer 市场晨间扫描",
+      "enabled": true,
+      "createdAtMs": 1771346161890,
+      "updatedAtMs": 1771722202333,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 1 * * *",
+        "tz": "UTC"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🔮 Simmer 市场扫描提醒\n\n当前时间：09:00 (GMT+8)\n\n待办事项：\n1. 运行 simmer-check.py opportunities 扫描高分歧市场\n2. 分析持仓状态和风险\n3. 评估新交易机会\n4. 更新 simmer-state.json\n\n请回复 /check 开始扫描"
+      },
+      "state": {
+        "nextRunAtMs": 1771808400000,
+        "lastRunAtMs": 1771722202333,
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "8b6dc1a1-d302-4b96-955d-cc85a8ad1be5",
+      "agentId": "main",
+      "name": "AI日报",
+      "createdAtMs": 1771380746543,
+      "updatedAtMs": 1771722202333,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行 AI 热门推文日报任务\n\n请根据 tasks.json 中 task-twitter-001 的配置，搜索 AI/GPT/Claude/LLM/OpenAI/Anthropic 相关热门推文，筛选高互动内容（likes/retweets/comments），整理成简明日报。\n\n发送到：telegram:-1003505656701:topic:2"
+      },
+      "state": {
+        "nextRunAtMs": 1771808400000,
+        "lastRunAtMs": 1771722202333,
+        "lastStatus": "ok",
+        "lastDurationMs": 0,
+        "consecutiveErrors": 0
+      },
+      "enabled": true
+    },
+    {
+      "id": "07b0e05d-2bd4-4704-89b2-6233e7f4f950",
+      "agentId": "main",
+      "name": "4A广告拆解",
+      "createdAtMs": 1771380751046,
+      "updatedAtMs": 1771723800032,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行 4A 广告视觉拆解任务\n\n请根据 tasks.json 中 task-ad-visual-001 的配置，监控 4A 公司及新片场顶级作品，生成分镜脚本和 Seedance 2.0 提示词。\n\n发送到：telegram:-1003505656701:topic:3"
+      },
+      "state": {
+        "nextRunAtMs": 1771810200000,
+        "lastRunAtMs": 1771723800014,
+        "lastStatus": "ok",
+        "lastDurationMs": 18,
+        "consecutiveErrors": 0
+      },
+      "enabled": true
+    },
+    {
+      "id": "a28a53f5-45fe-46fa-bd4c-9946f9e84bfe",
+      "agentId": "main",
+      "name": "TikTok泰区日报",
+      "createdAtMs": 1771380755029,
+      "updatedAtMs": 1771725600028,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行泰区 TikTok 趋势日报任务\n\n请根据 tasks.json 中 task-tiktok-th-001 的配置，监控泰国 TikTok 热门话题、爆款视频和产品趋势，聚焦咖啡、厨房、家居、工具类目。\n\n发送到：telegram:-1003505656701:topic:4"
+      },
+      "state": {
+        "nextRunAtMs": 1771812000000,
+        "lastRunAtMs": 1771725600012,
+        "lastStatus": "ok",
+        "lastDurationMs": 16,
+        "consecutiveErrors": 0
+      },
+      "enabled": true
+    },
+    {
+      "id": "aecbe286-abe4-4ea0-8064-78667aa66c71",
+      "agentId": "main",
+      "name": "OpenClaw追踪",
+      "createdAtMs": 1771380759463,
+      "updatedAtMs": 1771754400035,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行 OpenClaw 话题追踪任务\n\n请根据 tasks.json 中 task-twitter-003 的配置，搜索 OpenClaw 相关讨论和玩法分享，追踪 7 天内的趋势。\n\n发送到：telegram:-1003505656701:topic:5"
+      },
+      "state": {
+        "nextRunAtMs": 1771840800000,
+        "lastRunAtMs": 1771754400012,
+        "lastStatus": "ok",
+        "lastDurationMs": 23,
+        "consecutiveErrors": 0
+      },
+      "enabled": true
+    },
+    {
+      "id": "b9c81d9b-04af-402d-927a-ed11e5954d8a",
+      "agentId": "main",
+      "name": "Seedance案例",
+      "createdAtMs": 1771380763312,
+      "updatedAtMs": 1771761600026,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行 Seedance 视频案例收集任务\n\n请根据 tasks.json 中 task-twitter-004 的配置，收集 Seedance 2.0 优秀作品和提示词分享。\n\n发送到：telegram:-1003505656701:topic:3"
+      },
+      "state": {
+        "nextRunAtMs": 1771848000000,
+        "lastRunAtMs": 1771761600008,
+        "lastStatus": "ok",
+        "lastDurationMs": 18,
+        "consecutiveErrors": 0
+      },
+      "enabled": true
+    },
+    {
+      "id": "25797175-bbbd-406b-a3a7-4b414d3d7fd3",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "AI比赛资讯汇总",
+      "enabled": true,
+      "createdAtMs": 1771471292215,
+      "updatedAtMs": 1771740000025,
+      "schedule": {
+        "expr": "0 14 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 执行 AI 比赛资讯汇总任务\n\n请根据 tasks.json 中 task-ai-competition-001 的配置，搜索国内外 AI 相关比赛（Kaggle、DrivenData、Papers With Code、GitHub Trending、AI Challenge、Hackathon 等），汇总参赛信息、奖金、截止日期。\n\n发送到：telegram:-1003505656701:topic:2"
+      },
+      "state": {
+        "nextRunAtMs": 1771826400000,
+        "lastRunAtMs": 1771740000010,
+        "lastStatus": "ok",
+        "lastDurationMs": 15,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "df657cf0-6e6a-403d-9da1-d02ff59057bb",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "weekly-self-evolution",
+      "enabled": true,
+      "createdAtMs": 1771500738926,
+      "updatedAtMs": 1771588812490,
+      "schedule": {
+        "expr": "0 20 * * 5",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请进行每周自我进化检查：\n\n1. 打开 EVOLUTION.md 逐项检查\n2. 回顾过去一周的对话，找出：\n   - 可以写成 skill 的重复操作\n   - 可以优化的流程\n   - 学到的新东西\n3. 把重要的发现写入 MEMORY.md\n4. 不要汇报细节，只需要说\"自检完成，发现 X 项可改进\""
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:8391832262"
+      },
+      "state": {
+        "nextRunAtMs": 1772193600000,
+        "lastRunAtMs": 1771588800028,
+        "lastStatus": "ok",
+        "lastDurationMs": 12462,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "880de2d8-eb99-4d62-9ab9-2491089a111a",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "simmer-opportunity-scan",
+      "enabled": true,
+      "createdAtMs": 1771503652189,
+      "updatedAtMs": 1771791652360,
+      "schedule": {
+        "everyMs": 1800000,
+        "kind": "every",
+        "anchorMs": 1771503652189
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行 Simmer 市场扫描：\n\n1. 运行 ~/.simmer-venv/bin/python3 ~/.openclaw/workspace/scripts/simmer-check.py markets\n2. 筛选高确信度机会 (>65% 或 <35%)\n3. 如果有好的机会，汇报给用户\n4. 如果没有，回复\"暂无好机会，继续观望\"",
+        "model": "minimax-portal/MiniMax-M2.1"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:8391832262"
+      },
+      "state": {
+        "lastRunAtMs": 1771791652333,
+        "lastStatus": "error",
+        "lastDurationMs": 27,
+        "consecutiveErrors": 9,
+        "nextRunAtMs": 1771795252360,
+        "lastError": "model not allowed: minimax-portal/MiniMax-M2.1"
+      }
+    },
+    {
+      "id": "dae52af1-3f1d-478f-88d2-3ad9f807ae0e",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "foundry-weekly-report",
+      "enabled": true,
+      "createdAtMs": 1771555908113,
+      "updatedAtMs": 1771592578296,
+      "schedule": {
+        "expr": "0 21 * * 5",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行 Foundry 学习汇报：\n\n1. 运行 foundry_learnings 获取最新 patterns 和 insights\n2. 总结：新增了多少结晶化 pattern？有多少成功/失败经验？\n3. 用简洁的中文汇报给用户",
+        "model": "minimax-portal/MiniMax-M2.1"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:8391832262"
+      },
+      "state": {
+        "nextRunAtMs": 1772197200000,
+        "lastRunAtMs": 1771592400009,
+        "lastStatus": "ok",
+        "lastDurationMs": 178287,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "62282d67-c4aa-4ca7-bc8e-df2217a4d09f",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "auto-session-summary",
+      "enabled": true,
+      "createdAtMs": 1771612262781,
+      "updatedAtMs": 1771772452156,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run: cd ~/.openclaw/workspace && bash scripts/session_workflow.sh"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771858800000,
+        "lastRunAtMs": 1771772400012,
+        "lastStatus": "ok",
+        "lastDurationMs": 52144,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "94d11b08-9809-4b1a-873c-4ecf30d16db1",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:group:-1003505656701:topic:691",
+      "name": "daily-ai-evolution-research",
+      "enabled": true,
+      "createdAtMs": 1771637158678,
+      "updatedAtMs": 1771722299190,
+      "schedule": {
+        "expr": "0 9 * * *",
+        "kind": "cron",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "搜索 GitHub 和 web 上最近 7 天关于 AI agent 自进化、自改进的新项目或讨论。\n\n简洁汇报：\n- 找到的 2-3 个最有价值的项目/方法\n- 是否可以在 OpenClaw Foundry 中实现\n- 如果有简单可实现的，直接用 foundry 工具实现\n\n保持回复简短，不要重复搜索。",
+        "model": "MiniMax-M2.5"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "telegram:-1003505656701:topic:691"
+      },
+      "state": {
+        "nextRunAtMs": 1771808400000,
+        "lastRunAtMs": 1771722284177,
+        "lastStatus": "ok",
+        "lastDurationMs": 15013,
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "8ad2860b-4780-4bd9-b486-5b2fd438f451",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "每日待办事项提醒",
+      "enabled": true,
+      "createdAtMs": 1771730825534,
+      "updatedAtMs": 1771730825534,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 每日待办事项提醒\n\n请总结今天的待办事项，检查 memory/todos.md 和最近的对话记录，整理 pending、in progress 和 done 的事项，并汇报给用户。"
+      },
+      "state": {
+        "nextRunAtMs": 1771808400000
+      }
+    },
+    {
+      "id": "90fc21bf-2d00-4019-84a7-d5780f34a24d",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "keonho-free-time",
+      "enabled": true,
+      "createdAtMs": 1771783200000,
+      "updatedAtMs": 1771783200000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 4 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "🌅 Keonho 自由活动时间启动\n\n现在是北京时间 04:55，自由活动窗口即将开始（05:00-07:00）。\n\n启动流程：\n1. 读取 FREE_TIME_RULES.md（规则文件）\n2. 读取 USER_CHARTER.md（用户宪章）\n3. 读取昨天的自由时间日志（~/OpenClaw_FreeTime_Log/）\n4. 检查未完成任务\n5. 直接开始执行（用户在睡觉，不打扰）\n6. 创建今日日志文件\n7. 观察模式：每30分钟记录进度\n8. 至少留 15 分钟做自我反思\n9. 07:00 前结束，写好汇报等用户醒来看\n\n⚠️ 严格遵守 FREE_TIME_RULES.md 中的安全红线！"
+      },
+      "state": {
+        "nextRunAtMs": 1771793700000,
+        "runningAtMs": 1771793700010
+      }
+    }
+  ]
+}

@@ -1,11 +1,9 @@
 {
-  "lastSimmerCheck": "2026-02-17T16:33:00+08:00",
-  "lastPositionCount": 42,
-  "lastResolvedCount": 18,
-  "lastWinRate": 78,
-  "lastTotalPnl": 23.98,
-  "balance_usdc": 9.77,
-  "realPositions": 1,
-  "simulatedTradeAdded": "Bitcoin 2:45AM -$4.87",
-  "alert": "New York temp亏损 -$7.50"
+  "lastSimmerCheck": "2026-02-19T17:31:00Z",
+  "lastPositionCount": 43,
+  "lastResolvedCount": 25,
+  "lastWinRate": 80,
+  "lastTotalPnl": 8.24,
+  "lastBalance": 9.06,
+  "alerts": ["⚠️ NYC温度预测 -7.50 USDC", "⚠️ Seattle降水 -5.88 USDC"]
 }

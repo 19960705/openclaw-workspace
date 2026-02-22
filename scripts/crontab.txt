@@ -1,0 +1,5 @@
+# OpenClaw Gateway Watchdog - 每 5 分钟检查一次
+*/5 * * * * /Users/mac/.openclaw/workspace/scripts/gateway-watchdog.sh >> /Users/mac/.openclaw/workspace/logs/gateway-watchdog.log 2>&1
+
+# Simmer 市场扫描 - 每 30 分钟一次
+*/30 * * * * /Users/mac/.openclaw/workspace/scripts/simmer-scan-cron.sh >> /Users/mac/.openclaw/workspace/logs/simmer-scan.log 2>&1
