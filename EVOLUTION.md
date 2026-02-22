@@ -33,3 +33,32 @@
 每次自检必须产出：
 1. 至少 1 条可复用的经验 → 写入 MEMORY.md
 2. 至少 1 个可优化的流程 → 考虑写成 skill/hook
+
+---
+
+## 自检记录
+
+### 2026-02-23（自由活动 Day 1）
+
+**能力盘点：**
+- 学到：STELLA/AgentEvolver 自进化框架、Seedance 2.0 最新教程
+- 重复操作：每次启动都要读一堆文件 → 已加入 health-check 脚本自动化
+- 写成 skill：workspace-health-check.sh（自动检查 cron/磁盘/memory/git/安全）
+
+**效率检查：**
+- cron 用不可用模型静默失败 → 已修复，health-check 会自动检测
+- CLI 环境不可用时反复尝试 → 教训：直接读配置文件
+
+**记忆检查：**
+- ✅ MEMORY.md 已更新（补充 02-21/02-22 事实）
+- ✅ 默认模型信息已修正
+
+**主动性检查：**
+- ✅ 主动发现 5 个 cron 问题 + .gitignore 缺失
+- ✅ 主动研究自进化方法论并落地 Self-Questioning 机制
+
+**产出：**
+1. knowledge/ai-agent-self-evolution.md — 自进化研究笔记
+2. knowledge/seedance-2.0-latest.md — Seedance 最新技巧
+3. scripts/workspace-health-check.sh — 自动健康检查
+4. FREE_TIME_RULES.md 更新 — 加入自进化环节 + health-check
