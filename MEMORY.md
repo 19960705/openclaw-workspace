@@ -228,6 +228,44 @@ Details:
 - AI日报重复: 每日AI新闻(08:30) + AI日报(09:00) — 建议保留 09:00
 - TikTok日报重复: TikTok泰国趋势日报(09:00) + TikTok泰区日报(10:00) — 建议保留 10:00
 - Simmer 任务过多: 自动交易扫描 + 交易提醒 + 市场晨间扫描 + 机会扫描 — 建议精简为 1-2 个
+- ⚠️ simmer-opportunity-scan 每30分钟运行一次 claude-sonnet，余额仅 $1.31，建议降频或禁用
+
+## FACT-2026-02-24-03
+type: fact
+area: cron
+
+Fact: Cron minimax 模型修复完成
+Details:
+- 3 个任务从 minimax-portal/MiniMax-M2.5 改为 yunyi-claude/claude-sonnet-4-5
+- simmer-opportunity-scan (8x errors → 0)
+- foundry-weekly-report
+- daily-ai-evolution-research
+- keonho-free-time timeout error 也已重置
+- Health check 全绿
+- 备份: configs/cron-jobs-backup-20260224.json (已推送 GitHub)
+
+## FACT-2026-02-24-04
+type: fact
+area: workspace
+
+Fact: Workspace 文件整理
+Details:
+- memory/ 项目文件 → knowledge/ai-projects/ (4个)
+- memory/ JSON 文件 → data/simmer/ (3个) + data/ (1个)
+- memory/ 参考文件 → knowledge/ (PREFERENCES, PROJECTS, SKILLS_LIBRARY, 1688香水指南)
+- 总计移动 11 个文件
+
+## FACT-2026-02-24-05
+type: fact
+area: industry
+
+Fact: AI 行业动态 2026年2月第4周
+Details:
+- Qwen3.5 发布，中国 AI 转向 Agent
+- Gemini 3.1 Pro: 1M token, ARC-AGI-2 77.1%
+- AI 编码市场 $4B，MCP 成行业标准
+- ClawHub 安全问题: 386 个恶意 skill（Infosecurity Magazine 报道）
+- ClawHub 规模: 5,700+ skills, 每天新增 40-60 个
 
 ---
 
