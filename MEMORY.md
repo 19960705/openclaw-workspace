@@ -131,13 +131,12 @@ Details:
 type: fact
 area: simmer
 
-Fact: Simmer 最新状态 (02-21)
+Fact: Simmer 状态变化追踪
 Details:
-- 余额: $1.63 USDC
-- 胜率: 83%
-- 持仓: 46 (已结 29 / 进行中 17)
-- 总 PnL: +$12.69
-- 亏损项: NYC 温度 (-7.50), Seattle 降水 (-6.78)
+- 02-21: 余额 $1.63, 胜率 83%, 持仓 46 (已结29/进行中17), PnL +$12.69
+- 02-24: 余额 $1.31, 胜率 0% (0 resolved), 持仓 13 (全部进行中), PnL -$20.46
+- 趋势: 大幅下滑，主要亏损来自 NYC温度(-$7.50), Seattle降水(-$6.20), Mavericks(-$5.00)
+- 注意: 之前已结的 29 个持仓可能已从 API 中移除，导致统计不连续
 
 ## FACT-2026-02-22-10
 type: fact
@@ -202,6 +201,28 @@ Details:
 - 完成: Health Check、 Cron 错误分析、Self-Questioning、Workspace 检查
 - 发现: 4 个 recurring failure patterns 待结晶 (gateway token mismatch, browser unreachable, web_fetch 403s)
 - 建议: 项目文件散落在 memory/ 目录，应移到 knowledge/ 或 archive/
+
+## FACT-2026-02-23-01
+type: fact
+area: tools
+
+Fact: Google Flow + 即梦 Jimeng 完全跑通
+Details:
+- Google Flow: labs.google.com/flow, PRO 账号, Veo 3.1 视频 + Nano Banana Pro 图片
+- 即梦 Jimeng: jimeng.jianying.com, Seedance 2.0, 15秒视频生成成功
+- jimeng-ai skill 已创建: ~/.openclaw/skills/jimeng-ai/
+- 4步完整流程: 拆解→提示词→图片(Google Flow)→视频(即梦 Seedance 2.0)
+- 即梦积分消耗: 图片少, 视频 10-30 积分/次
+
+## FACT-2026-02-23-02
+type: fact
+area: tools
+
+Fact: AnyRouter 自动签到 + 浏览器自动化
+Details:
+- AnyRouter GitHub Actions 自动签到已配置 (millylee/anyrouter-check-in)
+- VPN Chrome 扩展让无头浏览器可访问 Google 服务
+- browser-watchdog.sh 脚本已创建，自动检测并重启浏览器
 
 ## Cron 待清理（需 Lunah 确认）
 - AI日报重复: 每日AI新闻(08:30) + AI日报(09:00) — 建议保留 09:00

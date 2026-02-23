@@ -26,6 +26,17 @@ for j in data['jobs']:
         print(f'  ⚠️  {j[\"name\"]}: last run failed - {str(state.get(\"lastError\",\"\"))[:60]}')
 if errors == 0:
     print('  ✅ 所有活跃任务正常')
+bad_models = []
+for j in data['jobs']:
+    if not j.get('enabled', False):
+        continue
+    model = j.get('payload', {}).get('model', '')
+    if 'minimax' in model.lower():
+        bad_models.append(f'{j[\"name\"]} -> {model}')
+if bad_models:
+    print(f'  ⚠️  使用 minimax 模型的任务:')
+    for m in bad_models:
+        print(f'    - {m}')
 print(f'  总计: {sum(1 for j in data[\"jobs\"] if j.get(\"enabled\", False))} 活跃 / {len(data[\"jobs\"])} 总计')
 "
 fi
