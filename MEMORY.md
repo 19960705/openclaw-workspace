@@ -182,6 +182,27 @@ Details:
 - memory 目录大型 session transcript 应归档到子目录，只保留精炼日志
 - 知识类文件（工作流笔记、分镜脚本等）应放 knowledge/ 而非 memory/
 
+## FACT-2026-02-24-01
+type: fact
+area: cron
+
+Fact: 发现 2 个 cron 任务持续报错
+Details:
+- simmer-opportunity-scan: 8x consecutive errors, "cron announce delivery failed"
+- daily-ai-evolution-research: 1x error, "cron announce delivery failed"
+- 共同点: 使用 minimax 模型 (minimax-portal/MiniMax-M2.5)，delivery 模式为 announce
+- 建议: 改用 Claude 模型或修复 delivery 问题
+
+## FACT-2026-02-24-02
+type: fact
+area: free_time
+
+Fact: 自由活动时间第2天 (2026-02-24)
+Details:
+- 完成: Health Check、 Cron 错误分析、Self-Questioning、Workspace 检查
+- 发现: 4 个 recurring failure patterns 待结晶 (gateway token mismatch, browser unreachable, web_fetch 403s)
+- 建议: 项目文件散落在 memory/ 目录，应移到 knowledge/ 或 archive/
+
 ## Cron 待清理（需 Lunah 确认）
 - AI日报重复: 每日AI新闻(08:30) + AI日报(09:00) — 建议保留 09:00
 - TikTok日报重复: TikTok泰国趋势日报(09:00) + TikTok泰区日报(10:00) — 建议保留 10:00

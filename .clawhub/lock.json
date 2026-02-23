@@ -132,6 +132,30 @@
     "foundry": {
       "version": "0.1.0",
       "installedAt": 1771340761112
+    },
+    "gemini-computer-use": {
+      "version": "1.0.0",
+      "installedAt": 1771838773668
+    },
+    "obsidian-direct": {
+      "version": "1.0.0",
+      "installedAt": 1771874585318
+    },
+    "qveris": {
+      "version": "0.1.0",
+      "installedAt": 1771874779407
+    },
+    "github-ai-trends": {
+      "version": "1.1.0",
+      "installedAt": 1771876131356
+    },
+    "x-timeline-digest": {
+      "version": "1.0.2",
+      "installedAt": 1771876139419
+    },
+    "x-twitter": {
+      "version": "2.3.1",
+      "installedAt": 1771876240411
     }
   }
 }

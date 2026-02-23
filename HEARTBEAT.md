@@ -8,6 +8,8 @@
 ## 定时任务表
 | 时间 | 任务 | 发送至 |
 |------|------|--------|
+| 08:00 | GitHub AI 趋势 | topic:2 |
+| 08:30 | QVeris AI 趋势 (X/Twitter) | topic:2 |
 | 09:00 | AI 日报 | topic:2 |
 | 09:30 | 4A 广告 | topic:3 |
 | 10:00 | TikTok 泰区 | topic:4 |
@@ -15,14 +17,12 @@
 | 20:00 | Seedance 案例 | topic:3 |
 
 ## Simmer 交易监控
-每次 heartbeat 运行：`~/.simmer-venv/bin/python3 ~/.openclaw/workspace/scripts/simmer-check.py summary`
+每次 heartbeat 运行 → 推送至 topic:6
 
 检查：
 - 持仓状态 → PnL < -5 或胜率 <70% → 推送警报
 - 高确信度机会 → 有则推送
 - BTC/ETH 5分钟市场 → 40-60%概率机会 → 推送
-
-**静默期**：23:00-08:00 不推送（紧急亏损除外）
 
 ## 会话健康检查
 检查 token 使用率 >80% → 提醒用户
