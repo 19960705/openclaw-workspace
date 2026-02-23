@@ -1,7 +1,7 @@
 
 # 项目状态记录 (Projects)
 
-**最后更新**: 2026-02-22
+**最后更新**: 2026-02-24
 
 ---
 
@@ -18,16 +18,14 @@
 - 钱包: 0x39e4BB0f4b14875AC85B74E5b844bcB092438c61
 - 监控脚本: scripts/simmer-check.py (summary/positions/markets/trade/opportunities)
 - Heartbeat 已接入真实 API，自动监控持仓
-- 当前状态: 76% 胜率, +24.23 $SIM PnL, 34 持仓(17已结/17进行中)
+- 当前状态: 0% 胜率 (0 resolved), PnL -$20.46, 13 持仓(全活跃), 余额 $1.31
 - 交易限制: max $1 USDC/市场, 50笔/天, SL 20%, TP 15%
+- ⚠️ 大幅下滑：NYC温度(-$7.50), Seattle降水(-$6.20), Mavericks(-$5.00)
 
-**最近持仓 (2026-02-19)**:
-- 真实盘 2 笔持仓:
-  - Elon Musk 发推 &lt;40 条: $1.00 (亏损 -$1.00)
-  - NYC 温度 34-35°F: $7.50 (亏损 -$7.50)
-- 模拟盘 41 个持仓
-- 钱包余额: 9.06 USDC (真钱)
-- 胜率: 80%
+**最近持仓 (2026-02-24)**:
+- 13 个活跃持仓，0 个已结算
+- 余额: $1.31 USDC
+- 趋势: 持续亏损，建议暂停自动交易
 
 **相关技能**: ~/.openclaw/skills/simmer/
 
@@ -36,13 +34,14 @@
 ### 2. OpenClaw &amp; AI Agent 优化
 **状态**: 🟡 进行中（记忆系统优化）
 **路径**: ~/.openclaw/workspace/
-**最后更新**: 2026-02-22
+**最后更新**: 2026-02-24
 
 **关键信息**:
-- 已创建的技能: 9 个（model-switcher, simmer, localhost-troubleshoot, browser-watchdog, x-mission-fetcher, evomap, browser-watchdog-pro, gateway-watchdog, cron-watchdog）
+- 已创建的技能: 14 个
 - 已安装的插件: foundry-openclaw (v0.2.3)
-- 研究报告: ~/.openclaw/workspace/OpenClaw_AI_Agent_Research_Report.md
-- Foundry 学习: 9 个模式识别, 310+ 洞察
+- Foundry 学习: 24 个模式识别, 492+ 洞察
+- Cron 任务: 13 活跃 / 18 总计（minimax 问题已修复）
+- 自由时间: 观察期第2天/7天
 
 **当前任务**:
 - 记忆系统优化（进行中）
