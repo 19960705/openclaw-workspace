@@ -13,6 +13,18 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+---
+
+## Obsidian Vault
+
+**Vault Path**: `~/Documents/Obsidian/Keonho`
+
+**Purpose**: 自由时间报告、学习笔记、项目规划
+
+**Daily Report Path**: `~/Documents/Obsidian/Keonho/自由时间报告-YYYY-MM-DD.md`
+
+---
+
 ## Examples
 
 ```markdown
