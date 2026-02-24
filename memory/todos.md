@@ -1,15 +1,16 @@
-
 # 📋 待办事项 (Todos)
 
-**最后更新**: 2026-02-22
+**最后更新**: 2026-02-24
 
 ---
 
 ## 待办 (Pending)
-- [ ]
+- [ ] Cron 修复确认（3个 minimax 任务改模型）- memory/2026-02-24-cron-fix-plan.md
+- [ ] Recurring failures 结晶批准（gateway token, browser, web_fetch 403）
+- [ ] Simmer 交易是否暂停（当前 PnL -$20.46）
 
 ## 进行中 (In Progress)
-- [ ]
+- [ ] Simmer 市场监控（每30分钟扫描）
 
 ## 已完成 (Done)
 - [x] 创建待办事项跟踪系统 (memory/todos.md) - 2026-02-22
@@ -18,6 +19,8 @@
 - [x] 每天从所有对话中总结待办事项并提醒用户 - 2026-02-22
 - [x] 记住：除了 OpenClaw 本身的脚本改动，所有文件和脚本内容都需要通过 Telegram 发给用户（远程操控） - 2026-02-22
 - [x] 今晚回家拿塑料盖子 - 2026-02-22
+- [x] 自由活动时间 Day 2 完成 - 2026-02-24
+- [x] Cron minimax 模型修复 - 2026-02-24
 
 ---
 

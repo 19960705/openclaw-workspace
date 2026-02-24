@@ -237,3 +237,10 @@ SecureClaw protects against: prompt injection, credential exposure, supply chain
 **Apply hardening:** `bash skills/secureclaw/scripts/quick-harden.sh`
 
 See `TOOLS.md` for complete SecureClaw reference and available scripts.
+
+
+## 🚫 Gotchas
+
+- edit: Could not find exact text - use read first to verify
+- web_fetch: 403 for Chinese sites - use web_search summary instead
+- browser: Can't reach OpenClaw browser - restart gateway
