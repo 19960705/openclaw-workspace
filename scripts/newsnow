@@ -1,0 +1,2 @@
+#!/bin/bash
+cd /tmp/newsnow && /Users/mac/.bun/bin/bun src/cli.ts "$@"
