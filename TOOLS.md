@@ -25,6 +25,26 @@ Things like:
 
 ---
 
+## 浏览器工具（已登录）
+
+- **Perplexity** (perplexity.ai) — AI 搜索引擎，深度研究、实时资讯
+  - Pro 账号，省 API 费用直接用网页版
+  - 功能：搜索（15源审核）、发现（新闻聚合）、金融（市场+Polymarket）、空间模板（专利/KOL/论文）
+  - 可用模型：Sonar、Gemini 3 Flash、Gemini 3.1 Pro、GPT-5.2、Claude Sonnet 4.6、Claude Opus 4.6(Max)、Grok 4.1、Kimi K2.5
+  - 使用场景：AI日报→搜索+发现、Simmer→金融页、选品→深度研究模板、广告→搜索对比
+- **Flowith** (flowith.io) — AI 全栈创作平台，Agent 自动化 + 图片/视频生成
+  - Ultimate 账号（目黒琉璃），年付，99,840 积分/月，27天重置
+  - Agent Mode (Neo): 云端自主规划、多步骤执行，输出类型：文档/幻灯片/网页/游戏/视频/图片
+  - 图片提取方法: JS evaluate 获取 img[alt="progressing image"] 的 src URL，curl 下载
+  - T1 高级模型 (Text): o3, o3 Pro, o4 mini, GPT 5.1/5.2/5.2 Pro/5 Pro, Claude Sonnet 4.5/4.6, Opus 4.5/4.6, Gemini 2.5 Pro, Grok 4
+  - T1 高级模型 (Multi-Modal): Flux 2, Kontext Pro/Max, Recraft v3, Veo 3.1 (text/img→video), Sora 2, Wan V2.6, Kling V2.6 Pro/3.0, GPT Image 1/1.5
+  - T2 基础模型 (Text): GPT 4.1/mini, GPT 5 nano/mini, DeepSeek V3.2/R1, Claude Haiku 4.5, Gemini 3/3.1 Pro/Flash, Grok 4.1 Fast, Kimi K2.5
+  - T2 基础模型 (Multi-Modal): Seedream v4.5, Nano Banana 1/Pro, Midjourney, Reve, Wan 2.5, Z Image Turbo
+  - 使用场景：产品主图生成、视频制作、深度研究报告、幻灯片、网页原型
+- 通过 OpenClaw 无头浏览器访问（profile: openclaw）
+- 登录时间：2026-02-24
+- ⚠️ **重要规则**：以后浏览器任务一律用 profile "openclaw"（无头浏览器），不用 Chrome extension relay（不稳定）
+
 ## Examples
 
 ```markdown

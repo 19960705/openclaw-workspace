@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧑‍🎤 Keonho 像素冒险世界</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #1a1a2e; min-height: 100vh; font-family: 'Press Start 2P', monospace; color: #fff; padding: 8px; }
+        .header { text-align: center; padding: 10px; background: linear-gradient(90deg, #2d1b4e, #1a3a5c); border-radius: 10px; margin-bottom: 8px; }
+        .header h1 { font-size: 12px; background: linear-gradient(90deg, #ffd700, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        #game-container { width: 100%; max-width: 500px; margin: 0 auto; border: 4px solid #4a4a6a; border-radius: 8px; overflow: hidden; background: #0a0a15; }
+        #gameCanvas { width: 100%; height: auto; display: block; image-rendering: pixelated; }
+        
+        .status-bar { display: flex; justify-content: space-between; padding: 10px; background: linear-gradient(90deg, #1a2a4a, #2a1a4a); border-radius: 8px; margin-top: 8px; font-size: 8px; }
+        .status-item { text-align: center; }
+        .status-item .icon { font-size: 16px; display: block; }
+        .status-item .label { color: #888; margin-top: 4px; font-size: 6px; }
+        
+        .sync-status { margin-top: 8px; padding: 8px; background: linear-gradient(145deg, #1a3a2a, #0a2a1a); border: 2px solid #00ff88; border-radius: 8px; text-align: center; font-size: 7px; color: #00ff88; }
+        
+        .level-bar { margin-top: 8px; background: linear-gradient(145deg, #1e2a4a, #0d1b2a); border: 2px solid #c44dff; border-radius: 8px; padding: 10px; }
+        .level-bar h3 { font-size: 7px; background: linear-gradient(90deg, #ffe66d, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 6px; }
+        .progress { height: 12px; background: #0a0a15; border-radius: 6px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #6bffff, #ff6b9d); transition: width 0.5s; }
+        .progress-text { font-size: 6px; color: #888; text-align: center; margin-top: 4px; }
+        
+        .current-activity { margin-top: 8px; padding: 10px; background: linear-gradient(145deg, #2a1a3a, #1a0a2a); border: 2px solid #ff6b9d; border-radius: 8px; text-align: center; }
+        .current-activity .label { font-size: 6px; color: #888; }
+        .current-activity .activity { font-size: 8px; color: #ff6b9d; margin-top: 4px; }
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px; }
+        .stat-box { background: linear-gradient(145deg, #1e2a4a, #0d1b2a); border: 2px solid #2a4a6a; border-radius: 6px; padding: 8px; text-align: center; }
+        .stat-box .icon { font-size: 14px; }
+        .stat-box .count { font-size: 9px; background: linear-gradient(90deg, #00ff88, #6bffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 4px; }
+        .stat-box .label { font-size: 5px; color: #666; margin-top: 2px; }
+        
+        .zones { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 8px; }
+        .zone-btn { padding: 6px 2px; background: linear-gradient(145deg, #2a2a4a, #1a1a3a); border: 2px solid #4a4a6a; border-radius: 6px; text-align: center; font-size: 6px; cursor: pointer; transition: all 0.2s; }
+        .zone-btn:active { transform: scale(0.95); }
+        .zone-btn.active { border-color: #00ff88; background: linear-gradient(145deg, #2a4a2a, #1a3a1a); }
+        .zone-btn .icon { font-size: 12px; display: block; margin-bottom: 2px; }
+        
+        .log { margin-top: 8px; padding: 8px; background: #0a0a15; border-radius: 8px; font-size: 5px; max-height: 50px; overflow-y: auto; color: #666; line-height: 1.8; }
+        .log .active { color: #7fff7f; }
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🧑‍🎤 Keonho 实时状态同步</h1></div>
+    <div id="game-container"><canvas id="gameCanvas" width="480" height="300"></canvas></div>
+    
+    <div class="sync-status" id="syncStatus">🔄 正在同步 Keonho 状态...</div>
+    
+    <div class="status-bar">
+        <div class="status-item"><span class="icon" id="playerIcon">🧑‍🎤</span><span class="label" id="playerZone">🏰 城堡</span></div>
+        <div class="status-item"><span class="icon">⚡</span><span class="label" id="playerStatus">🟡 待机</span></div>
+        <div class="status-item"><span class="icon">⭐</span><span class="label" id="playerLevel">Lv.1</span></div>
+    </div>
+    
+    <div class="current-activity">
+        <div class="label">🎯 当前活动</div>
+        <div class="activity" id="currentActivity">待机中</div>
+    </div>
+    
+    <div class="level-bar">
+        <h3>⭐ 冒险等级 Lv.<span id="levelNum">1</span></h3>
+        <div class="progress"><div class="progress-fill" id="expFill"></div></div>
+        <div class="progress-text" id="expText">XP: 0/100</div>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-box"><div class="icon">🎮</div><div class="count" id="totalAdventures">0</div><div class="label">探索次数</div></div>
+        <div class="stat-box"><div class="icon">⏱️</div><div class="count" id="totalTime">0h</div><div class="label">在线时长</div></div>
+        <div class="stat-box"><div class="icon">💎</div><div class="count" id="totalXP">0</div><div class="label">经验值</div></div>
+    </div>
+    
+    <div class="zones" id="zoneButtons">
+        <div class="zone-btn" data-zone="castle"><span class="icon">🏰</span><span>城堡</span></div>
+        <div class="zone-btn" data-zone="library"><span class="icon">📚</span><span>图书馆</span></div>
+        <div class="zone-btn" data-zone="workshop"><span class="icon">💻</span><span>工坊</span></div>
+        <div class="zone-btn" data-zone="studio"><span class="icon">🎤</span><span>创作角</span></div>
+        <div class="zone-btn" data-zone="tower"><span class="icon">🗼</span><span>任务塔</span></div>
+        <div class="zone-btn" data-zone="garden"><span class="icon">🌸</span><span>进化池</span></div>
+    </div>
+    
+    <div class="log" id="log"><div class="active">🌟 实时同步已开启</div></div>
+    
+    <script>
+        // Zone mapping
+        const zoneMap = {
+            castle: { x: 48, y: 165, name: '城堡', icon: '🏰' },
+            library: { x: 162, y: 185, name: '图书馆', icon: '📚' },
+            workshop: { x: 288, y: 175, name: '工坊', icon: '💻' },
+            studio: { x: 80, y: 245, name: '创作角', icon: '🎤' },
+            tower: { x: 205, y: 215, name: '任务塔', icon: '🗼' },
+            garden: { x: 365, y: 245, name: '进化池', icon: '🌸' }
+        };
+        
+        let currentState = { zone: 'castle', activity: '待机中', level: 1, xp: 0 };
+        let targetX = 220, targetY = 250;
+        
+        // Fetch status from server
+        async function syncStatus() {
+            try {
+                const resp = await fetch('pixel-game-status.json?_=' + Date.now());
+                const data = await resp.json();
+                
+                if (data.zone && zoneMap[data.zone]) {
+                    const z = zoneMap[data.zone];
+                    targetX = z.x;
+                    targetY = z.y;
+                    currentState.zone = data.zone;
+                    
+                    // Update UI
+                    document.getElementById('playerZone').textContent = z.icon + ' ' + z.name;
+                    document.getElementById('currentActivity').textContent = data.activity || '待机中';
+                    document.getElementById('playerStatus').textContent = getStatusEmoji(data.status);
+                    document.getElementById('syncStatus').textContent = '✅ 已同步: ' + z.name;
+                    document.getElementById('syncStatus').style.borderColor = '#00ff88';
+                    
+                    // Update level/XP
+                    if (data.level) {
+                        document.getElementById('levelNum').textContent = data.level;
+                        document.getElementById('playerLevel').textContent = 'Lv.' + data.level;
+                    }
+                    if (data.xp !== undefined) {
+                        const xpPercent = Math.min(100, (data.xp % 100));
+                        document.getElementById('expFill').style.width = xpPercent + '%';
+                        document.getElementById('expText').textContent = 'XP: ' + data.xp + '/100';
+                        document.getElementById('totalXP').textContent = data.xp;
+                    }
+                    
+                    // Highlight active zone
+                    document.querySelectorAll('.zone-btn').forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.zone === data.zone);
+                    });
+                    
+                    addLog('🔄  ' + z同步:.name);
+                }
+            } catch(e) {
+                document.getElementById('syncStatus').textContent = '⚠️ 同步失败';
+                document.getElementById('syncStatus').style.borderColor = '#ff6b6b';
+            }
+        }
+        
+        function getStatusEmoji(status) {
+            const map = {
+                idle: '🟡 待机',
+                working: '💻工作中',
+                researching: '🔍研究中',
+                creating: '🎨创作中',
+                trading: '📈交易中',
+                learning: '🧠学习中',
+                sleeping: '😴休息中'
+            };
+            return map[status] || '🟡 待机';
+        }
+        
+        function addLog(msg) {
+            const l = document.getElementById('log');
+            const e = document.createElement('div');
+            e.className = 'active';
+            const time = new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+            e.textContent = '[' + time + '] ' + msg;
+            l.insertBefore(e, l.firstChild);
+            while(l.children.length > 5) l.removeChild(l.lastChild);
+        }
+        
+        // Canvas drawing (same as before)
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function drawWorld() {
+            const skyGrad = ctx.createLinearGradient(0, 0, 0, 180);
+            skyGrad.addColorStop(0, '#1a1a3a');
+            skyGrad.addColorStop(1, '#3a2a5a');
+            ctx.fillStyle = skyGrad;
+            ctx.fillRect(0, 0, 480, 300);
+            
+            [[50,25],[120,45],[200,20],[280,40],[350,15],[420,35],[80,75],[180,65],[300,55],[400,75],[60,115],[350,95]].forEach(([x,y]) => { ctx.fillStyle = '#ffffaa'; ctx.fillRect(x, y, 3, 3); });
+            
+            ctx.fillStyle = '#ffffcc'; ctx.beginPath(); ctx.arc(400, 45, 16, 0, Math.PI * 2); ctx.fill();
+            
+            [[-20,120,120,90,'#2a2a4a'],[100,110,140,100,'#3a3a5a'],[260,120,120,90,'#2a2a4a'],[400,110,100,85,'#3a3a5a']].forEach(([x,y,w,h,c]) => { ctx.fillStyle = c; ctx.beginPath(); ctx.moveTo(x,y+h); ctx.lineTo(x+w/2,y); ctx.lineTo(x+w,y+h); ctx.closePath(); ctx.fill(); });
+            
+            [[-10,160,100,55,'#1a3a1a'],[110,150,120,65,'#2a4a2a'],[260,160,100,55,'#1a3a1a'],[390,150,100,65,'#2a4a2a']].forEach(([x,y,w,h,c]) => { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(x+w/2,y+h,w/2,Math.PI,0); ctx.fill(); });
+            
+            ctx.fillStyle = '#1a2a1a'; ctx.fillRect(0, 200, 480, 100);
+            
+            ctx.fillStyle = '#3a3a4a';
+            ctx.beginPath(); ctx.moveTo(0,250); ctx.quadraticCurveTo(120,230,160,260); ctx.quadraticCurveTo(240,290,320,250); ctx.quadraticCurveTo(400,220,480,260); ctx.lineWidth = 18; ctx.stroke();
+            
+            drawCastle(25, 130); drawLabel(50, 125, '🏰');
+            drawBuilding(140, 150, '#4a3a6a', '#5a4a7a', '📚'); drawLabel(165, 145, '📚');
+            drawBuilding(270, 145, '#3a4a5a', '#4a5a6a', '💻'); drawLabel(295, 140, '💻');
+            drawHouse(55, 210, '#8a5a5a', '#9a6a6a', '🎤'); drawLabel(85, 205, '🎤');
+            drawTower(190, 170); drawLabel(220, 165, '🗼');
+            drawGarden(340, 200); drawLabel(375, 195, '🌸');
+            
+            [[15,265],[95,280],[175,260],[280,275],[375,260],[455,280]].forEach(([x,y]) => drawTree(x,y));
+            [[35,295],[90,300],[150,290],[225,295],[305,285],[400,295],[460,300]].forEach(([x,y]) => drawFlower(x,y));
+            
+            drawPlayer();
+        }
+        
+        function drawCastle(x, y) {
+            ctx.fillStyle = '#6a5a7a'; ctx.fillRect(x, y, 45, 60);
+            ctx.fillStyle = '#5a4a6a'; ctx.fillRect(x+4, y+4, 37, 52);
+            ctx.fillStyle = '#ff6b6b'; ctx.beginPath(); ctx.moveTo(x-5,y); ctx.lineTo(x+22,y-25); ctx.lineTo(x+50,y); ctx.closePath(); ctx.fill();
+            ctx.fillStyle = '#ffffaa'; ctx.fillRect(x+12, y+15, 7, 7); ctx.fillRect(x+26, y+15, 7, 7);
+            ctx.fillStyle = '#3a2a2a'; ctx.fillRect(x+16, y+40, 13, 20);
+        }
+        
+        function drawBuilding(x, y, c1, c2, icon) {
+            ctx.fillStyle = c1; ctx.fillRect(x, y, 45, 40);
+            ctx.fillStyle = c2; ctx.fillRect(x+2, y+2, 41, 35);
+            ctx.fillStyle = '#ffffcc'; ctx.fillRect(x+8, y+10, 10, 10); ctx.fillRect(x+25, y+10, 10, 10);
+            ctx.fillStyle = '#3a3a3a'; ctx.fillRect(x+15, y+24, 13, 15);
+            ctx.font = '16px serif'; ctx.fillText(icon, x+12, y-5);
+        }
+        
+        function drawHouse(x, y, c1, c2, icon) {
+            ctx.fillStyle = c1; ctx.fillRect(x, y, 50, 35);
+            ctx.fillStyle = c2; ctx.fillRect(x+2, y+2, 46, 30);
+            ctx.fillStyle = '#cc4444'; ctx.beginPath(); ctx.moveTo(x-5,y); ctx.lineTo(x+25,y-20); ctx.lineTo(x+55,y); ctx.closePath(); ctx.fill();
+            ctx.fillStyle = '#3a2a2a'; ctx.fillRect(x+18, y+24, 14, 12);
+            ctx.font = '16px serif'; ctx.fillText(icon, x+12, y-5);
+        }
+        
+        function drawTower(x, y) {
+            ctx.fillStyle = '#5a5a7a'; ctx.fillRect(x, y, 40, 70);
+            ctx.fillStyle = '#4a4a6a'; ctx.fillRect(x+2, y+2, 36, 65);
+            ctx.fillStyle = '#6a5a8a'; ctx.beginPath(); ctx.moveTo(x-5,y); ctx.lineTo(x+20,y-30); ctx.lineTo(x+45,y); ctx.closePath(); ctx.fill();
+            ctx.fillStyle = '#ffffcc'; ctx.beginPath(); ctx.arc(x+20, y+25, 8, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = '#3a3a3a'; ctx.beginPath(); ctx.arc(x+20, y+25, 5, 0, Math.PI*2); ctx.fill();
+            ctx.font = '16px serif'; ctx.fillText('🗼', x+10, y-8);
+        }
+        
+        function drawGarden(x, y) {
+            ctx.fillStyle = '#2a4a3a'; ctx.fillRect(x, y, 55, 45);
+            [[x+8,y+15],[x+22,y+10],[x+38,y+18],[x+12,y+30],[x+32,y+32]].forEach(([fx,fy],i) => { const c=['#ff6b6b','#ffff6b','#ff9ff3','#ffffff','#ff6b6b'][i]; ctx.fillStyle=c; ctx.beginPath(); ctx.arc(fx,fy,4,0,Math.PI*2); ctx.fill(); });
+            ctx.fillStyle='#3a2a1a'; ctx.fillRect(x+5,y+30,5,12); ctx.fillStyle='#2a5a2a'; ctx.beginPath(); ctx.arc(x+8,y+25,10,0,Math.PI*2); ctx.fill();
+            ctx.font='14px serif'; ctx.fillText('🌸',x+18,y-5);
+        }
+        
+        function drawLabel(x, y, icon) { ctx.font='12px serif'; ctx.fillText(icon, x, y); }
+        function drawTree(x, y) { ctx.fillStyle='#3a2a1a'; ctx.fillRect(x+4,y+15,6,15); ctx.fillStyle='#2a5a2a'; ctx.beginPath(); ctx.arc(x+7,y+10,12,0,Math.PI*2); ctx.fill(); }
+        function drawFlower(x, y) { const c=['#ff6b6b','#ffff6b','#ff9ff3','#ffffff'][Math.floor(Math.random()*4)]; ctx.fillStyle=c; ctx.beginPath(); ctx.arc(x,y,3,0,Math.PI*2); ctx.fill(); }
+        
+        let playerX = 220, playerY = 250, frame = 0;
+        
+        function drawPlayer() {
+            playerX += (targetX - playerX) * 0.08;
+            playerY += (targetY - playerY) * 0.08;
+            const walk = Math.sin(Date.now() / 100) * 2;
+            const px = Math.floor(playerX), py = Math.floor(playerY);
+            
+            ctx.fillStyle='rgba(0,0,0,0.3)'; ctx.beginPath(); ctx.ellipse(px+12, py+44, 10, 4, 0, 0, Math.PI*2); ctx.fill();
+            
+            ctx.fillStyle='#2a2a3a'; ctx.fillRect(px+4, py+36, 6, 12); ctx.fillRect(px+14, py+36, 6, 12);
+            ctx.fillStyle='#ffffff'; ctx.fillRect(px+2, py+46, 10, 3); ctx.fillRect(px+12, py+46, 10, 3);
+            
+            ctx.fillStyle='#ff6b9d'; ctx.fillRect(px, py+18, 22, 18);
+            ctx.fillStyle='#e05a8a'; ctx.fillRect(px, py+18, 22, 3);
+            ctx.fillStyle='#d04a7a'; ctx.fillRect(px+4, py+29, 14, 7);
+            
+            ctx.fillStyle='#ff6b9d'; ctx.fillRect(px-4, py+20, 5, 12); ctx.fillRect(px+21, py+20, 5, 12);
+            ctx.fillStyle='#ffcc99'; ctx.fillRect(px-4, py+30, 5, 3); ctx.fillRect(px+21, py+30, 5, 3);
+            
+            ctx.fillStyle='#ffcc99'; ctx.fillRect(px, py, 22, 16);
+            
+            ctx.fillStyle='#1a0a0a';
+            ctx.fillRect(px-2, py-4, 26, 9);
+            ctx.fillRect(px, py+1, 7, 5); ctx.fillRect(px+9, py+3, 5, 5); ctx.fillRect(px+16, py+1, 7, 5);
+            ctx.fillRect(px-3, py+3, 3, 10); ctx.fillRect(px+22, py+3, 3, 10);
+            
+            ctx.fillStyle='#3a2a1a'; ctx.fillRect(px+3, py+5, 4, 2); ctx.fillRect(px+15, py+5, 4, 2);
+            ctx.fillStyle='#3a3a3a'; ctx.fillRect(px+3, py+7, 5, 5); ctx.fillRect(px+14, py+7, 5, 5);
+            ctx.fillStyle='#ffffff'; ctx.fillRect(px+4, py+8, 2, 2); ctx.fillRect(px+15, py+8, 2, 2);
+            ctx.fillStyle='#ddaa88'; ctx.fillRect(px+10, py+10, 2, 2);
+            ctx.fillStyle='#cc6666'; ctx.fillRect(px+8, py+14, 5, 2);
+            
+            ctx.fillStyle='#ffd700'; ctx.fillRect(px-3, py+10, 2, 3); ctx.fillRect(px+23, py+10, 2, 3);
+        }
+        
+        setInterval(() => { frame++; }, 200);
+        function gameLoop() { drawWorld(); requestAnimationFrame(gameLoop); }
+        
+        // Sync every 2 seconds
+        syncStatus();
+        setInterval(syncStatus, 2000);
+        
+        gameLoop();
+    </script>
+</body>
+</html>

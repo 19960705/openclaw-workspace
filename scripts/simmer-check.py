@@ -108,6 +108,7 @@ elif mode == "trade":
         market_id=market_id,
         side=side,
         amount=amount,
+        venue="polymarket",
         source="sdk:keonho",
         reasoning=reasoning
     )
@@ -128,9 +129,9 @@ elif mode == "positions":
         print(f"{icon} {p.question[:55]} | {side} | PnL: {p.pnl:+.2f}")
 
 elif mode == "opportunities":
-    # Find high-divergence markets (Simmer vs Polymarket price gap)
+    # Find high-divergence markets (Polymarket only - user has no Kalshi wallet)
     markets = client.get_markets(status="active", limit=50)
-    opps = [m for m in markets if m.divergence and abs(m.divergence) > 0.1]
+    opps = [m for m in markets if m.divergence and abs(m.divergence) > 0.1 and m.import_source == "polymarket"]
     opps.sort(key=lambda x: abs(x.divergence), reverse=True)
     
     result = []

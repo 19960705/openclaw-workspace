@@ -12,18 +12,18 @@ Obsidian vault = folder with Markdown files + `.obsidian/` config.
 
 ## Configuration
 
-- **Vault Path:** `/home/ruslan/webdav/data/ruslain`
-- **Env:** `OBSIDIAN_VAULT=/home/ruslan/webdav/data/ruslain`
+- **Vault Path:** `~/Documents/Obsidian Vault/Keonho`
+- **Env:** `OBSIDIAN_VAULT=~/Documents/Obsidian Vault/Keonho`
 
 ## CLI Usage
 
-Scripts location: `/home/ruslan/.openclaw/workspace/skills/obsidian/scripts`
+Scripts location: `~/.openclaw/workspace/skills/obsidian-direct/scripts`
 
 Note: Global flags (`--vault`, `--json`) must come BEFORE the command.
 
 ```bash
-export OBSIDIAN_VAULT=/home/ruslan/webdav/data/ruslain
-cd /home/ruslan/.openclaw/workspace/skills/obsidian/scripts
+export OBSIDIAN_VAULT=~/Documents/Obsidian\ Vault/Keonho
+cd ~/.openclaw/workspace/skills/obsidian-direct/scripts
 
 # Search (fuzzy/phonetic) - uses ripgrep for speed
 python3 obsidian_search.py "$OBSIDIAN_VAULT" "query" --limit 10 --json
@@ -122,13 +122,24 @@ Standard fields:
 
 # Keonho's Vault (已配置)
 
-- **Vault Path:** `~/Documents/Obsidian/Keonho`
-- **Env:** `OBSIDIAN_VAULT=~/Documents/Obsidian/Keonho`
+- **Vault Path:** `~/Documents/Obsidian Vault/Keonho`
+- **Env:** `OBSIDIAN_VAULT=~/Documents/Obsidian Vault/Keonho`
+
+## 文件夹结构
+
+- `AI/技巧/` — AI 工具使用技巧、提示词
+- `AI/研究/` — AI 研究报告
+- `AI/趋势/` — AI 行业趋势
+- `AI/项目/` — AI 项目记录
+- `广告/` — 广告创意相关
+- `参考/` — 参考资料
+- `自由时间报告/` — Keonho 自由活动时间报告
+- `其他/` — 其他笔记
 
 ## 测试
 
 ```bash
-export OBSIDIAN_VAULT=~/Documents/Obsidian/Keonho
+export OBSIDIAN_VAULT=~/Documents/Obsidian\ Vault/Keonho
 cd ~/.openclaw/workspace/skills/obsidian-direct/scripts
 python3 obsidian_cli.py --json list
 ```

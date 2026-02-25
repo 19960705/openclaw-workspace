@@ -267,6 +267,30 @@ Details:
 - ClawHub 安全问题: 386 个恶意 skill（Infosecurity Magazine 报道）
 - ClawHub 规模: 5,700+ skills, 每天新增 40-60 个
 
+## FACT-2026-02-24-06
+type: fact
+area: tools
+
+Fact: Perplexity Pro 网页版接入完成
+Details:
+- 账号: akazujin0754499 (Pro)
+- 通过 OpenClaw 无头浏览器访问 (profile: openclaw)
+- 功能: 搜索(15源审核)、发现(新闻聚合)、金融(市场+Polymarket)、空间模板(专利/KOL/论文)
+- 可用模型: Sonar, Gemini 3 Flash, Gemini 3.1 Pro, GPT-5.2, Claude Sonnet 4.6, Claude Opus 4.6(Max), Grok 4.1, Kimi K2.5
+- 使用场景: AI日报→搜索+发现, Simmer→金融页, 选品→深度研究模板
+- Flowith 也已登录，待探索（支持图片/视频生成）
+
+## FACT-2026-02-24-07
+type: fact
+area: simmer
+
+Fact: Simmer 交易教训
+Details:
+- Oilers vs Ducks 两单下反方向，Lunah 手动止损（亏 $0.81）
+- 只交易 Polymarket 市场（Kalshi 没连钱包）
+- simmer-check.py 已更新：opportunities 只过滤 polymarket, trade 默认 venue=polymarket
+- 教训：下单前必须确认方向，不要急于交易
+
 ---
 
 _First meeting: 2026-02-13_

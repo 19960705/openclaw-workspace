@@ -10,7 +10,7 @@
 |------|------|--------|
 | 08:00 | GitHub AI 趋势 | topic:2 |
 | 08:30 | QVeris AI 趋势 (X/Twitter) | topic:2 |
-| 09:00 | AI 日报 | topic:2 |
+| 09:00 | AI 日报（NewsNow 聚合：hackernews + producthunt + github-trending-today + 36kr + juejin + ithome + sspai，筛选 AI/创意相关） | topic:2 |
 | 09:30 | 4A 广告 | topic:3 |
 | 10:00 | TikTok 泰区 | topic:4 |
 | 18:00 | OpenClaw 话题 | topic:5 |
