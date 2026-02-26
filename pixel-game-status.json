@@ -1,8 +1,17 @@
 {
-  "status": "idle",
-  "zone": "castle",
-  "activity": "\u51c6\u59075\u70b9\u63a2\u9669",
-  "lastUpdate": "2026-02-25T19:54:18Z",
-  "level": 2,
-  "xp": 120
+  "status": "exploring",
+  "zone": "workspace",
+  "activity": "Cron清理大战 + Hook整理",
+  "lastUpdate": "2026-02-26T05:02:00Z",
+  "level": 3,
+  "xp": 240,
+  "title": "文件整理大师",
+  "adventures": [
+    {
+      "date": "2026-02-26",
+      "theme": "Cron清理大战 + Workspace大扫除",
+      "points": 120,
+      "notes": "删除重复hooks，修复cron错误"
+    }
+  ]
 }
