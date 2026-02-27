@@ -5,12 +5,22 @@
 ---
 
 ## 待办 (Pending)
-- [ ] Cron 修复确认（3个 minimax 任务改模型）- memory/2026-02-24-cron-fix-plan.md
-- [ ] Recurring failures 结晶批准（gateway token, browser, web_fetch 403）
-- [ ] Simmer 交易是否暂停（当前 PnL -$20.46）
+- [ ] Recurring failures 结晶（gateway token, browser, web_fetch 403）
+- [ ] Simmer 交易策略评估（当前 PnL -$14.38）
+- [ ] Git 未推送（4 commits, 14 files）
 
 ## 进行中 (In Progress)
 - [ ] Simmer 市场监控（每30分钟扫描）
+
+## 已完成 (Done)
+- [x] Cron 修复确认（3个 minimax 任务改模型） - 2026-02-24
+- [x] AI 日报任务 - 2026-02-27
+- [x] 自由活动时间 Day 5 完成 - 2026-02-27
+- [x] 多 Agent 团队搭建（code/researcher/archivist-agent） - 2026-02-27
+- [x] 每周自我进化检查 - 2026-02-27
+- [x] Cron 修复确认（3个 minimax 任务改模型） - 2026-02-24
+- [x] AI 日报任务 - 2026-02-27
+- [x] 自由活动时间 Day 5 完成 - 2026-02-27
 
 ## 已完成 (Done)
 - [x] 创建待办事项跟踪系统 (memory/todos.md) - 2026-02-22

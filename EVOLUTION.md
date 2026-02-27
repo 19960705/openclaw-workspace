@@ -88,3 +88,27 @@
 2. memory/2026-02-24-cron-fix-plan.md — Cron 修复方案
 3. MEMORY.md 更新 — 新增 2 条 FACT
 4. Git commit + push — 48 files committed
+
+### 2026-02-27（每周自检）
+
+**能力盘点：**
+- 学到：PiEvolve、Recursive Knowledge Crystallization、Memory Guard 实现、Seedance 2.0 深度研究、多 Agent 团队架构
+- 重复操作：recurring failures 处理（gateway token mismatch、browser unreachable、web_fetch 403）
+- 写成 skill：Memory Guard extension 已实现
+
+**效率检查：**
+- recurring failures 需要结晶为预防 hook（已记录到待办）
+- 浏览器服务稳定性问题待解决
+
+**记忆检查：**
+- ✅ MEMORY.md 已更新（5 条新 learning/fact）
+- ✅ todos.md 已更新
+
+**主动性检查：**
+- ✅ 发现 recurring failures 模式并记录
+- ✅ 多 Agent 团队已搭建
+
+**产出：**
+1. MEMORY.md 更新 — 5 条新 learning/fact
+2. todos.md 更新 — 添加本周完成项
+3. EVOLUTION.md 更新 — 添加自检记录

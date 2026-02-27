@@ -1,0 +1,23 @@
+AI Trend Watch | 2026.02.27
+
+Talking to AI friends, here is what I noticed:
+
+1. Multi-Agent Collaboration
+   Not just chatbot anymore. Multiple AI working together.
+   Example: one classifies question, one checks DB, one writes reply.
+
+2. Event-Driven AI
+   From Q&A to automatic triggers.
+   Example: server error triggers AI to fix itself.
+
+3. AI Video Battle
+   Seedance vs Kling vs Veo 3
+   Pro tip: dont write 'cinematic', write 'UnrealEngine5+VFX'
+
+4. AI Coding
+   Claude Code vs GPT-5.3 Codex
+   My take: GPT better at writing, Claude better at explaining.
+
+My take: AI is becoming a super assistant, not replacement.
+
+#AI #Agent #TechTrends

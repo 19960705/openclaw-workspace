@@ -156,6 +156,14 @@
     "x-twitter": {
       "version": "2.3.1",
       "installedAt": 1771876240411
+    },
+    "capability-evolver": {
+      "version": "1.14.0",
+      "installedAt": 1772125766396
+    },
+    "self-evolve": {
+      "version": "1.0.0",
+      "installedAt": 1772126007122
     }
   }
 }

@@ -291,6 +291,62 @@ Details:
 - simmer-check.py 已更新：opportunities 只过滤 polymarket, trade 默认 venue=polymarket
 - 教训：下单前必须确认方向，不要急于交易
 
+## LRN-2026-02-25-01
+type: learning
+area: ai-agent
+
+Learning: PiEvolve + Recursive Knowledge Crystallization
+Source: AI Agent 自进化研究 (2026-02-25)
+Details:
+- PiEvolve (Fractal): 进化式 Agentic Engine，Graph-Structured Search，持续迭代直到资源耗尽
+- Recursive Knowledge Crystallization: Agent 将学习成果持久化到 SKILL.md，突破 context window 限制
+- Memory Guard: 已实现 extension 防止内存膨胀（120行上限 + 噪声检测）
+- Verifier Swarm: 多模型投票评估工具质量（25/3408 = 0.7% 接受率）
+
+## LRN-2026-02-26-01
+type: learning
+area: video
+
+Learning: Seedance 2.0 vs 竞品
+Source: 深度研究 2026-02-26
+Details:
+- Seedance 2.0 在 AI 视频工具对比中排名第一（超越 Veo 3、Kling 2.0）
+- 核心优势：时空分离注意力、导演级提示词理解、多镜头叙事支持
+- 最佳实践：短提示词（40-120词）、参考图 > 纯文字、镜头语言
+
+## LRN-2026-02-27-01
+type: learning
+area: architecture
+
+Learning: 多 Agent 团队架构
+Source: x.com/@treydtw (香蕉Banana)
+Details:
+- code-agent: Claude Sonnet 4.5 → GPT-5.3 Codex（编程任务）
+- researcher-agent: Claude Opus 4.6（深度调研）
+- archivist-agent: Claude Sonnet 4.5（知识管理）
+- SOUL.md 定义人格，AGENTS.md 定义团队配置
+
+## FACT-2026-02-27-01
+type: fact
+area: failures
+
+Fact: Recurring Failures 待结晶
+Details:
+- gateway token mismatch: 6x（device token 需要 rotate/reissue）
+- browser unreachable: 5-8x（浏览器控制服务不稳定）
+- web_fetch 403: 5x
+- 待办: foundry_crystallize 结晶为预防 hook
+
+## FACT-2026-02-27-02
+type: fact
+area: projects
+
+Fact: 玻璃吸管 TikTok 广告项目暂停
+Details:
+- 目标：15秒泰国 TikTok 高转化视频
+- 问题：浏览器自动化上传图片失败（browser 服务不稳定）
+- 状态：等待浏览器服务稳定性解决后重启
+
 ---
 
 _First meeting: 2026-02-13_

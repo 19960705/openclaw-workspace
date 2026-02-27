@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-02-27T19:29:20.652731",
+  "sources": [
+    "manual",
+    "newsnow"
+  ],
+  "insights": [
+    "🤖 多 Agent 系统爆发 - 2026 是多 Agent 元年",
+    "⚡ 事件驱动 Agent - 从被动响应到主动触发",
+    "🎨 AI 视频生成 - Seedance/Kling/Veo3 三国大战",
+    "💻 AI Coding - Claude Code vs GPT-5.3 Codex 对决"
+  ],
+  "newsnow": [
+    "[hackernews] Statement from Dario Amodei on our discussions with the Department of War",
+    "[hackernews] MitID, Denmarks sole digital ID, has been down for over an hour and counting",
+    "[hackernews] F-Droid Board of Directors nominations 2026",
+    "[github-trending-today] ruvnet /      wifi-densepose",
+    "[github-trending-today] bytedance /      deer-flow",
+    "[github-trending-today] moonshine-ai /      moonshine",
+    "[36kr] 包钢股份：公司内部经营秩序稳定，市场环境、行业政策没有发生重大调整",
+    "[36kr] 捷荣技术：因涉嫌信息披露违法违规，证监会决定对公司、捷荣集团以及实控人赵晓群立案",
+    "[36kr] 佰维存储业绩快报：2025年净利润8.67亿元，同比增长437.56%",
+    "[sspai] AI 十字路口：当机器学会「思考」，我们应该知道什么？",
+    "[sspai] 新玩意 236｜少数派的编辑们最近买了啥？",
+    "[sspai] 本周看什么 | 最近值得一看的 8 部作品",
+    "[juejin] uni-app开发的鸿蒙应用上架后，竟然月入4000+",
+    "[juejin] vue文件自动生成路由会成为主流",
+    "[juejin] 阿里出手了！终于不怕OpenClaw烧token啦，直接算力自由～"
+  ],
+  "all_trends": [
+    "🤖 多 Agent 系统爆发 - 2026 是多 Agent 元年",
+    "⚡ 事件驱动 Agent - 从被动响应到主动触发",
+    "🎨 AI 视频生成 - Seedance/Kling/Veo3 三国大战",
+    "💻 AI Coding - Claude Code vs GPT-5.3 Codex 对决",
+    "[hackernews] Statement from Dario Amodei on our discussions with the Department of War",
+    "[hackernews] MitID, Denmarks sole digital ID, has been down for over an hour and counting",
+    "[hackernews] F-Droid Board of Directors nominations 2026",
+    "[github-trending-today] ruvnet /      wifi-densepose",
+    "[github-trending-today] bytedance /      deer-flow",
+    "[github-trending-today] moonshine-ai /      moonshine",
+    "[36kr] 包钢股份：公司内部经营秩序稳定，市场环境、行业政策没有发生重大调整",
+    "[36kr] 捷荣技术：因涉嫌信息披露违法违规，证监会决定对公司、捷荣集团以及实控人赵晓群立案",
+    "[36kr] 佰维存储业绩快报：2025年净利润8.67亿元，同比增长437.56%",
+    "[sspai] AI 十字路口：当机器学会「思考」，我们应该知道什么？",
+    "[sspai] 新玩意 236｜少数派的编辑们最近买了啥？",
+    "[sspai] 本周看什么 | 最近值得一看的 8 部作品",
+    "[juejin] uni-app开发的鸿蒙应用上架后，竟然月入4000+",
+    "[juejin] vue文件自动生成路由会成为主流",
+    "[juejin] 阿里出手了！终于不怕OpenClaw烧token啦，直接算力自由～"
+  ]
+}
