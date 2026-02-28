@@ -1,6 +1,6 @@
 # INDEX.md - 知识导航
 
-> Last updated: 2026-02-27
+> Last updated: 2026-02-28
 > Agent: Keonho
 
 ## 📊 健康度总览
@@ -66,6 +66,7 @@ workspace/
 
 ## 📝 最近操作
 
+- 2026-02-28: 夜间反思 cron 执行
 - 2026-02-27: 添加 gateway-watchdog cron (每2小时)
 - 2026-02-27: 添加 daily-workflow cron (每日23:00)
 - 2026-02-27: 安装 capability-evolver, self-evolve

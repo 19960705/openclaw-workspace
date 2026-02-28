@@ -1,6 +1,6 @@
 # NOW.md - 当前状态
 
-> Last updated: 2026-02-27 07:55
+> Last updated: 2026-02-28 23:01
 
 ## 🎯 今日优先级
 
@@ -21,6 +21,8 @@
 - [x] 安装 capability-evolver, self-evolve
 - [x] GitHub Copilot 记忆系统笔记保存
 - [x] OpenClaw v2.25 更新保存
+- [x] Simmer 交易监控 (持续)
+- [x] Nightly Reflection 执行
 
 ## 📊 状态指标
 
@@ -28,7 +30,7 @@
 |------|-----|------|
 | Gateway | 在线 | ✅ |
 | Browser | 在线 | ✅ |
-| Cron 失败 | 3 | ⚠️ |
+| Cron 失败 | 3 (已知模式) | ⚠️ 需crystallize |
 | Token | 有效 | ✅ |
 
 ---

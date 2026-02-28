@@ -115,15 +115,43 @@ chat id: -1003505656701
 - #normal: 1469211248854962328
 - 广告视觉频道: 1469680962102235177
 
-### X.com 链接处理
+### X.com/Twitter 链接处理
 
-遇到 X.com/twitter.com 链接时，使用 **Nitter** 替代（无广告、无反爬）：
+遇到 X.com/twitter.com 链接时，按以下优先级尝试：
+
+**1. 使用浏览器打开（推荐）**
+```bash
+# 用 OpenClaw 浏览器打开
+browser action=open targetUrl="https://x.com/i/status/123456789" profile="openclaw"
+```
+
+**2. 使用 Nitter 替代（无广告、无反爬）**
 - 优先：`nitter.net`
 - 备选：`nitter.privacydev.net`、`nitter.poast.org`
 
 示例：
 - 原文：`https://x.com/i/status/123456789`
 - 替换：`https://nitter.net/i/status/123456789`
+
+**3. 使用 vxtwitter/fxtwitter API**
+- `https://vxtwitter.com/i/status/123456789`
+- `https://api.fxtwitter.com/v2/tweet/123456789`
+
+**4. 使用 jina.ai Reader 抓取**
+```bash
+web_fetch url="https://x.com/i/status/123456789"
+```
+（需要先通过浏览器登录获取 cookie）
+
+**6. 使用 Xpoz MCP 或 Twitter MCP (推荐)**
+- 如果配置了 X/Twitter MCP，直接调用 MCP 工具获取推文
+- 或者使用 x-mission-fetcher skill 自动抓取
+
+**7. 尝试 browser profile="chrome"**
+- 如果用户已打开 X 页面，可以接管 Chrome tab
+```bash
+browser action=snapshot profile="chrome"
+```
 
 ---
 

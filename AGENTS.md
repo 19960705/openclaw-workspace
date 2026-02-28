@@ -6,7 +6,7 @@
 
 | Agent | ID | Model | Role |
 |-------|-----|-------|------|
-| **Keonho** | main | Claude Sonnet | Main - 总指挥 |
+| **Keonho** | main | MiniMax M2.5 | Main - 总指挥 |
 | **Code** | code-agent | Claude Sonnet 4.5 | 代码开发 |
 | **Researcher** | researcher-agent | Claude Opus 4.6 | 深度调研 |
 | **Archivist** | archivist-agent | Claude Sonnet 4.5 | 知识管理 |

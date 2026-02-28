@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-AI Trend Hunter - 优化版文案生成
-学习 X 爆火帖特点
+AI Trend Hunter - X 风格优化版 v11
+基于 X 热门 AI 推文风格
 """
 import json
 from datetime import datetime
@@ -15,76 +15,138 @@ def load_trends():
     with open(TRENDS_FILE, 'r') as f:
         return json.load(f)
 
-def format_for_x(trends_data):
-    """X 文案 - 短小精悍+个人观察+互动"""
-    # 随机选一个角度切入
+def format_x_data_driven(trends_data):
+    """数据驱动风格 - 参考热门推文"""
     lines = [
-        "最近观察到一个趋势:",
+        "OpenAI 估值 $730B。",
         "",
-        "AI 不只是聊天了。",
+        "我的第一反应：钱越多，压力越大。",
         "",
-        "多个 Agent 配合干活已成现实。",
-        "客服场景: 一个分类问题，一个查数据库，一个写回复。",
+        "投资人要回报。",
+        "$730B 意味着必须找到 killer app。",
         "",
-        "事件驱动的也在起来。",
-        "服务器异常? AI 自动报警+修复。",
+        "上次这么大压力，",
+        "还是移动互联网刚起来的时候。",
         "",
-        "我的感觉: AI 是超级助手，不是取代人类。",
+        "2012-2014，移动互联网融资也疯狂。",
+        "真正爆发是微信、Uber、抖音出现之后。",
         "",
-        "你怎么看?",
+        "---",
         "",
-        "#AI #Agent"
+        "💡 所以普通人机会在哪？",
+        "",
+        "在 killer app 出现之前，先学会用 AI。",
+        "",
+        "就像 2012 年学编程，",
+        "不一定当程序员，",
+        "但第一批吃到了红利。",
+        "",
+        "会用 AI 的人，比不会的更有优势。",
+        "",
+        "你怎么看？融资变多会让 AI 发展更快还是更慢？",
+        "",
+        "#AI #OpenAI #Tech",
     ]
     return '\n'.join(lines)
 
-def format_for_xiaohongshu(trends_data):
-    """小红书 - 更接地气+个人经历"""
+def format_x_experiment_style(trends_data):
+    """实验风格 - 参考 @aixuexi_ai"""
     lines = [
-        "最近 AI 圈的变化:",
+        "试了一下 AI 自动发推，聊聊结果。",
         "",
-        "1️⃣ 多 Agent 协作",
-        "不只是聊天! 多个 AI 配合干活",
-        "例子: 客服，一个分类，一个查资料，一个回复",
+        "🤖 用了什么：",
+        "   - AI 写手自动搜热点",
+        "   - 每天生成 3 条草稿",
+        "   - 我审批后自动发",
         "",
-        "2️⃣ 事件驱动",
-        "从你问我答 → 自动触发",
-        "例子: 服务器异常时 AI 自动处理",
+        "📊 效果：",
+        "   - 每天投入：2 分钟",
+        "   - 之前：1 小时手动",
+        "   - 效率提升：30x",
         "",
-        "3️⃣ AI 视频爆发",
-        "即梦 Seedance vs 可灵 vs Veo 3",
+        "💡 心得：",
+        "   - AI 解决的是'写什么'，不是'什么时候发'",
+        "   - 审批流程必须有，AI 也会翻车",
+        "   - 关键是让人做决策，AI 干活",
         "",
-        "4️⃣ AI Coding",
-        "GPT 写代码强，Claude 解释更好",
+        "你们有用 AI 运营社交媒体吗？效果怎么样？",
         "",
-        "💡 感觉: AI 更像超级助手",
-        "你怎么看? 评论区聊聊",
-        "",
-        "#AI #人工智能 #2026 #科技"
+        "#AI #Automation #Twitter",
     ]
     return '\n'.join(lines)
 
-def save_outputs(x_content, xhs_content):
+def format_x_question_style(trends_data):
+    """提问风格 - 引导互动"""
+    lines = [
+        "AI 时代，学什么技能最有用？",
+        "",
+        "我的答案：会用 AI。",
+        "",
+        "不是学 AI 原理（那是科学家的事），",
+        "是学会指挥 AI 干活。",
+        "",
+        "---",
+        "",
+        "就像 2012 年，",
+        "不是每个人都去学编程，",
+        "但会用电脑的人赢了。",
+        "",
+        "2026，",
+        "不是每个人都要调模型，",
+        "但会用 AI 的人会赢。",
+        "",
+        "你同意吗？还是觉得我在制造焦虑？",
+        "",
+        "#AI #技能 #2026",
+    ]
+    return '\n'.join(lines)
+
+def format_x_short_stylish(trends_data):
+    """简短酷炫风格"""
+    lines = [
+        "OpenAI 估值 $730B。",
+        "",
+        "钱太多 = 压力太大。",
+        "",
+        "上次这样，还是移动互联网起来的时候。",
+        "",
+        "2012 年学编程的人，",
+        "2016 年做 App 的人，",
+        "",
+        "2026，该学什么了？",
+        "",
+        "#AI",
+    ]
+    return '\n'.join(lines)
+
+def save_outputs(*contents):
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    x_file = OUTPUT_DIR / f"x_{timestamp}.txt"
-    xhs_file = OUTPUT_DIR / f"xiaohongshu_{timestamp}.txt"
-    with open(x_file, 'w', encoding='utf-8') as f:
-        f.write(x_content)
-    with open(xhs_file, 'w', encoding='utf-8') as f:
-        f.write(xhs_content)
-    return str(x_file), str(xhs_file)
+    files = []
+    names = ['data_driven', 'experiment', 'question', 'short']
+    for i, content in enumerate(contents):
+        f = OUTPUT_DIR / f"x_{names[i]}_{timestamp}.txt"
+        with open(f, 'w', encoding='utf-8') as fp:
+            fp.write(content)
+        files.append(str(f))
+    return files
 
 def main():
-    print("AI Trend Hunter - Optimized Content")
+    print("AI Trend Hunter v11 - X 风格优化版")
     print("=" * 40)
     data = load_trends()
-    x_content = format_for_x(data)
-    xhs_content = format_for_xiaohongshu(data)
-    x_file, xhs_file = save_outputs(x_content, xhs_content)
-    print(f"\n📝 X (English):")
-    print(x_content)
-    print(f"\n📝 小红书 (中文):")
-    print(xhs_content)
-    print(f"\n✅ Saved: {x_file}, {xhs_file}")
+    
+    c1 = format_x_data_driven(data)
+    c2 = format_x_experiment_style(data)
+    c3 = format_x_question_style(data)
+    c4 = format_x_short_stylish(data)
+    
+    files = save_outputs(c1, c2, c3, c4)
+    
+    print(f"\n📝 数据驱动风格 ({len(c1)} 字):\n{c1}\n")
+    print(f"📝 实验风格 ({len(c2)} 字):\n{c2}\n")
+    print(f"📝 提问风格 ({len(c3)} 字):\n{c3}\n")
+    print(f"📝 简短酷炫 ({len(c4)} 字):\n{c4}\n")
+    print(f"✅ Saved to:\n" + "\n".join(files))
 
 if __name__ == "__main__":
     main()
