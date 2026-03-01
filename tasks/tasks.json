@@ -126,7 +126,7 @@
         "language": ["th", "zh", "en"],
         "deliverTo": "telegram:-1003505656701:topic:4"
       }
-    }
+    },
     {
       "id": "task-simmer-001",
       "name": "Simmer 市场扫描",
@@ -155,7 +155,7 @@
       "enabled": true,
       "createdAt": "2026-02-19",
       "lastRun": "2026-02-22 14:00",
-      "lastResult": "成功推送AI比赛资讯：IEEE IES生成式AI挑战赛、USAII全球AI Hackathon $15000奖金、HackUNCP刚结束、MIT AI电影黑客松、AI DevSummit等"
+      "lastResult": "成功推送AI比赛资讯：IEEE IES生成式AI挑战赛、USAII全球AI Hackathon $15000奖金、HackUNCP刚结束、MIT AI电影黑客松、AI DevSummit等",
       "config": {
         "sources": ["kaggle", "drivendata", "paperswithcode", "github_trending", "ai_challenges", "topcoder", "didi_challenge", "baidu_ai_studio", "waytoagi", "bilibili_ai", "wechat_mp", "feishu"],
         "feishu_source": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e",
