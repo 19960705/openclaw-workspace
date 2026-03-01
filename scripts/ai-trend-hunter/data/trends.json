@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-01T09:00:13.588766",
+  "timestamp": "2026-03-01T18:00:13.110500",
   "insights": [
     "🤖 AI 员工概念 - 从写推文的人变成审推文的人",
     "⚡ 审批流程 - AI 生成 → Telegram 推送 → 回复 ok → 自动发",
@@ -8,20 +8,20 @@
     "🎯 核心原则 - 没审批的绝不发，AI 干活人把关"
   ],
   "newsnow": [
-    "[hackernews] The Windows 95 user interface: A case study in usability engineering (1996)",
-    "[hackernews] We do not think Anthropic should be designated as a supply chain risk",
-    "[hackernews] MinIO Is Dead, Long Live MinIO",
+    "[hackernews] Microgpt",
+    "[hackernews] Decision trees – the unreasonable power of nested decision rules",
+    "[hackernews] 10-202: Introduction to Modern AI (CMU)",
     "[github-trending-today] ruvnet /      wifi-densepose",
     "[github-trending-today] moeru-ai /      airi",
     "[github-trending-today] anthropics /      claude-code",
-    "[36kr] 伯克希尔哈撒韦2025年营收3714.44亿美元，净利润669.68亿美元",
-    "[36kr] 淘宝闪购开源食安治理AI大模型“白泽”",
-    "[36kr] 南京娃哈哈宏振饮用水公司近日注销",
+    "[36kr] 国投白银LOF：3月2日开市起至当日10:30停牌",
+    "[36kr] 天宜新材：预重整产业投资人遴选完成，紫光通信联合体为正选",
+    "[36kr] 极氪：2月交付新车23867辆，同比增长70%",
     "[sspai] 年度征文｜AI 十字路口：当机器学会「思考」，我们应该知道什么？",
     "[sspai] 新玩意 236｜少数派的编辑们最近买了啥？",
     "[sspai] 本周看什么 | 最近值得一看的 8 部作品",
-    "[juejin] OpenClaw 的关键不在于安装，而在于你怎么用？29 个真实用例告诉你，AI 不是工具，是工作和生活方式",
     "[juejin] 真的，你可以不用TypeScript",
-    "[juejin] Go 为什么没成为游戏服务器主流语言"
+    "[juejin] Go 为什么没成为游戏服务器主流语言",
+    "[juejin] Flutter 的真正价值是什么？深度解析再结合鸿蒙，告诉你 Flutter 的真正优势"
   ]
 }

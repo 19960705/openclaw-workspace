@@ -3,6 +3,7 @@
 ## User
 - **Name:** Lunah (Jinny) | **Timezone:** Asia/Shanghai
 - **Style:** 正经 + 可爱 🐶 | **Wants:** Bold and proactive
+- **Preference (2026-03-01):** 每日复盘加入三日志检查：Action Log / Rejection Log / Handoff Log
 
 ## Me
 - **Name:** Keonho | **Emoji:** 🐶
@@ -30,6 +31,16 @@
 | 02-28 | 学习 @行者AI视频 推文，整理 Nano+Seedance 提示词资源大全到 Obsidian |
 | 03-01 | GitHub AI 趋势 + X/Twitter AI 趋势已推送 (08:30)，AI日报+4A广告+TikTok泰区已完成 |
 | 03-01 | 上午任务全部完成：GitHub/QVeris/AI日报/4A广告/TikTok |
+| 03-01 | 探险模式完成：Agent 系统设计调研 + Rejection Log + YAML Spec + Budget System |
+
+## New Systems (from SpecMarket)
+
+| System | File | Purpose |
+|--------|------|---------|
+| Rejection Log | scripts/rejection_log.py | 记录被拒绝的决策 |
+| YAML Spec | scripts/openclaw_spec.py | 规格即合约 |
+| Budget | scripts/budget.py | 资源预算管理 |
+| Workflow | scripts/workflow_auto.py | 自动化工作流 |
 
 ## Tools Created
 - Seedance 分镜提示词生成器

@@ -61,8 +61,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-22 18:00",
-      "lastResult": "推送 OpenClaw 话题追踪：创始人加入OpenAI、安全CVE修复、GitHub讨论、版本更新2026.2.21-2、媒体报道",
+      "lastRun": "2026-03-01 18:00",
+      "lastResult": "推送OpenClaw话题追踪：Wikipedia收录、Perplexity CEO对标、树莓派官方教程、安全事件、媒体热议",
       "config": {
         "topic": "OpenClaw",
         "keywords": ["OpenClaw", "openclaw"],
@@ -80,8 +80,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-22 20:00",
-      "lastResult": "成功收集 Seedance 2.0 案例：B站教程、安鱼资源、CSDN提示词指南、核心功能、使用建议、媒体报道",
+      "lastRun": "2026-03-01 20:00",
+      "lastResult": "推送Seedance 2.0案例：B站教程爆发、30个实测案例、九宫格提示词技巧、Seedance+Coze工作流、awesomeSeedance社区",
       "config": {
         "topic": "Seedance",
         "keywords": ["Seedance", "seedance", "即梦"],
@@ -99,8 +99,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-02-22 09:30",
-      "lastResult": "成功推送4A广告视觉拆解：隐私优先/AI驱动/真实故事趋势、1月最佳广告案例、Seedance 2.0分镜脚本、动画摄影技巧补充",
+      "lastRun": "2026-03-01 10:12",
+      "lastResult": "推送4A广告视觉拆解：7大2026趋势(动画/模块化/AI情感/互动)、Super Bowl案例、Seedance 2.0分镜建议",
       "config": {
         "sources": ["twitter", "digitaling", "xinpianchang", "youtube_adblitz", "ads_of_the_world", "adweek", "behance", "campaign_us"],
         "translate": true,
@@ -118,8 +118,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-16",
-      "lastRun": "2026-02-22 09:00",
-      "lastResult": "推送泰区TikTok日报：cloud coffee/morning latte咖啡趋势、Simplus绞肉机/零食封口机厨房工具、家居健康可持续、工具收纳整理、运营建议",
+      "lastRun": "2026-03-01 10:00",
+      "lastResult": "推送泰区TikTok日报：咖啡(手打咖啡/拿铁)、厨房(制冰机/除湿机)、家居(收纳/宠物用品)、工具类目趋势分析及运营建议",
       "config": {
         "categories": ["咖啡", "厨房", "家居", "工具"],
         "country": "TH",
@@ -140,7 +140,7 @@
       "lastRun": null,
       "lastResult": null,
       "config": {
-        "command": "scan",
+        "command": "opportunities",
         "deliverTo": "telegram:-1003505656701:topic:6"
       }
     },
@@ -154,8 +154,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-19",
-      "lastRun": "2026-02-22 14:00",
-      "lastResult": "成功推送AI比赛资讯：IEEE IES生成式AI挑战赛、USAII全球AI Hackathon $15000奖金、HackUNCP刚结束、MIT AI电影黑客松、AI DevSummit等",
+      "lastRun": "2026-03-01 14:00",
+      "lastResult": "推送AI比赛资讯：Amazon Nova $40K+AWS、Solana AI Agent $100K、Microsoft $10K+门票、IBM $5K、ML竞赛平台汇总",
       "config": {
         "sources": ["kaggle", "drivendata", "paperswithcode", "github_trending", "ai_challenges", "topcoder", "didi_challenge", "baidu_ai_studio", "waytoagi", "bilibili_ai", "wechat_mp", "feishu"],
         "feishu_source": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e",

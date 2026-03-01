@@ -6,7 +6,7 @@
 
 ## 待办 (Pending)
 - [ ] Recurring failures 结晶（gateway token, browser, web_fetch 403）
-- [ ] Simmer 交易策略评估（当前 PnL -$14.38）
+- [ ] Simmer 交易策略评估（当前 PnL -$11.60）
 - [ ] Git 未推送（4 commits, 14 files）
 
 ## 进行中 (In Progress)
