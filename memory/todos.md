@@ -1,32 +1,34 @@
 # 📋 待办事项 (Todos)
 
-**最后更新**: 2026-02-24
+**最后更新**: 2026-03-02
 
 ---
 
 ## 待办 (Pending)
-- [ ] Recurring failures 结晶（gateway token, browser, web_fetch 403）
-- [ ] Simmer 交易策略评估（当前 PnL -$11.60）
-- [ ] Git 未推送（4 commits, 14 files）
+- [ ] Recurring failures 结晶（gateway token, browser）
+- [ ] Simmer 交易策略评估（当前 PnL -$12.52）
 
 ## 进行中 (In Progress)
 - [ ] Simmer 市场监控（每30分钟扫描）
+- [ ] 18:00 OpenClaw 话题追踪
+- [ ] 20:00 Seedance 案例收集
 
 ## 已完成 (Done)
+- [x] 08:00 GitHub AI 趋势推送 - 2026-03-02
+- [x] 08:30 QVeris AI 趋势推送 - 2026-03-02
+- [x] 09:00 AI 日报推送 - 2026-03-02
+- [x] 09:30 4A 广告 & 创意趋势推送 - 2026-03-02
+- [x] 10:00 泰区 TikTok 趋势日报推送 - 2026-03-02
+- [x] Simmer 警报推送（大额亏损 -$12.52） - 2026-03-02
+- [x] Git 提交 & 推送（5 files changed） - 2026-03-02
 - [x] Cron 修复确认（3个 minimax 任务改模型） - 2026-02-24
 - [x] AI 日报任务 - 2026-02-27
 - [x] 自由活动时间 Day 5 完成 - 2026-02-27
 - [x] 多 Agent 团队搭建（code/researcher/archivist-agent） - 2026-02-27
 - [x] 每周自我进化检查 - 2026-02-27
-- [x] Cron 修复确认（3个 minimax 任务改模型） - 2026-02-24
-- [x] AI 日报任务 - 2026-02-27
-- [x] 自由活动时间 Day 5 完成 - 2026-02-27
-
-## 已完成 (Done)
 - [x] 创建待办事项跟踪系统 (memory/todos.md) - 2026-02-22
 - [x] 设置每日 cron 提醒 (09:00 Asia/Shanghai) - 2026-02-22
 - [x] 更新 AGENTS.md 和 MEMORY.md 文档 - 2026-02-22
-- [x] 每天从所有对话中总结待办事项并提醒用户 - 2026-02-22
 - [x] 记住：除了 OpenClaw 本身的脚本改动，所有文件和脚本内容都需要通过 Telegram 发给用户（远程操控） - 2026-02-22
 - [x] 今晚回家拿塑料盖子 - 2026-02-22
 - [x] 自由活动时间 Day 2 完成 - 2026-02-24
