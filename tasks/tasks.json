@@ -1,6 +1,42 @@
 {
   "tasks": [
     {
+      "id": "task-github-ai-trends",
+      "name": "GitHub AI 趋势",
+      "type": "github-trends",
+      "description": "每日推送 GitHub AI 热门项目趋势榜",
+      "schedule": "daily",
+      "scheduleTime": "08:00",
+      "status": "completed",
+      "enabled": true,
+      "createdAt": "2026-03-02",
+      "lastRun": "2026-03-02 08:04",
+      "lastResult": "成功推送GitHub AI趋势榜到topic:2: OpenClaw #1、AutoGPT #2、n8n #3、Langflow #4、LangChain #5",
+      "config": {
+        "period": "daily",
+        "limit": 10,
+        "deliverTo": "telegram:-1003505656701:topic:2"
+      }
+    },
+    {
+      "id": "task-qveris-ai-trending",
+      "name": "QVeris AI 趋势 (X/Twitter)",
+      "type": "qveris",
+      "description": "每日搜索 X/Twitter 上的 AI 科技热门话题",
+      "schedule": "daily",
+      "scheduleTime": "08:30",
+      "status": "completed",
+      "enabled": true,
+      "createdAt": "2026-03-02",
+      "lastRun": "2026-03-02 08:18",
+      "lastResult": "成功推送QVeris AI热门趋势到topic:2: OpenAI $1100亿融资、中国AI模型崛起(MiniMax M2.5)、NVIDIA新推理芯片、Google AI伦理事件",
+      "config": {
+        "query": "AI tech news Twitter",
+        "limit": 5,
+        "deliverTo": "telegram:-1003505656701:topic:2"
+      }
+    },
+    {
       "id": "task-001",
       "name": "示例任务：每日问候",
       "type": "message",
@@ -178,6 +214,8 @@
     "wechat-radar": "公众号蓝海选题雷达",
     "ad-visual-analyst": "4A 广告视觉拆解",
     "ai-competition": "AI 比赛资讯",
+    "github-trends": "GitHub 趋势榜",
+    "qveris": "QVeris 动态工具搜索",
     "custom": "自定义脚本"
   },
   "scheduleTypes": {
