@@ -19,9 +19,9 @@ on run argv
 		"if [ -n \"$API_KEY\" ]; then export API_KEY; fi; " & ¬
 		"bash /Users/mac/.openclaw/skills/turix-cua/scripts/run_turix.sh " & quoted form of taskText
 
-	-- Run in Terminal so user can see logs; keep Runner as the stable permission host.
-	tell application "Terminal"
-		activate
-		do script sh
-	end tell
+	-- Run via do shell script (no Terminal Apple Events needed). Log to file.
+	set logFile to "/Users/mac/.openclaw/logs/turix_runner.log"
+	set sh2 to sh & " >> " & quoted form of logFile & " 2>&1 &"
+	do shell script sh2
+	display notification "Task launched: " & taskText with title "TuriXRunner"
 end run
