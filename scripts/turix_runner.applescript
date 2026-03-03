@@ -20,13 +20,16 @@ on run argv
 		"bash /Users/mac/.openclaw/skills/turix-cua/scripts/run_turix.sh " & quoted form of taskText
 
 	-- Run via do shell script (no Terminal Apple Events needed). Log to file.
-	set logFile to "/Users/mac/.openclaw/logs/turix_runner.log"
-	-- ensure log dir exists
-	do shell script "mkdir -p /Users/mac/.openclaw/logs"
-	-- write header
-	do shell script "echo '--- TuriXRunner start '$(date)" & " >> " & quoted form of logFile
-	-- run synchronously so failures are captured
-	set sh2 to sh & " >> " & quoted form of logFile & " 2>&1"
-	do shell script sh2
-	display notification "Task finished (check log): " & taskText with title "TuriXRunner"
+	set logFile to "/tmp/turix_runner.log"
+	try
+		-- write header
+		do shell script "echo '--- TuriXRunner start '$(date) >> /tmp/turix_runner.log"
+		-- run synchronously so failures are captured
+		set sh2 to sh & " >> " & quoted form of logFile & " 2>&1"
+		do shell script sh2
+		display notification "Task finished (check /tmp/turix_runner.log): " & taskText with title "TuriXRunner"
+	on error errMsg number errNum
+		do shell script "echo '--- TuriXRunner ERROR '$(date)': '" & quoted form of errMsg & "' (" & errNum & ")' >> /tmp/turix_runner.log"
+		display dialog "TuriXRunner error (" & errNum & "): " & errMsg buttons {"OK"} default button "OK"
+	end try
 end run
