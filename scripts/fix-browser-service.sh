@@ -16,9 +16,11 @@ echo "❌ Browser service not responding. Attempting recovery..."
 pkill -f "chrome.*user-data-dir.*openclaw" 2>/dev/null
 sleep 2
 
-# Restart via openclaw gateway
-if command -v openclaw &> /dev/null; then
-    openclaw gateway restart 2>/dev/null
+# Restart via openclaw gateway (use cron-safe env)
+source "$HOME/.openclaw/workspace/scripts/cron_env.sh"
+
+if [ -x "$OPENCLAW_BIN" ]; then
+    "$OPENCLAW_BIN" gateway restart 2>/dev/null
     echo "🔄 Gateway restarted"
 else
     # Fallback: find and restart the gateway process

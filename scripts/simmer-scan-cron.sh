@@ -2,7 +2,10 @@
 # Simmer 市场定时扫描脚本
 # 每 30 分钟运行一次，发送到 Telegram simmer topic
 
-export PATH="$HOME/.nvm/versions/node/v22.12.0/bin:$PATH"
+# cron-safe env
+source "$HOME/.openclaw/workspace/scripts/cron_env.sh"
+
+# keep existing python env
 export PYTHONPATH="$HOME/.simmer-venv/lib/python3.14/site-packages:$PYTHONPATH"
 
 TELEGRAM_BOT_TOKEN="8244872479:AAHuzDb0xQdixsDCEEzjjWQ9vHr5bRv0Gwk"

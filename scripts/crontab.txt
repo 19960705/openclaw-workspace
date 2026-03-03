@@ -1,3 +1,8 @@
+# OpenClaw Cron Tips
+# - Cron runs with a minimal PATH. All scripts should source:
+#     source "$HOME/.openclaw/workspace/scripts/cron_env.sh"
+#   (we standardized this across watchdog/simmer scripts)
+
 # OpenClaw Gateway Watchdog - 每 5 分钟检查一次
 */5 * * * * /Users/mac/.openclaw/workspace/scripts/gateway-watchdog.sh >> /Users/mac/.openclaw/workspace/logs/gateway-watchdog.log 2>&1
 

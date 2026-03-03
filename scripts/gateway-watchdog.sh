@@ -2,7 +2,8 @@
 # Gateway Watchdog - 自动监控并重启 Gateway
 # 用法：每 5 分钟通过系统 cron 运行
 
-export PATH="$HOME/.nvm/versions/node/v22.12.0/bin:$PATH"
+# cron-safe env
+source "$HOME/.openclaw/workspace/scripts/cron_env.sh"
 LOG_FILE="$HOME/logs/gateway-watchdog.log"
 
 # 确保日志目录存在
@@ -30,7 +31,7 @@ restart_gateway() {
     sleep 2
     
     # 启动新进程
-    nohup openclaw gateway > /dev/null 2>&1 &
+    nohup "$OPENCLAW_BIN" gateway > /dev/null 2>&1 &
     sleep 5
     
     # 验证

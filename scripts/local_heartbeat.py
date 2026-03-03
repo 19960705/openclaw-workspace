@@ -11,6 +11,7 @@ from datetime import datetime
 
 # 配置
 OLLAMA_MODEL = "qwen2.5:3b"
+OLLAMA_PATH = "/opt/homebrew/bin/ollama"
 TASKS_FILE = Path("/Users/mac/.openclaw/workspace/tasks/tasks.json")
 LOG_FILE = Path("/Users/mac/.openclaw/logs/heartbeat.log")
 
@@ -18,7 +19,7 @@ def call_local_model(prompt: str, timeout: int = 30) -> str:
     """调用本地模型"""
     try:
         result = subprocess.run(
-            ["ollama", "run", OLLAMA_MODEL, prompt],
+            [OLLAMA_PATH, "run", OLLAMA_MODEL, prompt],
             capture_output=True,
             text=True,
             timeout=timeout
@@ -85,6 +86,26 @@ def log(message: str):
     with open(LOG_FILE, "a") as f:
         f.write(f"[{datetime.now().isoformat()}] {message}\n")
 
+def send_telegram(message: str, chat_id: str = "8391832262"):
+    """发送 Telegram 消息"""
+    import urllib.request
+    import urllib.parse
+    
+    bot_token = "8244872479:AAHuzDb0xQdixsDCEEzjjWQ9vHr5bRv0Gwk"
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    data = urllib.parse.urlencode({
+        "chat_id": chat_id,
+        "text": message
+    }).encode()
+    
+    try:
+        req = urllib.request.Request(url, data=data)
+        urllib.request.urlopen(req, timeout=10)
+        return True
+    except Exception as e:
+        log(f"Telegram发送失败: {e}")
+        return False
+
 def main():
     print("=" * 40)
     print("🔔 OpenClaw HeartBeat (Local AI Mode)")
@@ -112,6 +133,12 @@ def main():
     else:
         print("\n⚠️ 需要人工介入")
         print(result)
+        
+        # 发送 Telegram 通知
+        alert_msg = f"🔔 OpenClaw HeartBeat 警报\n\n{task_summary}\n\n🤖 AI 判断:\n{result}"
+        if send_telegram(alert_msg):
+            print("\n📱 已推送 Telegram 通知")
+        
         sys.exit(1)
 
 if __name__ == "__main__":
