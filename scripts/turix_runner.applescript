@@ -21,7 +21,12 @@ on run argv
 
 	-- Run via do shell script (no Terminal Apple Events needed). Log to file.
 	set logFile to "/Users/mac/.openclaw/logs/turix_runner.log"
-	set sh2 to sh & " >> " & quoted form of logFile & " 2>&1 &"
+	-- ensure log dir exists
+	do shell script "mkdir -p /Users/mac/.openclaw/logs"
+	-- write header
+	do shell script "echo '--- TuriXRunner start '$(date)" & " >> " & quoted form of logFile
+	-- run synchronously so failures are captured
+	set sh2 to sh & " >> " & quoted form of logFile & " 2>&1"
 	do shell script sh2
-	display notification "Task launched: " & taskText with title "TuriXRunner"
+	display notification "Task finished (check log): " & taskText with title "TuriXRunner"
 end run
