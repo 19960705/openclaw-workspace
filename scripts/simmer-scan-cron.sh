@@ -5,6 +5,11 @@
 # cron-safe env
 source "$HOME/.openclaw/workspace/scripts/cron_env.sh"
 
+# gateway healthcheck (optional but recommended for consistency)
+bash "$HOME/.openclaw/workspace/scripts/gateway-healthcheck.sh" || {
+    echo "⚠️ Gateway unavailable, continuing anyway (Simmer uses direct API)" >&2
+}
+
 # keep existing python env
 export PYTHONPATH="$HOME/.simmer-venv/lib/python3.14/site-packages:$PYTHONPATH"
 
