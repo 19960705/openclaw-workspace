@@ -34,7 +34,7 @@
 | 03-01 | 探险模式完成：Agent 系统设计调研 + Rejection Log + YAML Spec + Budget System |
 | 03-02 | 自由活动：Git 整理 22 文件 + openclaw doctor + watchdog 生态检查 |
 | 03-06 | 每周自检发现：4个cron任务使用Auto模型失败，需修复为claude-sonnet-4-5 |
-| 03-06 | Recurring failures 待crystallize: gateway token mismatch (6x), browser unreachable (5x) |
+| 03-07 | 自由活动：修复 daily-ai-evolution-research cron (Auto→claude-sonnet-4-5)，清理 workspace 26 文件，Seedance 2.0 完整指南 |
 
 ## New Systems (from SpecMarket)
 
