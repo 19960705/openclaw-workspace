@@ -38,30 +38,65 @@
 
 ## 自检记录
 
-### 2026-02-23（自由活动 Day 1）
+### 2026-03-06（每周自检）
 
 **能力盘点：**
-- 学到：STELLA/AgentEvolver 自进化框架、Seedance 2.0 最新教程
-- 重复操作：每次启动都要读一堆文件 → 已加入 health-check 脚本自动化
-- 写成 skill：workspace-health-check.sh（自动检查 cron/磁盘/memory/git/安全）
+- 学到：过去一周主要在维护现有系统，没有学习新的重大技能
+- 重复操作：
+  - ✅ Cron 任务执行（每日 AI 日报、趋势监控、Simmer 扫描）
+  - ✅ 浏览器服务重启（browser unreachable 已有自动恢复）
+  - ✅ Gateway token 问题（已知问题，但仍在 recurring failures 中）
+- 可写成 skill：无新发现（现有 cron 任务已自动化）
 
 **效率检查：**
-- cron 用不可用模型静默失败 → 已修复，health-check 会自动检测
-- CLI 环境不可用时反复尝试 → 教训：直接读配置文件
+- ⚠️ **发现问题**：多个 cron 任务使用 `Auto` 模型失败（不支持 coding plan）
+  - 影响任务：thailand-trend-report, nightly-reflection, daily-workflow, daily-ai-evolution-research
+  - 需要修复：改用支持的模型（claude-sonnet-4-5 或 gpt-5.2）
+- ✅ 工具成功率整体良好（91%），但 cron 任务成功率偏低（57%）
 
 **记忆检查：**
-- ✅ MEMORY.md 已更新（补充 02-21/02-22 事实）
-- ✅ 默认模型信息已修正
+- ✅ MEMORY.md 已更新到 2026-03-02
+- ⚠️ 需要补充：2026-03-03 到 2026-03-06 的重要事件
+- ✅ todos.md 维护良好
 
 **主动性检查：**
-- ✅ 主动发现 5 个 cron 问题 + .gitignore 缺失
-- ✅ 主动研究自进化方法论并落地 Self-Questioning 机制
+- ✅ 发现 recurring failures（gateway token mismatch 6x, browser unreachable 5x）
+- ⚠️ 但未主动提出解决方案或 crystallize
+- ⚠️ 未主动检查 cron 任务健康度（直到本次自检才发现 Auto 模型问题）
 
 **产出：**
-1. knowledge/ai-agent-self-evolution.md — 自进化研究笔记
-2. knowledge/seedance-2.0-latest.md — Seedance 最新技巧
-3. scripts/workspace-health-check.sh — 自动健康检查
-4. FREE_TIME_RULES.md 更新 — 加入自进化环节 + health-check
+1. **发现 4 个 cron 任务配置错误**（使用不支持的 Auto 模型）
+2. **建议 crystallize 2 个 recurring failures**：
+   - gateway token mismatch → 自动重新认证 hook
+   - browser unreachable → 自动重启浏览器服务 hook
+
+---
+
+### 2026-02-27（每周自检）
+
+**能力盘点：**
+- 学到：PiEvolve、Recursive Knowledge Crystallization、Memory Guard 实现、Seedance 2.0 深度研究、多 Agent 团队架构
+- 重复操作：recurring failures 处理（gateway token mismatch、browser unreachable、web_fetch 403）
+- 写成 skill：Memory Guard extension 已实现
+
+**效率检查：**
+- recurring failures 需要结晶为预防 hook（已记录到待办）
+- 浏览器服务稳定性问题待解决
+
+**记忆检查：**
+- ✅ MEMORY.md 已更新（5 条新 learning/fact）
+- ✅ todos.md 已更新
+
+**主动性检查：**
+- ✅ 发现 recurring failures 模式并记录
+- ✅ 多 Agent 团队已搭建
+
+**产出：**
+1. MEMORY.md 更新 — 5 条新 learning/fact
+2. todos.md 更新 — 添加本周完成项
+3. EVOLUTION.md 更新 — 添加自检记录
+
+---
 
 ### 2026-02-24（自由活动 Day 2）
 
@@ -89,26 +124,29 @@
 3. MEMORY.md 更新 — 新增 2 条 FACT
 4. Git commit + push — 48 files committed
 
-### 2026-02-27（每周自检）
+---
+
+### 2026-02-23（自由活动 Day 1）
 
 **能力盘点：**
-- 学到：PiEvolve、Recursive Knowledge Crystallization、Memory Guard 实现、Seedance 2.0 深度研究、多 Agent 团队架构
-- 重复操作：recurring failures 处理（gateway token mismatch、browser unreachable、web_fetch 403）
-- 写成 skill：Memory Guard extension 已实现
+- 学到：STELLA/AgentEvolver 自进化框架、Seedance 2.0 最新教程
+- 重复操作：每次启动都要读一堆文件 → 已加入 health-check 脚本自动化
+- 写成 skill：workspace-health-check.sh（自动检查 cron/磁盘/memory/git/安全）
 
 **效率检查：**
-- recurring failures 需要结晶为预防 hook（已记录到待办）
-- 浏览器服务稳定性问题待解决
+- cron 用不可用模型静默失败 → 已修复，health-check 会自动检测
+- CLI 环境不可用时反复尝试 → 教训：直接读配置文件
 
 **记忆检查：**
-- ✅ MEMORY.md 已更新（5 条新 learning/fact）
-- ✅ todos.md 已更新
+- ✅ MEMORY.md 已更新（补充 02-21/02-22 事实）
+- ✅ 默认模型信息已修正
 
 **主动性检查：**
-- ✅ 发现 recurring failures 模式并记录
-- ✅ 多 Agent 团队已搭建
+- ✅ 主动发现 5 个 cron 问题 + .gitignore 缺失
+- ✅ 主动研究自进化方法论并落地 Self-Questioning 机制
 
 **产出：**
-1. MEMORY.md 更新 — 5 条新 learning/fact
-2. todos.md 更新 — 添加本周完成项
-3. EVOLUTION.md 更新 — 添加自检记录
+1. knowledge/ai-agent-self-evolution.md — 自进化研究笔记
+2. knowledge/seedance-2.0-latest.md — Seedance 最新技巧
+3. scripts/workspace-health-check.sh — 自动健康检查
+4. FREE_TIME_RULES.md 更新 — 加入自进化环节 + health-check

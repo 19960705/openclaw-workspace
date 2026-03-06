@@ -3,7 +3,7 @@
 # Source this at top of cron scripts: `source "$HOME/.openclaw/workspace/scripts/cron_env.sh"`
 
 # Minimal sane PATH (cron often has a very small PATH)
-export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
+export PATH="/Users/mac/miniconda3/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 
 # Prefer the Homebrew-managed openclaw shim (stable across shells)
 export OPENCLAW_BIN="/opt/homebrew/bin/openclaw"

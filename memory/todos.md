@@ -5,16 +5,24 @@
 ---
 
 ## 待办 (Pending)
-- [ ] Recurring failures 结晶（device token mismatch, browser 控制服务/元素定位）
+- [ ] **紧急**: 修复 4 个 cron 任务模型配置（Auto → claude-sonnet-4-5）
+  - thailand-trend-report
+  - nightly-reflection
+  - daily-workflow
+  - daily-ai-evolution-research
+- [ ] Recurring failures 结晶（device token mismatch 6x, browser unreachable 5x）
 - [ ] Simmer 交易策略评估（当前 PnL -$12.52）
-- [ ] Git 提交（3 files modified, 2 untracked）
 
 ## 进行中 (In Progress)
 - [ ] Simmer 市场监控（每30分钟扫描）
+- [ ] Git 提交（logs/simmer-scan.log, projects/TuriX-CUA, data/trends/thailand_trends_20260304_0800.json）
+
+## 已完成 (Done) - 2026-03-04
+- [x] 09:00 AI 热门推文日报推送（topic:2）
 
 ## 已完成 (Done) - 2026-03-03
-- [x] 09:00 AI 热门推文日报推送（topic:2）
 - [x] 修复：exec: command not found: openclaw（将 openclaw CLI symlink 到 /opt/homebrew/bin/openclaw）
+- [x] workspace 清理 + 备份到 GitHub（commit: b0ebbd7）
 
 ## 已完成 (Done) - 2026-03-02
 - [x] 08:00 GitHub AI 趋势推送

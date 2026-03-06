@@ -97,8 +97,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-03-01 18:00",
-      "lastResult": "推送OpenClaw话题追踪：Wikipedia收录、Perplexity CEO对标、树莓派官方教程、安全事件、媒体热议",
+      "lastRun": "2026-03-06 18:15",
+      "lastResult": "推送OpenClaw话题追踪：Wikipedia收录、GitHub 25万星标超越React、Axios报道AI agent差点找到工作、ClawJacked漏洞修复、安全危机警告、2.26版本发布、MCP Bridge扩展、Reddit热议、Medium深度解析、QuantoSei完整指南",
       "config": {
         "topic": "OpenClaw",
         "keywords": ["OpenClaw", "openclaw"],

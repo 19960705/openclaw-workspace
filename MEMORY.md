@@ -33,6 +33,8 @@
 | 03-01 | 上午任务全部完成：GitHub/QVeris/AI日报/4A广告/TikTok |
 | 03-01 | 探险模式完成：Agent 系统设计调研 + Rejection Log + YAML Spec + Budget System |
 | 03-02 | 自由活动：Git 整理 22 文件 + openclaw doctor + watchdog 生态检查 |
+| 03-06 | 每周自检发现：4个cron任务使用Auto模型失败，需修复为claude-sonnet-4-5 |
+| 03-06 | Recurring failures 待crystallize: gateway token mismatch (6x), browser unreachable (5x) |
 
 ## New Systems (from SpecMarket)
 

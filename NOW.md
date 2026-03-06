@@ -1,35 +1,34 @@
 # NOW.md - 当前状态
 
-> Last updated: 2026-03-02 23:02
+> Last updated: 2026-03-06 23:05
 
-## 🎯 今日优先级
+## 🎯 明日优先级
 
-1. [ ] Crystallize 两个高频失败模式：
-   - cron:gateway unauthorized device token mismatch
-   - browser:Can't reach OpenClaw browser control service
-2. [ ] Ollama：拉取并评估 qwen3.5:27b（替换过小模型带来的误判）
-3. [ ] Mission Control：用低资源方式完成安装（避免 npm install SIGKILL）
-4. [x] Simmer 交易监控 (每30分钟)
-5. [x] Gateway Watchdog cron (每2小时)
-6. [x] 探索 AI Agent 动态
+1. [ ] 验证 AI Twitter Digest v2 (09:00 自动运行)
+2. [ ] Crystallize 两个高频失败模式：
+   - cron:gateway unauthorized device token mismatch (6x)
+   - browser:Can't reach OpenClaw browser control service (5x)
+3. [ ] 补全缺失脚本：
+   - OpenClaw 话题追踪 (task-twitter-003)
+   - Seedance 案例收集 (task-twitter-004)
+   - AI 比赛资讯
+4. [ ] 考虑 4A 广告 Agent Reach 版本（绕过 Screen Recording 权限）
 
 ## 🚧 进行中
 
-- GitHub Copilot 记忆系统研究
-- OpenClaw v2026.3.1 升级后稳定性跟踪（cron token / browser service）
-- Mission Control 项目安装（低资源方案）
-- Ollama qwen3.5:27b 拉取与效果验证
+- AI Twitter Digest v2 部署（Agent Reach 方案，无需浏览器权限）
+- Screen Recording 权限等待生效（Terminal 已授权，需重启）
+- OpenClaw v2026.3.1 升级后稳定性跟踪
 
-## ✅ 已完成
+## ✅ 今日完成
 
-- [x] Gateway Watchdog cron 添加
-- [x] Daily Workflow cron 添加
-- [x] Nightly Reflection cron 添加
-- [x] 安装 capability-evolver, self-evolve
-- [x] GitHub Copilot 记忆系统笔记保存
-- [x] OpenClaw v2.25 更新保存
-- [x] Simmer 交易监控 (持续)
-- [x] Nightly Reflection 执行
+- [x] TuriX LaunchAgent 修复（conda 环境路径）
+- [x] 全局模型切换（yunyi-claude/claude-sonnet-4-5）
+- [x] 补推任务（GitHub AI 趋势、泰区 TikTok、Simmer）
+- [x] 探险 A+C（TuriX 权限研究 + Agent Reach Twitter 方案）
+- [x] Agent Reach 更新（v1.0.0 → v1.3.0）
+- [x] Feishu 插件更新（2026.2.25 → 2026.3.2）
+- [x] 探险点数 +100（Lv.1 → Lv.2）
 
 ## 📊 状态指标
 
@@ -37,9 +36,11 @@
 |------|-----|------|
 | Gateway | 在线 | ✅ |
 | Browser | 在线 | ✅ |
-| Cron 失败 | 2 个高频模式（device token mismatch / browser service timeout） | ⚠️ 需 crystallize |
-| Token | 有效 | ✅ |
+| 模型 | yunyi-claude/claude-sonnet-4-5 | ✅ |
+| Cron 失败 | 2 个高频模式 | ⚠️ 需 crystallize |
+| Agent Reach | v1.3.0 | ✅ |
+| Feishu 插件 | 2026.3.2 | ✅ |
 
 ---
 
-*探索中...*
+*持续进化中...*
