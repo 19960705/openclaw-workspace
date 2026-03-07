@@ -5,17 +5,25 @@
 ---
 
 ## 待办 (Pending)
-- [ ] **紧急**: 修复 4 个 cron 任务模型配置（Auto → claude-sonnet-4-5）
+- [ ] **中优先级**: 修复剩余 3 个 cron 任务模型配置（Auto → claude-sonnet-4-5）
   - thailand-trend-report
   - nightly-reflection
   - daily-workflow
-  - daily-ai-evolution-research
-- [ ] Recurring failures 结晶（device token mismatch 6x, browser unreachable 5x）
+- [ ] Recurring failures 结晶（观察 1-2 天后决定）
+  - gateway token mismatch (6x) - 历史问题
+  - browser unreachable (5x) - 按需启动
 - [ ] Simmer 交易策略评估（当前 PnL -$12.52）
+- [ ] 探索新的有用 skill（ClawHub）
+- [ ] Memory 归档（memory/ 已有 46 个文件）
 
 ## 进行中 (In Progress)
 - [ ] Simmer 市场监控（每30分钟扫描）
 - [ ] Git 提交（logs/simmer-scan.log, projects/TuriX-CUA, data/trends/thailand_trends_20260304_0800.json）
+
+## 已完成 (Done) - 2026-03-07
+- [x] 04:55-05:00 自由时间：修复 daily-ai-evolution-research cron、清理 workspace、Seedance 2.0 指南
+- [x] 09:00 AI 热门推文日报推送（topic:2）
+- [x] 09:05 每日待办事项提醒
 
 ## 已完成 (Done) - 2026-03-04
 - [x] 09:00 AI 热门推文日报推送（topic:2）
