@@ -190,8 +190,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-19",
-      "lastRun": "2026-03-01 14:00",
-      "lastResult": "推送AI比赛资讯：Amazon Nova $40K+AWS、Solana AI Agent $100K、Microsoft $10K+门票、IBM $5K、ML竞赛平台汇总",
+      "lastRun": "2026-03-07 14:00",
+      "lastResult": "推送AI比赛资讯：Microsoft Imagine Cup、ET Gen AI Hackathon(₹10L)、AI Cup 2026、DARPA AI Cyber Challenge、PSB Suraksha Manthan(₹12L)、UIDAI Data Hackathon、IIT Hackathons、Harvard HSIL、B2BMX AI Hackathon、Venture AI Innovators Challenge",
       "config": {
         "sources": ["kaggle", "drivendata", "paperswithcode", "github_trending", "ai_challenges", "topcoder", "didi_challenge", "baidu_ai_studio", "waytoagi", "bilibili_ai", "wechat_mp", "feishu"],
         "feishu_source": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e",
