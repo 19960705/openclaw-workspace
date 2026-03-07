@@ -135,8 +135,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-03-01 10:12",
-      "lastResult": "推送4A广告视觉拆解：7大2026趋势(动画/模块化/AI情感/互动)、Super Bowl案例、Seedance 2.0分镜建议",
+      "lastRun": "2026-03-07 09:30",
+      "lastResult": "推送4A广告视觉拆解：扭曲摄影、超大标题、鲜艳色彩回归、叙事驱动设计、Seedance 2.0排名#1、Hyundai Night Fishing获奖案例、JD Sports x Nike创意、Seedance分镜模板",
       "config": {
         "sources": ["twitter", "digitaling", "xinpianchang", "youtube_adblitz", "ads_of_the_world", "adweek", "behance", "campaign_us"],
         "translate": true,
