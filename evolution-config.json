@@ -1,0 +1,40 @@
+{
+  "themes": [
+    {
+      "name": "AI Agent 架构",
+      "description": "研究 AI agent 自进化架构和模式：自触发循环、元编程、运行时自适应、多 agent 协作",
+      "weight": 30
+    },
+    {
+      "name": "工具生态",
+      "description": "探索 MCP、A2A、OpenClaw 工具集成、外部 API 连接、工具组合模式",
+      "weight": 25
+    },
+    {
+      "name": "安全机制",
+      "description": "分析 agent 安全、沙箱、审计方案：WASM 隔离、污点追踪、能力门控、威胁检测",
+      "weight": 20
+    },
+    {
+      "name": "实战案例",
+      "description": "收集真实 agent 应用案例：GitHub workflows、自主研究、内容生成、OSINT",
+      "weight": 15
+    },
+    {
+      "name": "自由探索",
+      "description": "发散思考和创新方向：未来趋势、跨领域应用、突破性想法",
+      "weight": 10
+    }
+  ],
+  "max_duration_hours": 8,
+  "interval_minutes": 10,
+  "hitl_checkpoints": [
+    { "round": 10, "pause": true },
+    { "round": 20, "pause": true }
+  ],
+  "night_mode": {
+    "enabled": true,
+    "quiet_hours": "23:00-07:00",
+    "silent_delivery": true
+  }
+}

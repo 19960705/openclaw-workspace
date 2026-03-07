@@ -2,9 +2,10 @@
 # Browser service auto-recovery script
 # Usage: bash fix-browser-service.sh
 
+set -euo pipefail
+
 echo "🔍 Checking browser service..."
 
-# Check if browser CDP port is responding
 if curl -s --max-time 3 http://127.0.0.1:18800/json/version > /dev/null 2>&1; then
     echo "✅ Browser service is healthy (CDP port 18800 responding)"
     exit 0
@@ -12,32 +13,30 @@ fi
 
 echo "❌ Browser service not responding. Attempting recovery..."
 
-# Kill any stale chrome processes
-pkill -f "chrome.*user-data-dir.*openclaw" 2>/dev/null
-sleep 2
-
-# Restart via openclaw gateway (use cron-safe env)
 source "$HOME/.openclaw/workspace/scripts/cron_env.sh"
 
-if [ -x "$OPENCLAW_BIN" ]; then
-    "$OPENCLAW_BIN" gateway restart 2>/dev/null
+# Kill any stale Chrome/Chromium processes tied to OpenClaw profile
+pkill -f "[Cc]hrome.*openclaw" 2>/dev/null || true
+pkill -f "[Cc]hromium.*openclaw" 2>/dev/null || true
+sleep 2
+
+if [ -n "${OPENCLAW_BIN:-}" ] && [ -x "$OPENCLAW_BIN" ]; then
+    "$OPENCLAW_BIN" gateway restart >/dev/null 2>&1 || true
     echo "🔄 Gateway restarted"
 else
-    # Fallback: find and restart the gateway process
-    GATEWAY_PID=$(pgrep -f "openclaw.*gateway" 2>/dev/null | head -1)
+    GATEWAY_PID=$(pgrep -f "openclaw.*gateway" 2>/dev/null | head -1 || true)
     if [ -n "$GATEWAY_PID" ]; then
-        kill -HUP "$GATEWAY_PID" 2>/dev/null
+        kill -HUP "$GATEWAY_PID" 2>/dev/null || true
         echo "🔄 Sent HUP to gateway (PID: $GATEWAY_PID)"
     fi
 fi
 
-sleep 5
+sleep 6
 
-# Verify recovery
 if curl -s --max-time 5 http://127.0.0.1:18800/json/version > /dev/null 2>&1; then
     echo "✅ Browser service recovered!"
     exit 0
-else
-    echo "⚠️ Browser service still down. Manual intervention needed."
-    exit 1
 fi
+
+echo "⚠️ Browser service still down. Manual intervention needed."
+exit 1

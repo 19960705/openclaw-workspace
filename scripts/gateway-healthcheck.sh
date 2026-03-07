@@ -15,6 +15,11 @@ log() {
 
 # Check if gateway is reachable via RPC probe
 check_gateway_rpc() {
+    if [ -z "$OPENCLAW_BIN" ] || [ ! -x "$OPENCLAW_BIN" ]; then
+        log "❌ openclaw binary not found in cron env"
+        return 1
+    fi
+
     if "$OPENCLAW_BIN" gateway status 2>&1 | grep -q "RPC probe: ok"; then
         return 0
     else

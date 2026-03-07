@@ -35,6 +35,7 @@
 | 03-02 | 自由活动：Git 整理 22 文件 + openclaw doctor + watchdog 生态检查 |
 | 03-06 | 每周自检发现：4个cron任务使用Auto模型失败，需修复为claude-sonnet-4-5 |
 | 03-07 | 自由活动：修复 daily-ai-evolution-research cron (Auto→claude-sonnet-4-5)，清理 workspace 26 文件，Seedance 2.0 完整指南 |
+| 03-07 | TikTok Shop 数据源调研完成：Apify Scraper 方案（月成本 $15-60），官方 Research API 不适用（仅限学术） |
 
 ## New Systems (from SpecMarket)
 
