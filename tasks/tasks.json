@@ -116,8 +116,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-03-01 20:00",
-      "lastResult": "推送Seedance 2.0案例：B站教程爆发、30个实测案例、九宫格提示词技巧、Seedance+Coze工作流、awesomeSeedance社区",
+      "lastRun": "2026-03-07 20:00",
+      "lastResult": "推送Seedance 2.0案例：两行提示词病毒式传播、SeaArt 20+提示词模板、YouTube终极指南、角色一致性方法、Atlas Cloud实战、ModelsLab API、提示词工程最佳实践(主体→场景→动作→镜头→光照→音频)、Reddit社区分享、性能对比超越Kling/Veo/Runway",
       "config": {
         "topic": "Seedance",
         "keywords": ["Seedance", "seedance", "即梦"],
