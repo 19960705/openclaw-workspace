@@ -73,3 +73,36 @@
 ---
 
 _First meeting: 2026-02-13_
+
+## ContentFactory 系统（2026-03-08）
+
+**系统位置**：
+- 物理路径：`~/Documents/Obsidian Vault/Keonho/ContentFactory/`
+- 软链接：`~/.openclaw/workspace/ContentFactory`
+- 使用手册：`~/.openclaw/workspace/ContentFactory/ContentFactory-使用手册.md`
+
+**核心功能**：
+- 8 阶段工作流：灵感捕获 → 选题立项 → 大纲设计 → 初稿打磨 → 多平台适配 → 终稿定稿 → 发布复盘
+- Perplexity 集成：深度研究、实时信息、多模型支持
+- 多平台支持：X/Twitter、小红书、公众号、TikTok
+- YAML 元数据 + 双向链接
+
+**快速使用**：
+1. 灵感捕获：Perplexity 搜索 → 保存到收件箱 → 移动到灵感库
+2. 选题立项：从灵感库选择 → 生成 2-3 个选题
+3. 大纲设计：选择选题 → 设计结构
+4. 终稿完成：撰写 → 审核 → 保存到终稿库
+5. 发布：复制内容 → 发布 → 归档 → 追踪效果
+
+**首次验证**：2026-03-08，X/Twitter 推文创作成功
+
+**配置文件**：
+- SOUL.md：操作规则
+- USER.md：用户偏好
+- SOP_CONTENT.md：工作流详细步骤
+- AGENTS.md：多 Agent 协作
+
+**Perplexity 访问**：
+```bash
+browser action=open targetUrl="https://perplexity.ai" profile="openclaw"
+```

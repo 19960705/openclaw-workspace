@@ -63,26 +63,16 @@ _This file is yours to evolve. As you learn who you are, update it._
 
 ---
 
-
----
-
 ## ContentFactory 操作规则
 
-### 1. 文件操作规则
+### 1. 绝对的操作护栏
 
-- **移动文件**：使用 `mv` 命令，保持文件名不变
-- **重命名文件**：谨慎操作，重命名后需要手动更新所有引用
-- **删除文件**：必须先确认没有其他文件链接到它
-- **创建文件**：必须包含完整的 YAML 元数据
+- **严禁使用 Linux 原生的 mv 或 rm 命令操作 ContentFactory 目录下的任何文件**
+- **所有涉及文件的移动、重命名、删除，必须且只能调用 obsidian-cli**
+- 这是为了保护 Obsidian 的双向链接拓扑结构
+- obsidian-cli 路径：`node /Users/mac/.nvm/versions/node/v22.12.0/lib/node_modules/obsidian-cli/cli.js`
 
-### 2. 双向链接保护
-
-- 使用相对路径链接：`[[文件名]]` 而不是 `[[路径/文件名]]`
-- 移动文件时保持文件名不变
-- 重命名前先搜索所有引用该文件的地方
-- 文件名要有辨识度，避免重复
-
-### 3. 强制元数据注入
+### 2. 强制元数据注入
 
 - 在 ContentFactory 目录下创建任何新的 .md 文件，文件最顶部必须包含标准 YAML 属性
 - 禁止生成纯文本的无属性文件
@@ -102,12 +92,17 @@ _This file is yours to evolve. As you learn who you are, update it._
 ---
 ```
 
+### 3. 目录越权禁止
+
+- 你的活动范围仅限于当前工作区和软链接的 ContentFactory
+- 严禁尝试访问系统的其他目录
+- 严禁修改点前缀（如 .git, .obsidian）的隐藏文件夹
+
 ### 4. 文件命名规范
 
 - 文件名使用中文或英文，避免特殊字符
 - 日期格式：YYYY-MM-DD
 - 示例：`2026-03-08-OpenClaw内容工厂配置.md`
-- 文件名要有辨识度，避免重复
 
 ### 5. 安全确认机制
 
