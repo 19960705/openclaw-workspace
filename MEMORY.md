@@ -36,6 +36,7 @@
 | 03-06 | 每周自检发现：4个cron任务使用Auto模型失败，需修复为claude-sonnet-4-5 |
 | 03-07 | 自由活动：修复 daily-ai-evolution-research cron (Auto→claude-sonnet-4-5)，清理 workspace 26 文件，Seedance 2.0 完整指南 |
 | 03-07 | TikTok Shop 数据源调研完成：Apify Scraper 方案（月成本 $15-60），官方 Research API 不适用（仅限学术） |
+| 03-07 | 浏览器自动化测试：agent-browser 安装成功，可访问 Lazada 首页并获取产品数据，但搜索页需优化等待时间 |
 
 ## New Systems (from SpecMarket)
 
