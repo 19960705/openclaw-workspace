@@ -59,8 +59,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-03-07 09:00",
-      "lastResult": "成功推送AI热门日报到topic:2: GPT-5.4发布(75%性能超人类)、Anthropic供应链风险事件、WordPress集成三大AI、Claude 4.6拒绝荒谬指令测试优异、Claude Code收入增长5.5倍",
+      "lastRun": "2026-03-08 09:00",
+      "lastResult": "成功推送AI热门日报到topic:2: GPT-5.4正式发布(Computer Use+金融插件)、Claude日增百万用户超越ChatGPT、Claude Opus 4.6编写C编译器、Anthropic超级碗广告+无广告承诺、GPT-5.3明天发布、Anthropic 75%概率领先3月",
       "config": {
         "keywords": ["AI", "GPT", "Claude", "LLM", "OpenAI", "Anthropic"],
         "minEngagement": "high",
