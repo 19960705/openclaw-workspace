@@ -135,8 +135,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-03-07 09:30",
-      "lastResult": "推送4A广告视觉拆解：扭曲摄影、超大标题、鲜艳色彩回归、叙事驱动设计、Seedance 2.0排名#1、Hyundai Night Fishing获奖案例、JD Sports x Nike创意、Seedance分镜模板",
+      "lastRun": "2026-03-08 09:30",
+      "lastResult": "推送4A广告视觉拆解：Naive Design(天真设计)、Blueprint Design(蓝图设计)、AI辅助创意+人类真实性、动态个性化体验、Google Veo 3+Nano Banana、2026营销五大趋势、AAF获奖案例、Seedance 2.0提示词模板4个",
       "config": {
         "sources": ["twitter", "digitaling", "xinpianchang", "youtube_adblitz", "ads_of_the_world", "adweek", "behance", "campaign_us"],
         "translate": true,
