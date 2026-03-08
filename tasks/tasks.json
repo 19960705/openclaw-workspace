@@ -190,8 +190,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-19",
-      "lastRun": "2026-03-07 14:00",
-      "lastResult": "推送AI比赛资讯：Microsoft Imagine Cup、ET Gen AI Hackathon(₹10L)、AI Cup 2026、DARPA AI Cyber Challenge、PSB Suraksha Manthan(₹12L)、UIDAI Data Hackathon、IIT Hackathons、Harvard HSIL、B2BMX AI Hackathon、Venture AI Innovators Challenge",
+      "lastRun": "2026-03-08 14:00",
+      "lastResult": "推送AI比赛资讯：MiniMax $150K AI Agent Challenge(8月)、ET GenAI Hackathon(₹10L)、PSB Suraksha Manthan(₹12L/7月)、Harvard HSIL医疗AI、AI Cup 2026、Hackfest/WFEO/Stevens已完成、DoraHacks全球社区",
       "config": {
         "sources": ["kaggle", "drivendata", "paperswithcode", "github_trending", "ai_challenges", "topcoder", "didi_challenge", "baidu_ai_studio", "waytoagi", "bilibili_ai", "wechat_mp", "feishu"],
         "feishu_source": "https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e",
