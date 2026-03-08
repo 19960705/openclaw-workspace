@@ -97,8 +97,8 @@
       "status": "completed",
       "enabled": true,
       "createdAt": "2026-02-14",
-      "lastRun": "2026-03-07 18:00",
-      "lastResult": "推送OpenClaw话题追踪：Wikipedia收录、Axios报道差点找到工作、CNET深度报道、The Operator Vault免费API数据库、YouTube教程爆发、DataCamp实战教程、Reddit热议、Stormy AI营销自动化、Clarifai深度解析、社区生态繁荣",
+      "lastRun": "2026-03-08 18:00",
+      "lastResult": "推送OpenClaw话题追踪：Reddit社区活跃、GitHub Discussions热议、YouTube教程增长、Discord社区扩展、技术博客深度解析、开发者工具集成、企业采用案例、学术研究引用",
       "config": {
         "topic": "OpenClaw",
         "keywords": ["OpenClaw", "openclaw"],
