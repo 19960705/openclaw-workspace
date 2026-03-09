@@ -1,0 +1,24 @@
+# 泰国香水类视频采集列表
+# 格式：每行一个 TikTok 视频链接
+# 使用方法：./scripts/batch_collect.sh perfume_urls.txt
+
+# 示例链接（实际使用时替换为真实链接）
+# https://www.tiktok.com/@thaibeauty1/video/7234567890123456789
+# https://www.tiktok.com/@perfumereview/video/7234567890123456790
+# https://www.tiktok.com/@fragrancelover/video/7234567890123456791
+
+# 采集说明：
+# 1. 在 TikTok 搜索 "#น้ำหอม" 或 "#รีวิวน้ำหอม"
+# 2. 找到高互动率视频（点赞数多、评论多）
+# 3. 点击分享 → 复制链接
+# 4. 粘贴到此文件
+# 5. 运行：./scripts/batch_collect.sh perfume_urls.txt
+
+# 目标数量：10-20 个视频
+# 筛选标准：
+# - 播放量 >50K
+# - 互动率 >5%
+# - 最近 30 天内发布
+# - 内容类型：测评、教程、种草
+
+# 开始添加链接（删除此行及以上的注释）：
